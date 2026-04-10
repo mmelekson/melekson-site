@@ -46,6 +46,7 @@ export const content = {
         label: "Company",
         name: "Mpower Sourcing",
         icon: "building",
+        logo: "/logos/mpower-sourcing.png",
         description:
           "AI-enhanced staffing and managed services. Skilled offshore professionals running AI agents for growing businesses -- delivering the output of a full team at a fraction of the cost.",
         link: "https://mpowersourcing.com",
@@ -68,6 +69,7 @@ export const content = {
         label: "Partnership",
         name: "IntelePeer Partnership",
         icon: "link",
+        logo: "/logos/intelepeer.svg",
         description:
           "Resale partner with IntelePeer, bringing AI-powered communications and collections solutions to enterprise clients.",
         link: "https://intelepeer.ai",
@@ -79,6 +81,7 @@ export const content = {
         label: "Networking",
         name: "NPI Advantage",
         icon: "handshake",
+        logo: "/logos/npi-advantage.png",
         description:
           "Member of the Hollywood/Davie Powerhouse chapter. Building referral relationships across South Florida.",
         link: "https://npiadvantage.com",
@@ -105,6 +108,30 @@ export const content = {
           "Referral-driven networking group focused on building quality business connections in the South Florida market.",
         link: null,
         link_label: null,
+        status: "Active",
+      },
+      {
+        id: "aventura_chamber",
+        label: "Chamber",
+        name: "Aventura Marketing Council / Chamber of Commerce",
+        icon: "handshake",
+        logo: "/logos/aventura-marketing-council.png",
+        description:
+          "Active member of the Aventura Marketing Council and Chamber of Commerce. Collaborating on tech education and innovation initiatives for the city.",
+        link: null,
+        link_label: null,
+        status: "Active",
+      },
+      {
+        id: "rac_south_florida",
+        label: "Chamber",
+        name: "Russian-Speaking American Chamber of South Florida",
+        icon: "handshake",
+        logo: "/logos/rac-south-florida.png",
+        description:
+          "Member of the RAC South Florida, connecting with high-level business professionals across the region.",
+        link: "https://racsouthflorida.com",
+        link_label: "racsouthflorida.com",
         status: "Active",
       },
       {
@@ -138,6 +165,7 @@ export const content = {
     items: [
       {
         name: "Outsta",
+        logo: "/logos/outsta.svg",
         role: "Fractional Leadership",
         description: "Staffing and operational consulting for a growing digital services company.",
         period: "2024 - 2025",
@@ -150,6 +178,7 @@ export const content = {
       },
       {
         name: "DesignedVR",
+        logo: "/logos/designedvr.webp",
         role: "Fractional Leadership",
         description: "Operational consulting and business development for a VR experience company in Hallandale Beach.",
         period: "2024 - 2026",

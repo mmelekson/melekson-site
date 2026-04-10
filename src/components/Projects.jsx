@@ -60,11 +60,15 @@ export default function Projects() {
               className="fade-in bg-white rounded-xl p-6 border border-warm-200 hover:border-warm-300 transition-colors"
             >
               <div className="flex items-start gap-4">
-                {project.icon && icons[project.icon] && (
+                {project.logo ? (
+                  <div className="w-10 h-10 rounded-lg bg-white flex items-center justify-center flex-shrink-0 overflow-hidden">
+                    <img src={project.logo} alt={project.name} className="w-8 h-8 object-contain" />
+                  </div>
+                ) : project.icon && icons[project.icon] ? (
                   <div className="w-10 h-10 rounded-lg bg-accent/10 flex items-center justify-center flex-shrink-0 text-accent">
                     {icons[project.icon]}
                   </div>
-                )}
+                ) : null}
                 <div className="flex-1">
                   <div className="flex items-center gap-3 mb-2">
                     <span className="text-xs font-medium uppercase tracking-wider text-warm-400">
