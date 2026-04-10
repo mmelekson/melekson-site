@@ -28,14 +28,12 @@ export default function Hero() {
             </a>
           </div>
 
-          {/* Photo placeholder */}
           <div className="flex justify-center md:justify-end">
-            <div className="w-72 h-80 sm:w-80 sm:h-96 rounded-2xl bg-warm-200 border-2 border-dashed border-warm-300 flex items-center justify-center">
-              <p className="text-warm-400 text-sm text-center px-4">
-                Your photo here<br />
-                <span className="text-xs">/assets/myron-hero.jpg</span>
-              </p>
-            </div>
+            <img
+              src="/myron-hero.png"
+              alt="Myron Melekson"
+              className="w-72 h-80 sm:w-80 sm:h-96 rounded-2xl object-cover object-top shadow-lg"
+            />
           </div>
         </div>
       </div>
