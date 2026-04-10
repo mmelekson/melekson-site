@@ -71,6 +71,16 @@ export const content = {
         status: "Active",
       },
       {
+        id: "networking",
+        label: "Networking",
+        name: "Networking Groups",
+        description:
+          "Active member of NPI Advantage, Primetime Networking Group, and Pro Business Referrals. Building real relationships across South Florida's business community.",
+        link: null,
+        link_label: null,
+        status: "Active",
+      },
+      {
         id: "aventura_tech",
         label: "Community Initiative",
         name: "Aventura Tech Ecosystem",
