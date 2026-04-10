@@ -6,6 +6,8 @@ const categoryColor = {
   Community: 'bg-blue-100 text-blue-800',
   Press: 'bg-purple-100 text-purple-800',
   Milestone: 'bg-yellow-100 text-yellow-800',
+  Partnership: 'bg-emerald-100 text-emerald-800',
+  Product: 'bg-indigo-100 text-indigo-800',
 };
 
 export default function Updates() {

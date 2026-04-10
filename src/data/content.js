@@ -25,7 +25,7 @@ export const content = {
     heading: "About Me",
     body: [
       "I've spent 20 years building -- companies, teams, products, and now communities. Not because it was the plan, but because it's what I do when there's a problem worth solving.",
-      "I run Mpower Sourcing, an AI-enhanced staffing and managed services company based in South Florida. I also founded Magen Construction, drawing on years of construction operations experience. And I'm deep into building something I care about a lot -- a civic tech ecosystem in Aventura focused on founders, students, and the next generation of leaders.",
+      "I run Mpower Sourcing, an AI-enhanced staffing and managed services company based in South Florida. I also launched Mpower Agents, an AI automation platform. And I'm deep into building something I care about a lot -- a civic tech ecosystem in Aventura focused on founders, students, and the next generation of leaders.",
       "I grew up in Glenview, Illinois. I hold an MBA from Technion Tel Aviv, a BS from Purdue, and a certificate in Behavioral Economics from Yale. I'm Jewish, I'm a father of two, and I try to be the kind of person who shows up for people.",
       "I believe technology should lift more boats. And I believe the communities worth living in are the ones people actively build -- not the ones they wait for.",
     ],
@@ -51,13 +51,23 @@ export const content = {
         status: "Active",
       },
       {
-        id: "magen",
-        label: "Company",
-        name: "Magen Construction",
+        id: "mpower_agents",
+        label: "Product",
+        name: "Mpower Agents",
         description:
-          "New construction and renovation company rooted in years of construction operations experience across South Florida.",
-        link: null,
-        link_label: null,
+          "Virtual assistants, automation, and agentic AI for business operations. The AI-powered arm of the Mpower ecosystem.",
+        link: "https://mpoweragents.ai",
+        link_label: "mpoweragents.ai",
+        status: "Active",
+      },
+      {
+        id: "intelepeer",
+        label: "Partnership",
+        name: "IntelePeer Partnership",
+        description:
+          "Resale partner with IntelePeer, bringing AI-powered communications and collections solutions to enterprise clients.",
+        link: "https://intelepeer.ai",
+        link_label: "intelepeer.ai",
         status: "Active",
       },
       {
@@ -96,6 +106,30 @@ export const content = {
         link: null,
       },
       {
+        id: "update_005",
+        date: "April 2026",
+        category: "Event",
+        title: "eMerge Americas 2026",
+        body: "Attending eMerge Americas in Miami. If you're there, let's connect.",
+        link: "https://emergeamericas.com",
+      },
+      {
+        id: "update_003",
+        date: "April 2026",
+        category: "Partnership",
+        title: "IntelePeer Resale Partnership",
+        body: "Signed on as a resale partner with IntelePeer, bringing AI-powered communications and collections solutions to enterprise clients. Already working deals together.",
+        link: null,
+      },
+      {
+        id: "update_004",
+        date: "April 2026",
+        category: "Product",
+        title: "Mpower Agents Launched",
+        body: "Launched mpoweragents.ai -- virtual assistants, automation, and agentic AI for business operations.",
+        link: "https://mpoweragents.ai",
+      },
+      {
         id: "update_002",
         date: "April 2026",
         category: "Community",
@@ -121,7 +155,7 @@ export const content = {
     links: [
       {
         platform: "LinkedIn",
-        href: "https://linkedin.com/in/myronmelekson",
+        href: "https://linkedin.com/in/melekson",
         label: "LinkedIn",
       },
       {
@@ -133,6 +167,11 @@ export const content = {
         platform: "Mpower",
         href: "https://mpowersourcing.com",
         label: "Mpower Sourcing",
+      },
+      {
+        platform: "MpowerAgents",
+        href: "https://mpoweragents.ai",
+        label: "Mpower Agents",
       },
     ],
   },
