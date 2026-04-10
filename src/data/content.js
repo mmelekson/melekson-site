@@ -4,6 +4,7 @@ export const content = {
     links: [
       { label: "About", href: "#about" },
       { label: "Building", href: "#building" },
+      { label: "Clients", href: "#clients" },
       { label: "Updates", href: "#updates" },
       { label: "Book", href: "#book" },
       { label: "Connect", href: "#connect" },
@@ -44,6 +45,7 @@ export const content = {
         id: "mpower",
         label: "Company",
         name: "Mpower Sourcing",
+        icon: "building",
         description:
           "AI-enhanced staffing and managed services. Skilled offshore professionals running AI agents for growing businesses -- delivering the output of a full team at a fraction of the cost.",
         link: "https://mpowersourcing.com",
@@ -54,6 +56,7 @@ export const content = {
         id: "mpower_agents",
         label: "Product",
         name: "Mpower Agents",
+        icon: "cpu",
         description:
           "Virtual assistants, automation, and agentic AI for business operations. The AI-powered arm of the Mpower ecosystem.",
         link: "https://mpoweragents.ai",
@@ -64,6 +67,7 @@ export const content = {
         id: "intelepeer",
         label: "Partnership",
         name: "IntelePeer Partnership",
+        icon: "link",
         description:
           "Resale partner with IntelePeer, bringing AI-powered communications and collections solutions to enterprise clients.",
         link: "https://intelepeer.ai",
@@ -71,11 +75,34 @@ export const content = {
         status: "Active",
       },
       {
-        id: "networking",
+        id: "npi",
         label: "Networking",
-        name: "Networking Groups",
+        name: "NPI Advantage",
+        icon: "handshake",
         description:
-          "Active member of NPI Advantage, Primetime Networking Group, and Pro Business Referrals. Building real relationships across South Florida's business community.",
+          "Member of the Hollywood/Davie Powerhouse chapter. Building referral relationships across South Florida.",
+        link: "https://npiadvantage.com",
+        link_label: "npiadvantage.com",
+        status: "Member since May 2025",
+      },
+      {
+        id: "primetime",
+        label: "Networking",
+        name: "Primetime Founders",
+        icon: "handshake",
+        description:
+          "Member of the Primetime Founders Group in Aventura. High-level referral networking with South Florida business owners.",
+        link: null,
+        link_label: null,
+        status: "Member since May 2025",
+      },
+      {
+        id: "pro_business",
+        label: "Networking",
+        name: "Pro Business Referrals",
+        icon: "handshake",
+        description:
+          "Referral-driven networking group focused on building quality business connections in the South Florida market.",
         link: null,
         link_label: null,
         status: "Active",
@@ -84,6 +111,7 @@ export const content = {
         id: "aventura_tech",
         label: "Community Initiative",
         name: "Aventura Tech Ecosystem",
+        icon: "globe",
         description:
           "Building a civic tech hub in Aventura -- connecting founders, students, and local leaders around technology, innovation, and community. Includes hackathons, mentorship, and a growing tech council.",
         link: null,
@@ -94,11 +122,37 @@ export const content = {
         id: "hack_aventura",
         label: "Event",
         name: "Hack Aventura",
+        icon: "zap",
         description:
           "Two back-to-back student hackathons at Don Sofer High School in May 2026. Students build full startups in one day using AI tools. Free. Community-funded.",
         link: null,
         link_label: null,
         status: "Coming May 2026",
+      },
+    ],
+  },
+
+  clients: {
+    heading: "Select Engagements",
+    subheading: "Companies I've consulted for, led fractionally, or helped build through Mpower.",
+    items: [
+      {
+        name: "Outsta",
+        role: "Fractional Leadership",
+        description: "Staffing and operational consulting for a growing digital services company.",
+        period: "2024 - 2025",
+      },
+      {
+        name: "Magen Construction",
+        role: "Founder / Operator",
+        description: "Founded and operated a construction company focused on new builds and renovations across South Florida. Now closed.",
+        period: "2023 - 2025",
+      },
+      {
+        name: "DesignedVR",
+        role: "Fractional Leadership",
+        description: "Operational consulting and business development for a VR experience company in Hallandale Beach.",
+        period: "2024 - 2026",
       },
     ],
   },
@@ -125,7 +179,7 @@ export const content = {
       },
       {
         id: "update_003",
-        date: "April 2026",
+        date: "April 7, 2026",
         category: "Partnership",
         title: "IntelePeer Resale Partnership",
         body: "Signed on as a resale partner with IntelePeer, bringing AI-powered communications and collections solutions to enterprise clients. Already working deals together.",
