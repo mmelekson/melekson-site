@@ -372,7 +372,33 @@ export const content = {
   media: {
     heading: "Media & Interviews",
     subheading: "Conversations, appearances, and press.",
-    items: [],
+    items: [
+      {
+        type: "podcast",
+        title: "How to Turn Criticism into FIRE",
+        show: "Chutzpah Everyday Podcast",
+        date: "May 2017",
+        url: "https://soundcloud.com/chutzpaheveryday/podcast-0005-how-to-turn-criticism-into-fire-with-myron-meir-melekson",
+        description: "On leaving the US for Israel, entrepreneurial failures, team leadership, and building Q-IT from scratch.",
+      },
+      {
+        type: "video",
+        title: "Q-it: Don't Plan It, Just Q-it",
+        show: "Q-IT Product Demo",
+        date: "2017",
+        url: "https://vimeo.com/225843269",
+        vimeoId: "225843269",
+        description: "The original product demo for Q-IT, the automated scheduling startup Myron co-founded in Israel.",
+      },
+      {
+        type: "article",
+        title: "From Corporate to Startup to Mpower Sourcing",
+        show: "LinkedIn",
+        date: "December 2023",
+        url: "https://www.linkedin.com/pulse/from-corporate-startup-mpower-sourcing-embracing-my-myron-melekson-sewoc",
+        description: "Myron's account of his career evolution — from corporate to Israeli startup to founding Mpower Sourcing.",
+      },
+    ],
   },
 
   moments: {
