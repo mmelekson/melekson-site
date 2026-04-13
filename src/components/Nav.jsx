@@ -8,8 +8,9 @@ export default function Nav() {
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-warm-50/90 backdrop-blur-sm border-b border-warm-200">
       <div className="max-w-5xl mx-auto px-6 py-4 flex items-center justify-between">
-        <a href="#" className="font-heading text-xl text-warm-900">
-          {nav.name}
+        <a href="#" className="flex items-center gap-3">
+          <img src="/logo.png" alt="Myron Melekson" className="w-8 h-8 object-contain" />
+          <span className="font-heading text-xl text-warm-900">{nav.name}</span>
         </a>
 
         {/* Desktop links */}
