@@ -163,7 +163,7 @@ export const content = {
 
   clients: {
     heading: "Select Engagements",
-    subheading: "Companies I've consulted for, led fractionally, or helped build through Mpower.",
+    subheading: "Companies I've consulted for, led fractionally, or helped build.",
     items: [
       {
         name: "Outsta",
@@ -184,6 +184,12 @@ export const content = {
         role: "Fractional Leadership",
         description: "Operational consulting and business development for a VR experience company in Hallandale Beach.",
         period: "2024 - 2026",
+      },
+      {
+        name: "WeDry USA",
+        role: "Construction Operations Director",
+        description: "Led construction operations for a South Florida restoration and remediation company.",
+        period: "2022 - 2023",
       },
     ],
   },
@@ -397,6 +403,22 @@ export const content = {
         date: "December 2023",
         url: "https://www.linkedin.com/pulse/from-corporate-startup-mpower-sourcing-embracing-my-myron-melekson-sewoc",
         description: "Myron's account of his career evolution — from corporate to Israeli startup to founding Mpower Sourcing.",
+      },
+      {
+        type: "profile",
+        title: "Myron Melekson — Startup Nation Finder",
+        show: "Startup Nation Central",
+        date: "2016",
+        url: "https://finder.startupnationcentral.org/user/profile/agxzfmlsbGlzdHNpdGVyFQsSCE5ld19Vc2VyGICAwIbz2IIKDA",
+        description: "Profile in the Israeli startup ecosystem directory. Listed during the Q-IT / Technion MBA years.",
+      },
+      {
+        type: "profile",
+        title: "Q-IT — Crunchbase",
+        show: "Crunchbase",
+        date: "2016",
+        url: "https://www.crunchbase.com/organization/q-it",
+        description: "Q-IT company profile on Crunchbase. $150K raised, automated scheduling startup co-founded in Israel.",
       },
     ],
   },
