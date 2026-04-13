@@ -6,7 +6,7 @@ export default function Clients() {
   const ref = useFadeIn();
 
   return (
-    <section id="clients" className="py-20" ref={ref}>
+    <section id="clients" className="py-20 bg-white" ref={ref}>
       <div className="max-w-5xl mx-auto px-6">
         <h2 className="fade-in font-heading text-3xl sm:text-4xl text-warm-900 mb-2">
           {clients.heading}

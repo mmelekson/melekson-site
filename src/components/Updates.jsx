@@ -15,7 +15,7 @@ export default function Updates() {
   const ref = useFadeIn();
 
   return (
-    <section id="updates" className="py-20 bg-white" ref={ref}>
+    <section id="updates" className="py-20" ref={ref}>
       <div className="max-w-3xl mx-auto px-6">
         <h2 className="fade-in font-heading text-3xl sm:text-4xl text-warm-900 mb-2">
           {updates.heading}
