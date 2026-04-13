@@ -18,7 +18,23 @@ export default function About() {
             </p>
           ))}
         </div>
-        <div className="fade-in mt-10 flex flex-wrap gap-3">
+        {/* Stats strip */}
+        <div className="fade-in mt-10 grid grid-cols-3 gap-4 border-t border-warm-200 pt-10 mb-8">
+          <div>
+            <p className="font-heading text-3xl text-accent">20+</p>
+            <p className="text-sm text-warm-500 mt-1">Years building</p>
+          </div>
+          <div>
+            <p className="font-heading text-3xl text-accent">3</p>
+            <p className="text-sm text-warm-500 mt-1">Active companies</p>
+          </div>
+          <div>
+            <p className="font-heading text-3xl text-accent">SF</p>
+            <p className="text-sm text-warm-500 mt-1">South Florida</p>
+          </div>
+        </div>
+
+        <div className="fade-in flex flex-wrap gap-3">
           {about.credentials.map((cred, i) => (
             <span
               key={i}

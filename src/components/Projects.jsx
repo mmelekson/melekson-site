@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { content } from '../data/content';
 import { useFadeIn } from '../hooks/useFadeIn';
 
@@ -39,9 +40,27 @@ const icons = {
   ),
 };
 
+const tabs = [
+  { key: 'all', label: 'All' },
+  { key: 'building', label: 'Building' },
+  { key: 'network', label: 'Network' },
+  { key: 'community', label: 'Community' },
+];
+
+const tabMap = {
+  building: ['Company', 'Product', 'Partnership'],
+  network: ['Networking', 'Chamber'],
+  community: ['Community Initiative', 'Event'],
+};
+
 export default function Projects() {
   const { projects } = content;
   const ref = useFadeIn();
+  const [activeTab, setActiveTab] = useState('all');
+
+  const filtered = activeTab === 'all'
+    ? projects.items
+    : projects.items.filter(p => tabMap[activeTab]?.includes(p.label));
 
   return (
     <section id="building" className="py-20" ref={ref}>
@@ -49,19 +68,36 @@ export default function Projects() {
         <h2 className="fade-in font-heading text-3xl sm:text-4xl text-warm-900 mb-2">
           {projects.heading}
         </h2>
-        <p className="fade-in text-warm-500 mb-10 text-lg">
+        <p className="fade-in text-warm-500 mb-8 text-lg">
           {projects.subheading}
         </p>
 
+        {/* Tabs */}
+        <div className="fade-in flex gap-2 mb-8 flex-wrap">
+          {tabs.map(tab => (
+            <button
+              key={tab.key}
+              onClick={() => setActiveTab(tab.key)}
+              className={`px-4 py-1.5 rounded-full text-sm font-medium transition-colors ${
+                activeTab === tab.key
+                  ? 'bg-accent text-warm-50'
+                  : 'bg-warm-100 text-warm-600 hover:bg-warm-200'
+              }`}
+            >
+              {tab.label}
+            </button>
+          ))}
+        </div>
+
         <div className="grid md:grid-cols-2 gap-6">
-          {projects.items.map((project) => (
+          {filtered.map((project) => (
             <div
               key={project.id}
               className="fade-in bg-white rounded-xl p-6 border border-warm-200 hover:border-warm-300 transition-colors"
             >
               <div className="flex items-start gap-4">
                 {project.logo ? (
-                  <div className="w-10 h-10 rounded-lg bg-white flex items-center justify-center flex-shrink-0 overflow-hidden">
+                  <div className="w-10 h-10 rounded-lg bg-white flex items-center justify-center flex-shrink-0 overflow-hidden border border-warm-100">
                     <img src={project.logo} alt={project.name} className="w-8 h-8 object-contain" />
                   </div>
                 ) : project.icon && icons[project.icon] ? (

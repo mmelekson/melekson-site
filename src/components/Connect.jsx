@@ -37,7 +37,22 @@ export default function Connect() {
         <p className="fade-in text-warm-600 text-lg mb-10 max-w-xl mx-auto">
           {connect.body}
         </p>
-        <div className="fade-in flex flex-col sm:flex-row gap-4 justify-center">
+        {/* Calendly CTA */}
+        <div className="fade-in mb-8">
+          <a
+            href="https://calendly.com/mpower-myron/video-call"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 bg-accent text-warm-50 px-8 py-4 rounded-lg font-medium hover:bg-accent-light transition-colors text-lg"
+          >
+            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+            </svg>
+            Book a call
+          </a>
+        </div>
+
+        <div className="fade-in flex flex-col sm:flex-row gap-4 justify-center flex-wrap">
           {connect.links.map((link) => (
             <a
               key={link.platform}
