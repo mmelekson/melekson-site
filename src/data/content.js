@@ -240,6 +240,22 @@ export const content = {
     subheading: "Weekly thoughts on building, AI, South Florida, and what it means to keep going.",
     posts: [
       {
+        slug: "the-ai-operations-gap",
+        title: "The AI-Operations Gap",
+        date: "April 13, 2026",
+        category: "AI",
+        excerpt: "Most businesses are sitting on an uncomfortable truth: their operations aren't ready for the AI they want to deploy.",
+        body: [
+          "There's a gap I keep running into, and I think it's one of the defining business problems of the next few years.",
+          "On one side: AI tooling that is genuinely capable. Agents that can handle complex workflows, communicate with customers, process information, and coordinate across systems. The technology has crossed a threshold. It's not hype anymore.",
+          "On the other side: businesses whose internal operations were never designed to be automated. Processes that live in someone's head. Handoffs that happen over text. Decisions that depend on institutional knowledge nobody ever wrote down.",
+          "The gap between those two things — capable AI and undocumented operations — is where most implementation efforts die.",
+          "It's not a technology problem. The tools exist. It's an organizational problem. You cannot automate what you haven't first defined. And most businesses, especially fast-growing ones, have never had a reason to define things precisely. They scaled on hustle and trusted people. That works until you try to hand any of it to a machine.",
+          "What I think the next wave of AI adoption actually looks like is less about which tools you buy and more about who does the operational groundwork first. The businesses that win with AI will be the ones that did the unsexy work — mapping their processes, closing their gaps, building the foundation — before they tried to layer intelligence on top of it.",
+          "That work is available to any operator willing to do it. Most won't. That's the opportunity.",
+        ],
+      },
+      {
         slug: "why-i-started-hack-aventura",
         title: "Why I Started Hack Aventura",
         date: "April 13, 2026",
