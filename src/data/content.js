@@ -420,6 +420,14 @@ export const content = {
         url: "https://www.crunchbase.com/organization/q-it",
         description: "Q-IT company profile on Crunchbase. $150K raised, automated scheduling startup co-founded in Israel.",
       },
+      {
+        type: "profile",
+        title: "Q-IT — F6S",
+        show: "F6S",
+        date: "2016",
+        url: "https://www.f6s.com/company/q-it",
+        description: "Q-IT startup profile on F6S, the global founder and startup network. Listed during the Israel/Technion period.",
+      },
     ],
   },
 
