@@ -51,7 +51,7 @@ export default function Hero() {
 
             {/* Email capture */}
             <form
-              action="https://formspree.io/f/myron"
+              action="https://formspree.io/f/xdayozlz"
               method="POST"
               className="fade-in mt-6 flex gap-2 max-w-sm"
             >
