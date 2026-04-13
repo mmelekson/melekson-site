@@ -10,7 +10,9 @@ export default function Nav() {
 
   const handleNavClick = (e, href) => {
     e.preventDefault();
-    if (location.pathname === '/') {
+    if (href.startsWith('/')) {
+      navigate(href);
+    } else if (location.pathname === '/') {
       document.querySelector(href)?.scrollIntoView({ behavior: 'smooth' });
     } else {
       navigate('/' + href);

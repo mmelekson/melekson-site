@@ -8,7 +8,7 @@ import Updates from './components/Updates';
 import Writing from './components/Writing';
 import Post from './components/Post';
 import NotFound from './components/NotFound';
-import Media from './components/Media';
+import MediaPage from './components/MediaPage';
 import Moments from './components/Moments';
 import Book from './components/Book';
 import Connect from './components/Connect';
@@ -22,7 +22,6 @@ function HomePage() {
       <Projects />
       <Clients />
       <Writing />
-      <Media />
       <Moments />
       <Updates />
       <Book />
@@ -38,6 +37,7 @@ export default function App() {
       <main>
         <Routes>
           <Route path="/" element={<HomePage />} />
+          <Route path="/media" element={<MediaPage />} />
           <Route path="/writing/:slug" element={<Post />} />
           <Route path="*" element={<NotFound />} />
         </Routes>

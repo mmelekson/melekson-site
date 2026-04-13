@@ -6,7 +6,7 @@ export const content = {
       { label: "Building", href: "#building" },
       { label: "Clients", href: "#clients" },
       { label: "Writing", href: "#writing" },
-      { label: "Media", href: "#media" },
+      { label: "Media", href: "/media" },
       { label: "Updates", href: "#updates" },
       { label: "Book", href: "#book" },
       { label: "Connect", href: "#connect" },
