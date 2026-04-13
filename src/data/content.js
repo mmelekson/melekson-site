@@ -173,10 +173,10 @@ export const content = {
         period: "2024 - 2025",
       },
       {
-        name: "Magen Construction",
+        name: "Magen Builder Group",
         role: "Founder / Operator",
-        description: "Founded and operated a construction company focused on new builds and renovations across South Florida. Now closed.",
-        period: "2023 - 2025",
+        description: "Founded and operating a construction company focused on new builds and renovations across South Florida.",
+        period: "2025 - Present",
       },
       {
         name: "DesignedVR",
@@ -196,7 +196,7 @@ export const content = {
         id: "update_001",
         date: "May 2026",
         category: "Event",
-        title: "Hack Aventura -- Two Student Hackathons",
+        title: "Hack Aventura — Two Student Hackathons",
         body: "Hosting two back-to-back 1-day hackathons at Don Sofer High School. Students are building full AI-powered startups in a single day. Proud to be bringing this to Aventura.",
         link: null,
       },
@@ -221,7 +221,7 @@ export const content = {
         date: "April 2026",
         category: "Product",
         title: "Mpower Agents Launched",
-        body: "Launched mpoweragents.ai -- virtual assistants, automation, and agentic AI for business operations.",
+        body: "Launched mpoweragents.ai — virtual assistants, automation, and agentic AI for business operations.",
         link: "https://mpoweragents.ai",
       },
       {
