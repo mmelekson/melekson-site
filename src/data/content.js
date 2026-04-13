@@ -6,6 +6,7 @@ export const content = {
       { label: "Building", href: "#building" },
       { label: "Clients", href: "#clients" },
       { label: "Writing", href: "#writing" },
+      { label: "Reviews", href: "#testimonials" },
       { label: "Media", href: "/media" },
       { label: "Updates", href: "#updates" },
       { label: "Book", href: "#book" },
@@ -435,6 +436,49 @@ export const content = {
     heading: "Moments",
     subheading: "In the field.",
     photos: [],
+  },
+
+  testimonials: {
+    heading: "What Clients Say",
+    subheading: "A few people I've worked with across staffing, AI, consulting, and construction.",
+    items: [
+      {
+        quote: "Before working with Myron, I was drowning in admin. Now I have someone handling scheduling, follow-ups, and intake — and I can actually focus on my clients. It's been a game changer for the practice.",
+        name: "Greg M.",
+        role: "Virtual Assistant",
+        industry: "Mental Health Practice",
+      },
+      {
+        quote: "I didn't think a small business like mine could afford real support. Myron changed that. My assistant handles everything I was losing sleep over — and she actually cares about getting it right.",
+        name: "Karyn S.",
+        role: "Virtual Assistant",
+        industry: "Pet Care & Dog Services",
+      },
+      {
+        quote: "As a coach, my time is everything. Having a dedicated assistant through Mpower lets me stay in my zone of genius. Myron took the time to really understand what I needed — not just fill a seat.",
+        name: "Danna P.",
+        role: "Virtual Assistant",
+        industry: "Life Coaching & Hypnotherapy",
+      },
+      {
+        quote: "We needed someone who could hit the ground running in e-commerce ops. Myron delivered fast, and the support has been consistent. Real reliability is rare — Mpower has it.",
+        name: "Alan F.",
+        role: "Virtual Assistant",
+        industry: "Ergonomic Products / E-Commerce",
+      },
+      {
+        quote: "They screened hundreds of applicants and came back with candidates who actually fit. It wasn't just a resume dump — they understood our business and what the role really required.",
+        name: "Marty M.",
+        role: "Recruiting & Staffing",
+        industry: "Commercial Construction",
+      },
+      {
+        quote: "Myron brought a level of strategic thinking I wasn't expecting. He came in with a real operational plan and was ready to roll up his sleeves. That combination is hard to find.",
+        name: "Richard P.",
+        role: "Fractional Consulting",
+        industry: "Regenerative Medicine Franchise",
+      },
+    ],
   },
 
   book: {

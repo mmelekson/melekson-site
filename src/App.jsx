@@ -10,6 +10,7 @@ import Post from './components/Post';
 import NotFound from './components/NotFound';
 import MediaPage from './components/MediaPage';
 import Moments from './components/Moments';
+import Testimonials from './components/Testimonials';
 import Book from './components/Book';
 import Connect from './components/Connect';
 import Footer from './components/Footer';
@@ -22,6 +23,7 @@ function HomePage() {
       <Projects />
       <Clients />
       <Writing />
+      <Testimonials />
       <Moments />
       <Updates />
       <Book />
