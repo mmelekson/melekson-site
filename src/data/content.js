@@ -478,6 +478,24 @@ export const content = {
         role: "Fractional Consulting",
         industry: "Regenerative Medicine Franchise",
       },
+      {
+        quote: "We've worked with Mpower through multiple hires now. Every time we needed someone new, they came through. It's rare to find a partner you can keep going back to and trust they'll deliver.",
+        name: "Stephanie & Sabrina",
+        role: "Virtual Assistant",
+        industry: "Digital Marketing & Content Creation",
+      },
+      {
+        quote: "Sourcing talent across borders isn't easy, but Mpower made it seamless. The candidates were well-screened, professional, and ready to work. Exactly what we needed for our team.",
+        name: "Peter K.",
+        role: "Recruiting & Staffing",
+        industry: "Technology (UK)",
+      },
+      {
+        quote: "I've referred Myron to people in my network because I've seen firsthand how he operates — responsive, resourceful, and genuinely invested in making the match work.",
+        name: "Mike M.",
+        role: "Referral Partner",
+        industry: "Real Estate",
+      },
     ],
   },
 
