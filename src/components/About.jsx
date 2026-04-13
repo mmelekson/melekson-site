@@ -29,8 +29,8 @@ export default function About() {
             <p className="text-sm text-warm-500 mt-1">Active companies</p>
           </div>
           <div>
-            <p className="font-heading text-3xl text-accent">SF</p>
-            <p className="text-sm text-warm-500 mt-1">South Florida</p>
+            <p className="font-heading text-3xl text-accent">5+</p>
+            <p className="text-sm text-warm-500 mt-1">Networking groups</p>
           </div>
         </div>
 

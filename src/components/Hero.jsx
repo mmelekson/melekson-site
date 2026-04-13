@@ -16,8 +16,12 @@ export default function Hero() {
   }, []);
 
   return (
-    <section className="min-h-screen flex items-center pt-20 pb-16" ref={ref}>
-      <div className="max-w-5xl mx-auto px-6 w-full">
+    <section className="min-h-screen flex items-center pt-20 pb-16 relative overflow-hidden" ref={ref}>
+      {/* Subtle background gradient */}
+      <div className="absolute inset-0 bg-gradient-to-br from-warm-50 via-warm-50 to-warm-100 pointer-events-none" />
+      <div className="absolute top-0 right-0 w-96 h-96 bg-accent/5 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute bottom-0 left-0 w-64 h-64 bg-accent/3 rounded-full blur-3xl pointer-events-none" />
+      <div className="max-w-5xl mx-auto px-6 w-full relative z-10">
         <div className="grid md:grid-cols-2 gap-12 items-center">
           <div>
             <p className="fade-in text-sm font-medium text-warm-500 mb-4 tracking-wide uppercase">
