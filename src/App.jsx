@@ -7,6 +7,7 @@ import Clients from './components/Clients';
 import Updates from './components/Updates';
 import Writing from './components/Writing';
 import Post from './components/Post';
+import NotFound from './components/NotFound';
 import Media from './components/Media';
 import Moments from './components/Moments';
 import Book from './components/Book';
@@ -38,6 +39,7 @@ export default function App() {
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/writing/:slug" element={<Post />} />
+          <Route path="*" element={<NotFound />} />
         </Routes>
       </main>
       <Footer />

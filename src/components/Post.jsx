@@ -8,7 +8,31 @@ export default function Post() {
 
   useEffect(() => {
     window.scrollTo(0, 0);
-  }, [slug]);
+
+    if (post) {
+      const title = `${post.title} — Myron Melekson`;
+      const description = post.excerpt;
+      const url = `https://melekson.com/writing/${post.slug}`;
+
+      document.title = title;
+      document.querySelector('meta[name="description"]')?.setAttribute('content', description);
+      document.querySelector('meta[property="og:title"]')?.setAttribute('content', title);
+      document.querySelector('meta[property="og:description"]')?.setAttribute('content', description);
+      document.querySelector('meta[property="og:url"]')?.setAttribute('content', url);
+      document.querySelector('meta[name="twitter:title"]')?.setAttribute('content', title);
+      document.querySelector('meta[name="twitter:description"]')?.setAttribute('content', description);
+    }
+
+    return () => {
+      document.title = 'Myron Melekson';
+      document.querySelector('meta[name="description"]')?.setAttribute('content', 'Myron Melekson — Founder, builder, and community leader in South Florida.');
+      document.querySelector('meta[property="og:title"]')?.setAttribute('content', 'Myron Melekson');
+      document.querySelector('meta[property="og:description"]')?.setAttribute('content', 'Founder. Builder. Community leader. South Florida.');
+      document.querySelector('meta[property="og:url"]')?.setAttribute('content', 'https://melekson.com');
+      document.querySelector('meta[name="twitter:title"]')?.setAttribute('content', 'Myron Melekson');
+      document.querySelector('meta[name="twitter:description"]')?.setAttribute('content', 'Founder. Builder. Community leader. South Florida.');
+    };
+  }, [slug, post]);
 
   if (!post) {
     return (
