@@ -32,12 +32,43 @@ export default function Hero() {
             <p className="fade-in text-lg text-warm-500 mb-8">
               {hero.tagline}
             </p>
-            <a
-              href={hero.cta.href}
-              className="fade-in inline-block bg-accent text-warm-50 px-6 py-3 rounded-lg font-medium hover:bg-accent-light transition-colors"
+            <div className="fade-in flex flex-wrap gap-3">
+              <a
+                href={hero.cta.href}
+                className="inline-block bg-accent text-warm-50 px-6 py-3 rounded-lg font-medium hover:bg-accent-light transition-colors"
+              >
+                {hero.cta.label}
+              </a>
+              <a
+                href="https://calendly.com/mpower-myron/video-call"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 border border-accent text-accent px-6 py-3 rounded-lg font-medium hover:bg-accent hover:text-warm-50 transition-colors"
+              >
+                Book a call
+              </a>
+            </div>
+
+            {/* Email capture */}
+            <form
+              action="https://formspree.io/f/myron"
+              method="POST"
+              className="fade-in mt-6 flex gap-2 max-w-sm"
             >
-              {hero.cta.label}
-            </a>
+              <input
+                type="email"
+                name="email"
+                placeholder="Your email"
+                required
+                className="flex-1 px-4 py-2.5 rounded-lg border border-warm-200 bg-white text-warm-900 text-sm focus:outline-none focus:border-accent placeholder:text-warm-400"
+              />
+              <button
+                type="submit"
+                className="px-4 py-2.5 bg-warm-900 text-warm-50 rounded-lg text-sm font-medium hover:bg-warm-700 transition-colors whitespace-nowrap"
+              >
+                Get my posts
+              </button>
+            </form>
           </div>
 
           <div className="fade-in flex justify-center md:justify-end">

@@ -5,6 +5,8 @@ export const content = {
       { label: "About", href: "#about" },
       { label: "Building", href: "#building" },
       { label: "Clients", href: "#clients" },
+      { label: "Writing", href: "#writing" },
+      { label: "Media", href: "#media" },
       { label: "Updates", href: "#updates" },
       { label: "Book", href: "#book" },
       { label: "Connect", href: "#connect" },
@@ -231,6 +233,39 @@ export const content = {
         link: null,
       },
     ],
+  },
+
+  writing: {
+    heading: "Writing",
+    subheading: "Weekly thoughts on building, AI, South Florida, and what it means to keep going.",
+    posts: [
+      {
+        slug: "why-i-started-hack-aventura",
+        title: "Why I Started Hack Aventura",
+        date: "April 13, 2026",
+        category: "Community",
+        excerpt: "I didn't start Hack Aventura because it was a good idea. I started it because I looked around at what we had in Aventura for young builders and found almost nothing.",
+        body: [
+          "I didn't start Hack Aventura because it was a good idea. I started it because I looked around at what we had in Aventura for young builders and found almost nothing.",
+          "The city has real talent. Don Sofer has students who are sharp, motivated, and hungry. But there was no event, no community, no venue for them to build something real — not a school project, not a competition rubric, but an actual product with actual stakes.",
+          "So we're building two back-to-back one-day hackathons in May 2026. Students come in the morning with nothing. They leave in the afternoon with a working product built on AI tools. Free. Community-funded. No gatekeeping.",
+          "This is what the Aventura tech ecosystem needs to start with — not a tech park or a grant program, but a room full of teenagers proving they can build.",
+          "More details coming. If you want to sponsor or volunteer, reach out.",
+        ],
+      },
+    ],
+  },
+
+  media: {
+    heading: "Media & Interviews",
+    subheading: "Conversations, appearances, and press.",
+    items: [],
+  },
+
+  moments: {
+    heading: "Moments",
+    subheading: "In the field.",
+    photos: [],
   },
 
   book: {
