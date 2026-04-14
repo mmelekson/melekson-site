@@ -1,45 +1,87 @@
+import { useState, useEffect, useCallback } from 'react';
 import { content } from '../data/content';
 import { useFadeIn } from '../hooks/useFadeIn';
+
+const quotes = [
+  "Every business I've built — every single one — I built because of a suffocating feeling of not being able to pay for food, or worry about how I'm going to pay my rent or my mortgage or put my kids in school. That's the truth of it. Not inspiration. Not passion. Pressure.",
+  "He stared at my screen for a moment. 'Why do you have the Matrix on your computer screen?' That was it. That was the whole comment. And in that moment — not angrily, not dramatically, just clearly — I thought: Why is this man managing me?",
+  "For six to eight weeks, our team kept showing up without pay. They kept coming in, kept working. They believed in what we were building enough to show up for free when we had nothing left to give them. I don't know what to say about that except that it was one of the most humbling things I've ever witnessed.",
+  "Two decisions. Both mine. Both deliberate. I sold off the construction portfolio and put everything into Mpower. The financial pressure was heavier than ever — a wife, two young boys, a mortgage, one car barely functioning. But for the first time, what I was building was actually mine. I wasn't building for someone else anymore.",
+];
 
 export default function Book() {
   const { book } = content;
   const ref = useFadeIn();
+  const [current, setCurrent] = useState(0);
+  const [paused, setPaused] = useState(false);
+
+  const next = useCallback(() => setCurrent(i => (i + 1) % quotes.length), []);
+  const prev = () => setCurrent(i => (i - 1 + quotes.length) % quotes.length);
+
+  useEffect(() => {
+    if (paused) return;
+    const timer = setInterval(next, 5500);
+    return () => clearInterval(timer);
+  }, [paused, next]);
 
   return (
-    <section id="book" className="py-20" ref={ref}>
-      <div className="max-w-5xl mx-auto px-6">
-        <div className="fade-in bg-warm-900 rounded-2xl p-8 sm:p-12 md:p-16 grid md:grid-cols-2 gap-10 items-center">
-          {/* Mock book cover */}
-          <div className="flex justify-center">
-            <div className="w-48 h-64 sm:w-56 sm:h-72 bg-warm-800 rounded-lg border border-warm-700 flex flex-col items-center justify-center p-6 shadow-2xl">
-              <p className="font-heading text-xl text-warm-100 text-center leading-tight mb-4">
-                Keep<br />Building
-              </p>
-              <div className="w-12 h-px bg-warm-600 mb-4" />
-              <p className="text-warm-400 text-xs text-center">
-                Myron Melekson
-              </p>
-              <p className="text-warm-600 text-[10px] mt-auto">Coming Soon</p>
-            </div>
+    <section id="book" className="py-20 bg-warm-900" ref={ref}>
+      <div className="max-w-3xl mx-auto px-6 text-center">
+        <span className="fade-in text-xs font-medium uppercase tracking-wider text-warm-400 mb-3 block">
+          {book.status}
+        </span>
+        <h2 className="fade-in font-heading text-3xl sm:text-4xl text-warm-50 mb-2">
+          Keep Building
+        </h2>
+        <p className="fade-in text-warm-400 text-sm mb-16">From the book in progress</p>
+
+        <div
+          className="fade-in"
+          onMouseEnter={() => setPaused(true)}
+          onMouseLeave={() => setPaused(false)}
+        >
+          <div className="min-h-[220px] flex items-center justify-center mb-10 px-4 sm:px-8">
+            <p className="font-heading text-xl sm:text-2xl text-warm-100 leading-relaxed">
+              &ldquo;{quotes[current]}&rdquo;
+            </p>
           </div>
 
-          <div>
-            <span className="text-xs font-medium uppercase tracking-wider text-warm-400 mb-3 block">
-              {book.status}
-            </span>
-            <h2 className="font-heading text-3xl sm:text-4xl text-warm-50 mb-4">
-              {book.heading}
-            </h2>
-            <p className="text-warm-300 leading-relaxed text-lg mb-6">
-              {book.teaser}
-            </p>
-            <a
-              href={book.cta_href}
-              className="inline-block bg-warm-50 text-warm-900 px-6 py-3 rounded-lg font-medium hover:bg-warm-100 transition-colors"
+          <div className="flex items-center justify-center gap-6 mb-10">
+            <button
+              onClick={prev}
+              className="text-warm-400 hover:text-warm-100 transition-colors p-2 text-xl"
+              aria-label="Previous quote"
             >
-              {book.cta_label}
-            </a>
+              ←
+            </button>
+            <div className="flex gap-2">
+              {quotes.map((_, i) => (
+                <button
+                  key={i}
+                  onClick={() => setCurrent(i)}
+                  className={`w-2 h-2 rounded-full transition-colors ${i === current ? 'bg-accent' : 'bg-warm-600 hover:bg-warm-400'}`}
+                  aria-label={`Quote ${i + 1}`}
+                />
+              ))}
+            </div>
+            <button
+              onClick={next}
+              className="text-warm-400 hover:text-warm-100 transition-colors p-2 text-xl"
+              aria-label="Next quote"
+            >
+              →
+            </button>
           </div>
+        </div>
+
+        <div className="fade-in border-t border-warm-700 pt-10">
+          <p className="text-warm-300 leading-relaxed mb-6">{book.teaser}</p>
+          <a
+            href={book.cta_href}
+            className="inline-block bg-warm-50 text-warm-900 px-6 py-3 rounded-lg font-medium hover:bg-warm-100 transition-colors"
+          >
+            {book.cta_label}
+          </a>
         </div>
       </div>
     </section>
