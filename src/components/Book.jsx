@@ -20,7 +20,7 @@ export default function Book() {
 
   useEffect(() => {
     if (paused) return;
-    const timer = setInterval(next, 5500);
+    const timer = setInterval(next, 10000);
     return () => clearInterval(timer);
   }, [paused, next]);
 
