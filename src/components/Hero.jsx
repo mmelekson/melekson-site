@@ -27,10 +27,10 @@ export default function Hero() {
             <p className="fade-in text-sm font-medium text-warm-500 mb-4 tracking-wide uppercase">
               {nav.name}
             </p>
-            <h1 className="fade-in font-heading text-4xl sm:text-5xl lg:text-6xl text-warm-900 leading-tight mb-4">
+            <h1 className="fade-in font-heading text-3xl sm:text-4xl lg:text-5xl text-warm-900 leading-tight mb-2">
               {hero.headline}
             </h1>
-            <p className="fade-in font-heading text-3xl sm:text-4xl lg:text-5xl text-accent mb-6">
+            <p className="fade-in font-heading text-5xl sm:text-6xl lg:text-7xl text-accent mb-6 leading-none">
               {hero.subheadline}
             </p>
             <p className="fade-in text-lg text-warm-500 mb-8">
