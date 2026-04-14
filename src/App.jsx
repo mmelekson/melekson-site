@@ -4,6 +4,7 @@ import Hero from './components/Hero';
 import About from './components/About';
 import Projects from './components/Projects';
 import Clients from './components/Clients';
+import AboutPage from './components/AboutPage';
 import Post from './components/Post';
 import NotFound from './components/NotFound';
 import MediaPage from './components/MediaPage';
@@ -36,6 +37,7 @@ export default function App() {
       <main>
         <Routes>
           <Route path="/" element={<HomePage />} />
+          <Route path="/about" element={<AboutPage />} />
           <Route path="/media" element={<MediaPage />} />
           <Route path="/writing" element={<WritingPage />} />
           <Route path="/writing/:slug" element={<Post />} />

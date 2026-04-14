@@ -19,29 +19,76 @@
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@type": "Person",
-      "name": "Myron Melekson",
-      "url": "https://melekson.com",
-      "image": "https://melekson.com/myron-hero.png",
-      "jobTitle": "Founder & CEO",
-      "worksFor": {
-        "@type": "Organization",
-        "name": "Mpower Sourcing",
-        "url": "https://mpowersourcing.com"
-      },
-      "description": "Founder, builder, and community leader based in Aventura, South Florida. CEO of Mpower Sourcing and Mpower Agents.",
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "Aventura",
-        "addressRegion": "FL",
-        "addressCountry": "US"
-      },
-      "sameAs": [
-        "https://www.linkedin.com/in/melekson",
-        "https://mpowersourcing.com",
-        "https://mpoweragents.ai"
-      ],
-      "knowsAbout": ["AI", "Staffing", "Fractional Leadership", "Operations", "Entrepreneurship", "South Florida Tech"]
+      "@graph": [
+        {
+          "@type": "Person",
+          "@id": "https://melekson.com/#myron",
+          "name": "Myron Melekson",
+          "url": "https://melekson.com",
+          "image": "https://melekson.com/myron-hero.png",
+          "jobTitle": "Founder & CEO",
+          "description": "Founder, builder, and community leader based in Aventura, South Florida. CEO of Mpower Sourcing and Mpower Agents.",
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Aventura",
+            "addressRegion": "FL",
+            "postalCode": "33180",
+            "addressCountry": "US"
+          },
+          "worksFor": [
+            {
+              "@type": "Organization",
+              "@id": "https://mpowersourcing.com/#org",
+              "name": "Mpower Sourcing",
+              "url": "https://mpowersourcing.com"
+            },
+            {
+              "@type": "Organization",
+              "@id": "https://mpoweragents.ai/#org",
+              "name": "Mpower Agents",
+              "url": "https://mpoweragents.ai"
+            }
+          ],
+          "sameAs": [
+            "https://www.linkedin.com/in/melekson",
+            "https://mpowersourcing.com",
+            "https://mpoweragents.ai"
+          ],
+          "knowsAbout": ["AI", "Staffing", "Fractional Leadership", "Operations", "Entrepreneurship", "South Florida Tech", "Virtual Assistants", "AI Automation"]
+        },
+        {
+          "@type": "Organization",
+          "@id": "https://mpowersourcing.com/#org",
+          "name": "Mpower Sourcing",
+          "url": "https://mpowersourcing.com",
+          "founder": { "@id": "https://melekson.com/#myron" },
+          "description": "AI-enhanced staffing and managed services. Skilled offshore professionals running AI agents for growing businesses.",
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Aventura",
+            "addressRegion": "FL",
+            "postalCode": "33180",
+            "addressCountry": "US"
+          },
+          "sameAs": ["https://www.linkedin.com/company/mpowersourcing"]
+        },
+        {
+          "@type": "Organization",
+          "@id": "https://mpoweragents.ai/#org",
+          "name": "Mpower Agents",
+          "url": "https://mpoweragents.ai",
+          "founder": { "@id": "https://melekson.com/#myron" },
+          "description": "Virtual assistants, automation, and agentic AI for business operations.",
+          "sameAs": ["https://mpowersourcing.com"]
+        },
+        {
+          "@type": "WebSite",
+          "url": "https://melekson.com",
+          "name": "Myron Melekson",
+          "description": "Personal site of Myron Melekson — founder, builder, and community leader in South Florida.",
+          "author": { "@id": "https://melekson.com/#myron" }
+        }
+      ]
     }
     </script>
     <!-- Google tag (gtag.js) -->
