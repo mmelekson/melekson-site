@@ -15,7 +15,7 @@ export const content = {
   },
 
   hero: {
-    headline: "I don't wait for the future I want to live in.",
+    headline: "I don't wait for the future I want to live\u00A0in.",
     subheadline: "I build it.",
     tagline: "Founder. Builder. Community leader. South Florida.",
     photo_placeholder: "// Replace with: /assets/myron-hero.jpg",
