@@ -60,6 +60,7 @@ export const content = {
         id: "mpower_agents",
         label: "Product",
         name: "Mpower Agents",
+        logo: "/logos/mpoweragents.jpg",
         icon: "cpu",
         description:
           "Virtual assistants, automation, and agentic AI for business operations. The AI-powered arm of the Mpower ecosystem.",
