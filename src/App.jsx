@@ -4,13 +4,13 @@ import Hero from './components/Hero';
 import About from './components/About';
 import Projects from './components/Projects';
 import Clients from './components/Clients';
-import Updates from './components/Updates';
-import Writing from './components/Writing';
 import Post from './components/Post';
 import NotFound from './components/NotFound';
 import MediaPage from './components/MediaPage';
+import WritingPage from './components/WritingPage';
+import ReviewsPage from './components/ReviewsPage';
+import UpdatesPage from './components/UpdatesPage';
 import Moments from './components/Moments';
-import Testimonials from './components/Testimonials';
 import Book from './components/Book';
 import Connect from './components/Connect';
 import Footer from './components/Footer';
@@ -22,10 +22,7 @@ function HomePage() {
       <About />
       <Projects />
       <Clients />
-      <Writing />
-      <Testimonials />
       <Moments />
-      <Updates />
       <Book />
       <Connect />
     </>
@@ -40,7 +37,10 @@ export default function App() {
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/media" element={<MediaPage />} />
+          <Route path="/writing" element={<WritingPage />} />
           <Route path="/writing/:slug" element={<Post />} />
+          <Route path="/reviews" element={<ReviewsPage />} />
+          <Route path="/updates" element={<UpdatesPage />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </main>
