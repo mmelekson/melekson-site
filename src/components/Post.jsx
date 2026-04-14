@@ -1,6 +1,6 @@
-import { useParams, Link, useNavigate } from 'react-router-dom';
+import { useParams, Link } from 'react-router-dom';
 import { useEffect } from 'react';
-import { Helmet } from 'react-helmet-async';
+import { useSEO } from '../hooks/useSEO';
 import { content } from '../data/content';
 
 function readingTime(body) {
@@ -18,12 +18,16 @@ const categoryColor = {
 
 export default function Post() {
   const { slug } = useParams();
-  const navigate = useNavigate();
   const posts = content.writing.posts;
   const index = posts.findIndex((p) => p.slug === slug);
   const post = posts[index];
   const prev = index > 0 ? posts[index - 1] : null;
   const next = index < posts.length - 1 ? posts[index + 1] : null;
+
+  const title = post ? `${post.title} — Myron Melekson` : 'Myron Melekson';
+  const canonical = post ? `https://melekson.com/writing/${post.slug}` : 'https://melekson.com';
+
+  useSEO(post ? { title, description: post.excerpt, ogUrl: canonical } : {});
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -42,50 +46,11 @@ export default function Post() {
     );
   }
 
-  const title = `${post.title} — Myron Melekson`;
-  const canonical = `https://melekson.com/writing/${post.slug}`;
   const minutes = readingTime(post.body);
   const linkedInShare = `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(canonical)}`;
 
   return (
     <>
-      <Helmet>
-        <title>{title}</title>
-        <meta name="description" content={post.excerpt} />
-        <link rel="canonical" href={canonical} />
-        <meta property="og:type" content="article" />
-        <meta property="og:title" content={title} />
-        <meta property="og:description" content={post.excerpt} />
-        <meta property="og:url" content={canonical} />
-        <meta property="og:image" content="https://melekson.com/myron-hero.png" />
-        <meta property="og:site_name" content="Myron Melekson" />
-        <meta property="article:author" content="Myron Melekson" />
-        <meta property="article:published_time" content={post.date} />
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content={title} />
-        <meta name="twitter:description" content={post.excerpt} />
-        <meta name="twitter:image" content="https://melekson.com/myron-hero.png" />
-        <script type="application/ld+json">{JSON.stringify({
-          "@context": "https://schema.org",
-          "@type": "BlogPosting",
-          "headline": post.title,
-          "description": post.excerpt,
-          "datePublished": post.date,
-          "author": {
-            "@type": "Person",
-            "name": "Myron Melekson",
-            "url": "https://melekson.com"
-          },
-          "publisher": {
-            "@type": "Person",
-            "name": "Myron Melekson",
-            "url": "https://melekson.com"
-          },
-          "url": canonical,
-          "image": "https://melekson.com/myron-hero.png",
-          "mainEntityOfPage": canonical,
-        })}</script>
-      </Helmet>
 
       <article className="min-h-screen pt-28 pb-20">
         <div className="max-w-2xl mx-auto px-6">
