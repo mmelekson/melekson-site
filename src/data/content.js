@@ -198,14 +198,14 @@ export const content = {
       },
       {
         name: "House Mortgage",
-        role: "COO",
-        description: "Served as COO for a South Florida mortgage and lending company.",
+        role: "Fractional COO",
+        description: "Fractional COO for a Chicago-based mortgage and lending company.",
         period: "",
       },
       {
         name: "HMS Entertainment",
-        role: "COO",
-        description: "Served as COO for an event ticketing and entertainment company.",
+        role: "Consulting",
+        description: "Consulting engagement for an event ticketing and entertainment company.",
         period: "",
       },
     ],
