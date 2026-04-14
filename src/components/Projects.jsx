@@ -73,12 +73,12 @@ export default function Projects() {
         </p>
 
         {/* Tabs */}
-        <div className="fade-in flex gap-2 mb-8 flex-wrap">
+        <div className="fade-in flex gap-2 mb-8 overflow-x-auto pb-1 no-scrollbar whitespace-nowrap">
           {tabs.map(tab => (
             <button
               key={tab.key}
               onClick={() => setActiveTab(tab.key)}
-              className={`px-4 py-1.5 rounded-full text-sm font-medium transition-colors ${
+              className={`flex-shrink-0 px-4 py-1.5 rounded-full text-sm font-medium transition-colors ${
                 activeTab === tab.key
                   ? 'bg-accent text-warm-50'
                   : 'bg-warm-100 text-warm-600 hover:bg-warm-200'
