@@ -1,4 +1,4 @@
-import { useState, useEffect, useCallback } from 'react';
+import { useState, useEffect, useCallback, useRef } from 'react';
 import { content } from '../data/content';
 import { useFadeIn } from '../hooks/useFadeIn';
 
@@ -14,6 +14,8 @@ export default function Book() {
   const ref = useFadeIn();
   const [current, setCurrent] = useState(0);
   const [paused, setPaused] = useState(false);
+  const [submitted, setSubmitted] = useState(false);
+  const formRef = useRef(null);
 
   const next = useCallback(() => setCurrent(i => (i + 1) % quotes.length), []);
   const prev = () => setCurrent(i => (i - 1 + quotes.length) % quotes.length);
@@ -75,13 +77,49 @@ export default function Book() {
         </div>
 
         <div className="fade-in border-t border-warm-700 pt-10">
-          <p className="text-warm-300 leading-relaxed mb-6">{book.teaser}</p>
-          <a
-            href={book.cta_href}
-            className="inline-block bg-warm-50 text-warm-900 px-6 py-3 rounded-lg font-medium hover:bg-warm-100 transition-colors"
-          >
-            {book.cta_label}
-          </a>
+          <p className="text-warm-300 leading-relaxed mb-8">{book.teaser}</p>
+
+          {submitted ? (
+            <p className="text-warm-100 font-medium">You're on the list. I'll be in touch.</p>
+          ) : (
+            <form
+              ref={formRef}
+              action="https://formspree.io/f/xdayozlz"
+              method="POST"
+              onSubmit={async (e) => {
+                e.preventDefault();
+                const data = new FormData(formRef.current);
+                await fetch('https://formspree.io/f/xdayozlz', { method: 'POST', body: data, headers: { Accept: 'application/json' } });
+                setSubmitted(true);
+              }}
+              className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto"
+            >
+              <input type="hidden" name="source" value="book-section" />
+              <input
+                type="email"
+                name="email"
+                placeholder="Your email"
+                required
+                className="flex-1 px-4 py-2.5 rounded-lg border border-warm-600 bg-warm-800 text-warm-100 text-sm focus:outline-none focus:border-warm-400 placeholder:text-warm-500"
+              />
+              <select
+                name="interest"
+                required
+                className="px-4 py-2.5 rounded-lg border border-warm-600 bg-warm-800 text-warm-100 text-sm focus:outline-none focus:border-warm-400"
+              >
+                <option value="">I want to…</option>
+                <option value="pre-order">Pre-order the book</option>
+                <option value="editor">Be an editor / early reader</option>
+                <option value="both">Both</option>
+              </select>
+              <button
+                type="submit"
+                className="px-5 py-2.5 bg-warm-50 text-warm-900 rounded-lg text-sm font-medium hover:bg-warm-100 transition-colors whitespace-nowrap"
+              >
+                Count me in
+              </button>
+            </form>
+          )}
         </div>
       </div>
     </section>
