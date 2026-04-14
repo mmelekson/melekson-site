@@ -6,6 +6,11 @@
     <priority>1.0</priority>
   </url>
   <url>
+    <loc>https://melekson.com/media</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://melekson.com/writing/the-ai-operations-gap</loc>
     <lastmod>2026-04-13</lastmod>
     <changefreq>monthly</changefreq>

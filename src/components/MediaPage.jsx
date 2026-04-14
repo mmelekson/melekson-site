@@ -1,3 +1,4 @@
+import { Helmet } from 'react-helmet-async';
 import { content } from '../data/content';
 import { useFadeIn } from '../hooks/useFadeIn';
 
@@ -42,6 +43,16 @@ export default function MediaPage() {
   const ref = useFadeIn();
 
   return (
+    <>
+    <Helmet>
+      <title>Media & Interviews — Myron Melekson</title>
+      <meta name="description" content="Podcast appearances, video interviews, press mentions, and profiles featuring Myron Melekson — founder, builder, and community leader in South Florida." />
+      <link rel="canonical" href="https://melekson.com/media" />
+      <meta property="og:title" content="Media & Interviews — Myron Melekson" />
+      <meta property="og:description" content="Podcast appearances, video interviews, press mentions, and profiles featuring Myron Melekson." />
+      <meta property="og:url" content="https://melekson.com/media" />
+      <meta property="og:image" content="https://melekson.com/myron-hero.png" />
+    </Helmet>
     <section className="min-h-screen pt-32 pb-20 bg-warm-50" ref={ref}>
       <div className="max-w-5xl mx-auto px-6">
         <p className="fade-in text-sm font-medium text-warm-500 mb-3 tracking-wide uppercase">Archive</p>
@@ -107,5 +118,6 @@ export default function MediaPage() {
         </div>
       </div>
     </section>
+    </>
   );
 }
