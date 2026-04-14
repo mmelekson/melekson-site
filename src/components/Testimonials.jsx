@@ -17,15 +17,15 @@ export default function Testimonials() {
           {testimonials.subheading}
         </p>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {testimonials.items.map((item, i) => (
             <div
               key={i}
               className="fade-in flex flex-col bg-warm-50 border border-warm-200 rounded-xl p-6 hover:border-warm-300 transition-colors"
             >
               {/* Quote mark */}
-              <div className="text-accent text-4xl font-serif leading-none mb-3 select-none">&ldquo;</div>
-              <p className="text-warm-700 leading-relaxed text-sm flex-1 mb-6">
+              <div className="text-accent text-3xl font-serif leading-none mb-3 select-none">&ldquo;</div>
+              <p className="text-warm-700 leading-relaxed text-sm flex-1 mb-6 break-words hyphens-auto">
                 {item.quote}
               </p>
               <div className="border-t border-warm-200 pt-4">

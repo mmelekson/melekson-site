@@ -93,7 +93,7 @@ export default function Projects() {
           {filtered.map((project) => (
             <div
               key={project.id}
-              className="fade-in bg-white rounded-xl p-6 border border-warm-200 hover:border-warm-300 transition-colors"
+              className="bg-white rounded-xl p-6 border border-warm-200 hover:border-warm-300 transition-colors"
             >
               <div className="flex items-start gap-4">
                 {project.logo ? (
