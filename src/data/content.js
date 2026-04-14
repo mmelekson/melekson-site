@@ -96,6 +96,7 @@ export const content = {
         id: "primetime",
         label: "Networking",
         name: "Primetime Founders",
+        logo: "/logos/primetime-founders.png",
         icon: "handshake",
         description:
           "Member of the Primetime Founders Group in Aventura. High-level referral networking with South Florida business owners.",
