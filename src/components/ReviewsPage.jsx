@@ -1,10 +1,59 @@
+import { useState, useEffect, useCallback, useRef } from 'react';
 import { Helmet } from 'react-helmet-async';
 import { content } from '../data/content';
 import { useFadeIn } from '../hooks/useFadeIn';
 
+function ReviewCard({ item }) {
+  return (
+    <div className="flex flex-col bg-white border border-warm-200 rounded-xl p-6 hover:border-warm-300 transition-colors h-full">
+      <div className="text-accent text-3xl font-serif leading-none mb-3 select-none">&ldquo;</div>
+      <p className="text-warm-700 leading-relaxed text-sm flex-1 mb-6 break-words hyphens-auto">
+        {item.quote}
+      </p>
+      <div className="border-t border-warm-200 pt-4">
+        <p className="font-heading text-warm-900 text-sm font-medium">{item.name}</p>
+        <p className="text-xs text-accent mt-0.5">{item.role}</p>
+        <p className="text-xs text-warm-400 mt-0.5">{item.industry}</p>
+      </div>
+    </div>
+  );
+}
+
 export default function ReviewsPage() {
   const { testimonials } = content;
   const ref = useFadeIn();
+  const items = testimonials.items;
+
+  const [perPage, setPerPage] = useState(3);
+  const [page, setPage] = useState(0);
+  const [paused, setPaused] = useState(false);
+  const containerRef = useRef(null);
+
+  // Responsive: 1 on mobile, 3 on md+
+  useEffect(() => {
+    const update = () => setPerPage(window.innerWidth >= 768 ? 3 : 1);
+    update();
+    window.addEventListener('resize', update);
+    return () => window.removeEventListener('resize', update);
+  }, []);
+
+  const totalPages = Math.ceil(items.length / perPage);
+
+  // Reset to page 0 if perPage changes and page is out of range
+  useEffect(() => {
+    setPage((p) => Math.min(p, totalPages - 1));
+  }, [perPage, totalPages]);
+
+  const next = useCallback(() => setPage((p) => (p + 1) % totalPages), [totalPages]);
+  const prev = () => setPage((p) => (p - 1 + totalPages) % totalPages);
+
+  useEffect(() => {
+    if (paused) return;
+    const timer = setInterval(next, 10000);
+    return () => clearInterval(timer);
+  }, [paused, next]);
+
+  const visible = items.slice(page * perPage, page * perPage + perPage);
 
   return (
     <>
@@ -28,23 +77,46 @@ export default function ReviewsPage() {
             {testimonials.subheading}
           </p>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {testimonials.items.map((item, i) => (
-              <div
-                key={i}
-                className="fade-in flex flex-col bg-white border border-warm-200 rounded-xl p-6 hover:border-warm-300 transition-colors"
+          <div
+            className="fade-in"
+            onMouseEnter={() => setPaused(true)}
+            onMouseLeave={() => setPaused(false)}
+            ref={containerRef}
+          >
+            {/* Cards */}
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8 min-h-[280px]">
+              {visible.map((item, i) => (
+                <ReviewCard key={`${page}-${i}`} item={item} />
+              ))}
+            </div>
+
+            {/* Navigation */}
+            <div className="flex items-center justify-center gap-6">
+              <button
+                onClick={prev}
+                className="text-warm-400 hover:text-warm-900 transition-colors p-2 text-xl"
+                aria-label="Previous"
               >
-                <div className="text-accent text-3xl font-serif leading-none mb-3 select-none">&ldquo;</div>
-                <p className="text-warm-700 leading-relaxed text-sm flex-1 mb-6 break-words hyphens-auto">
-                  {item.quote}
-                </p>
-                <div className="border-t border-warm-200 pt-4">
-                  <p className="font-heading text-warm-900 text-sm font-medium">{item.name}</p>
-                  <p className="text-xs text-accent mt-0.5">{item.role}</p>
-                  <p className="text-xs text-warm-400 mt-0.5">{item.industry}</p>
-                </div>
+                ←
+              </button>
+              <div className="flex gap-2">
+                {Array.from({ length: totalPages }).map((_, i) => (
+                  <button
+                    key={i}
+                    onClick={() => setPage(i)}
+                    className={`w-2 h-2 rounded-full transition-colors ${i === page ? 'bg-accent' : 'bg-warm-300 hover:bg-warm-400'}`}
+                    aria-label={`Page ${i + 1}`}
+                  />
+                ))}
               </div>
-            ))}
+              <button
+                onClick={next}
+                className="text-warm-400 hover:text-warm-900 transition-colors p-2 text-xl"
+                aria-label="Next"
+              >
+                →
+              </button>
+            </div>
           </div>
         </div>
       </section>
