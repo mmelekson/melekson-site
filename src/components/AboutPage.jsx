@@ -1,77 +1,85 @@
-import { Helmet } from 'react-helmet-async';
+import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { useFadeIn } from '../hooks/useFadeIn';
+import { useSEO } from '../hooks/useSEO';
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Who is Myron Melekson?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Myron Melekson is a founder, operator, and community leader based in Aventura, Florida (zip code 33180). He is the CEO and founder of Mpower Sourcing, an AI-enhanced staffing and managed services company, and Mpower Agents, an AI automation platform. He has 20 years of experience building companies, teams, and products across staffing, technology, construction, and operations."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What companies has Myron Melekson founded?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Myron Melekson founded Mpower Sourcing (mpowersourcing.com), an AI-enhanced staffing and managed services company; Mpower Agents (mpoweragents.ai), an AI automation and virtual assistant platform; and Q-IT, an automated scheduling startup co-founded in Israel that raised $150K in seed funding. He also founded Magen Builder Group, a South Florida construction company."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Where is Myron Melekson located?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Myron Melekson is based in Aventura, Florida (zip code 33180), in the South Florida area. He is active in the local business and tech community through the Aventura Marketing Council, NPI Advantage, Primetime Founders, and Pro Business Referrals."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is Myron Melekson's background and education?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Myron Melekson holds an MBA from Technion Tel Aviv, a BS from Purdue University, and a certificate in Behavioral Economics from Yale School of Management. He has served as COO, fractional executive, and founder across multiple industries including technology, staffing, construction, and financial services."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What services does Myron Melekson offer?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Through Mpower Sourcing, Myron offers AI-enhanced staffing, offshore talent placement, managed services, and operational consulting. Through Mpower Agents, he offers AI automation, agentic workflows, and virtual assistant services. He also takes select fractional COO and consulting engagements with growing businesses."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How can I contact Myron Melekson?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "You can reach Myron Melekson via LinkedIn at linkedin.com/in/melekson, by email at myron@melekson.com, or by booking a call at mpowersourcing.com."
+      }
+    }
+  ]
+};
 
 export default function AboutPage() {
   const ref = useFadeIn();
+  useSEO({
+    title: 'About Myron Melekson — Founder, Builder, South Florida',
+    description: 'Myron Melekson is a founder, operator, and community leader based in Aventura, Florida. CEO of Mpower Sourcing and Mpower Agents. 20 years building companies, teams, and communities.',
+    ogUrl: 'https://melekson.com/about',
+  });
+
+  useEffect(() => {
+    const script = document.createElement('script');
+    script.type = 'application/ld+json';
+    script.id = 'faq-schema';
+    script.textContent = JSON.stringify(faqSchema);
+    document.head.appendChild(script);
+    return () => {
+      const el = document.getElementById('faq-schema');
+      if (el) el.remove();
+    };
+  }, []);
 
   return (
-    <>
-      <Helmet>
-        <title>About Myron Melekson — Founder, Builder, South Florida</title>
-        <meta name="description" content="Myron Melekson is a founder, operator, and community leader based in Aventura, Florida. CEO of Mpower Sourcing and Mpower Agents. 20 years building companies, teams, and communities." />
-        <link rel="canonical" href="https://melekson.com/about" />
-        <meta property="og:title" content="About Myron Melekson" />
-        <meta property="og:description" content="Founder, operator, and community leader based in Aventura, FL. CEO of Mpower Sourcing and Mpower Agents." />
-        <meta property="og:url" content="https://melekson.com/about" />
-        <meta property="og:image" content="https://melekson.com/myron-hero.png" />
-        <script type="application/ld+json">{JSON.stringify({
-          "@context": "https://schema.org",
-          "@type": "FAQPage",
-          "mainEntity": [
-            {
-              "@type": "Question",
-              "name": "Who is Myron Melekson?",
-              "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "Myron Melekson is a founder, operator, and community leader based in Aventura, Florida (zip code 33180). He is the CEO and founder of Mpower Sourcing, an AI-enhanced staffing and managed services company, and Mpower Agents, an AI automation platform. He has 20 years of experience building companies, teams, and products across staffing, technology, construction, and operations."
-              }
-            },
-            {
-              "@type": "Question",
-              "name": "What companies has Myron Melekson founded?",
-              "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "Myron Melekson founded Mpower Sourcing (mpowersourcing.com), an AI-enhanced staffing and managed services company; Mpower Agents (mpoweragents.ai), an AI automation and virtual assistant platform; and Q-IT, an automated scheduling startup co-founded in Israel that raised $150K in seed funding. He also founded Magen Builder Group, a South Florida construction company."
-              }
-            },
-            {
-              "@type": "Question",
-              "name": "Where is Myron Melekson located?",
-              "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "Myron Melekson is based in Aventura, Florida (zip code 33180), in the South Florida area. He is active in the local business and tech community through the Aventura Marketing Council, NPI Advantage, Primetime Founders, and Pro Business Referrals."
-              }
-            },
-            {
-              "@type": "Question",
-              "name": "What is Myron Melekson's background and education?",
-              "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "Myron Melekson holds an MBA from Technion Tel Aviv, a BS from Purdue University, and a certificate in Behavioral Economics from Yale School of Management. He has served as COO, fractional executive, and founder across multiple industries including technology, staffing, construction, and financial services."
-              }
-            },
-            {
-              "@type": "Question",
-              "name": "What services does Myron Melekson offer?",
-              "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "Through Mpower Sourcing, Myron offers AI-enhanced staffing, offshore talent placement, managed services, and operational consulting. Through Mpower Agents, he offers AI automation, agentic workflows, and virtual assistant services. He also takes select fractional COO and consulting engagements with growing businesses."
-              }
-            },
-            {
-              "@type": "Question",
-              "name": "How can I contact Myron Melekson?",
-              "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "You can reach Myron Melekson via LinkedIn at linkedin.com/in/melekson, by email at myron@melekson.com, or by booking a call at mpowersourcing.com."
-              }
-            }
-          ]
-        })}</script>
-      </Helmet>
-
-      <section className="min-h-screen pt-32 pb-20 bg-warm-50" ref={ref}>
+    <section className="min-h-screen pt-32 pb-20 bg-warm-50" ref={ref}>
         <div className="max-w-3xl mx-auto px-6">
           <p className="fade-in text-sm font-medium text-warm-500 mb-3 tracking-wide uppercase">About</p>
           <h1 className="fade-in font-heading text-4xl sm:text-5xl text-warm-900 mb-8">
@@ -146,6 +154,5 @@ export default function AboutPage() {
           </div>
         </div>
       </section>
-    </>
   );
 }

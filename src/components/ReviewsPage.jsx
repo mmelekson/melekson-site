@@ -1,7 +1,7 @@
 import { useState, useEffect, useCallback, useRef } from 'react';
-import { Helmet } from 'react-helmet-async';
 import { content } from '../data/content';
 import { useFadeIn } from '../hooks/useFadeIn';
+import { useSEO } from '../hooks/useSEO';
 
 function ReviewCard({ item }) {
   return (
@@ -22,6 +22,11 @@ function ReviewCard({ item }) {
 export default function ReviewsPage() {
   const { testimonials } = content;
   const ref = useFadeIn();
+  useSEO({
+    title: 'Reviews — Myron Melekson',
+    description: 'What clients, colleagues, and people Myron Melekson has coached and worked with say about working together.',
+    ogUrl: 'https://melekson.com/reviews',
+  });
   const items = testimonials.items;
 
   const [perPage, setPerPage] = useState(3);
@@ -56,18 +61,7 @@ export default function ReviewsPage() {
   const visible = items.slice(page * perPage, page * perPage + perPage);
 
   return (
-    <>
-      <Helmet>
-        <title>Reviews — Myron Melekson</title>
-        <meta name="description" content="What clients, colleagues, and people Myron Melekson has coached and worked with say about working together." />
-        <link rel="canonical" href="https://melekson.com/reviews" />
-        <meta property="og:title" content="Reviews — Myron Melekson" />
-        <meta property="og:description" content="What clients, colleagues, and people Myron has coached and worked with say about working together." />
-        <meta property="og:url" content="https://melekson.com/reviews" />
-        <meta property="og:image" content="https://melekson.com/myron-hero.png" />
-      </Helmet>
-
-      <section className="min-h-screen pt-32 pb-20 bg-warm-50" ref={ref}>
+    <section className="min-h-screen pt-32 pb-20 bg-warm-50" ref={ref}>
         <div className="max-w-5xl mx-auto px-6">
           <p className="fade-in text-sm font-medium text-warm-500 mb-3 tracking-wide uppercase">Reviews</p>
           <h1 className="fade-in font-heading text-4xl sm:text-5xl text-warm-900 mb-3">
@@ -120,6 +114,5 @@ export default function ReviewsPage() {
           </div>
         </div>
       </section>
-    </>
   );
 }

@@ -1,6 +1,6 @@
-import { Helmet } from 'react-helmet-async';
 import { content } from '../data/content';
 import { useFadeIn } from '../hooks/useFadeIn';
+import { useSEO } from '../hooks/useSEO';
 
 const categoryColor = {
   Event: 'bg-accent/10 text-accent',
@@ -14,20 +14,14 @@ const categoryColor = {
 export default function UpdatesPage() {
   const { updates } = content;
   const ref = useFadeIn();
+  useSEO({
+    title: 'Updates — Myron Melekson',
+    description: "What's been happening lately — events, partnerships, product launches, and community news from Myron Melekson.",
+    ogUrl: 'https://melekson.com/updates',
+  });
 
   return (
-    <>
-      <Helmet>
-        <title>Updates — Myron Melekson</title>
-        <meta name="description" content="What's been happening lately — events, partnerships, product launches, and community news from Myron Melekson." />
-        <link rel="canonical" href="https://melekson.com/updates" />
-        <meta property="og:title" content="Updates — Myron Melekson" />
-        <meta property="og:description" content="What's been happening lately — events, partnerships, product launches, and community news." />
-        <meta property="og:url" content="https://melekson.com/updates" />
-        <meta property="og:image" content="https://melekson.com/myron-hero.png" />
-      </Helmet>
-
-      <section className="min-h-screen pt-32 pb-20 bg-warm-50" ref={ref}>
+    <section className="min-h-screen pt-32 pb-20 bg-warm-50" ref={ref}>
         <div className="max-w-3xl mx-auto px-6">
           <p className="fade-in text-sm font-medium text-warm-500 mb-3 tracking-wide uppercase">Updates</p>
           <h1 className="fade-in font-heading text-4xl sm:text-5xl text-warm-900 mb-3">
@@ -67,6 +61,5 @@ export default function UpdatesPage() {
           </div>
         </div>
       </section>
-    </>
   );
 }
