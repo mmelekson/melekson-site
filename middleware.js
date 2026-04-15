@@ -7,6 +7,20 @@ const BOT_PATTERN =
 
 const posts = [
   {
+    slug: 'the-price-gaps-american-businesses-dont-see',
+    title: "The Price Gaps American Businesses Don't See",
+    excerpt: "I had a call with a CEO from the UK this week. Something he said stuck with me.",
+    date: 'April 15, 2026',
+    category: 'Business',
+  },
+  {
+    slug: 'when-to-use-a-human-vs-an-ai-agent',
+    title: 'When to Use a Human vs. an AI Agent',
+    excerpt: "I had a call last week that I keep having in different forms. A business owner wanted to know: should I hire a person or just build an AI system? Here's how I walked him through it.",
+    date: 'April 14, 2026',
+    category: 'AI',
+  },
+  {
     slug: 'the-ai-operations-gap',
     title: 'The AI-Operations Gap',
     excerpt: "Most businesses are sitting on an uncomfortable truth: their operations aren't ready for the AI they want to deploy.",
