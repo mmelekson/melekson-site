@@ -208,6 +208,13 @@ export const content = {
         description: "Consulting engagement for an event ticketing and entertainment company.",
         period: "",
       },
+      {
+        name: "Mobicode",
+        logo: "/logos/mobicode.png",
+        role: "Strategic Partnership",
+        description: "Active partnership with UK-based technology company Mobicode on cross-border business development and US market opportunities.",
+        period: "2026 - Present",
+      },
     ],
   },
 
@@ -262,6 +269,25 @@ export const content = {
     heading: "Writing",
     subheading: "Weekly thoughts on building, AI, South Florida, and what it means to keep going.",
     posts: [
+      {
+        slug: "the-price-gaps-american-businesses-dont-see",
+        title: "The Price Gaps American Businesses Don't See",
+        date: "April 15, 2026",
+        category: "Business",
+        excerpt: "I had a call with a CEO from the UK this week. Something he said stuck with me.",
+        body: [
+          "I had a call this week with a CEO from the UK. Runs multiple businesses, serious operator.",
+          "We got talking about costs. He mentioned his manufacturer produces shipping boxes for 32 cents each. Same box in America costs over a dollar.",
+          "That's not a small gap.",
+          "I've spent years thinking about price gaps. It's the whole reason Mpower Sourcing exists. Skilled professionals in the Philippines, Colombia, and South Africa doing the same work as their US counterparts at a fraction of the cost. Not because the work is worth less. The price floor is just set by a different cost of living.",
+          "But I always focused on labor. This conversation reminded me the gap exists everywhere. Manufacturing, logistics, software, sourcing. Most American businesses never look for it because they only ever price themselves against other Americans.",
+          "That's the blind spot.",
+          "We also talked about the US contractor market. No dominant software player in the construction estimation space. Real opportunity sitting there. But contractors here are slow to adopt new technology. The tool has to be simple and the person selling it has to speak the language, not just English but the actual language of tradespeople. That's a harder problem than building the software.",
+          "What I keep coming back to is how much you see when you talk to someone building in a different market. They see yours fresh. You see theirs with context they don't have. You find angles together that neither of you would have found alone.",
+          "The companies that find these gaps early don't look like they should be able to compete at their size.",
+          "They just do.",
+        ],
+      },
       {
         slug: "when-to-use-a-human-vs-an-ai-agent",
         title: "When to Use a Human vs. an AI Agent",
@@ -485,6 +511,12 @@ export const content = {
     heading: "What People Say",
     subheading: "Clients, colleagues, and people I've coached and worked with over the years.",
     items: [
+      {
+        quote: "Myron has a rare combination of strategic thinking and hands-on operator experience. In one conversation he identified three separate business opportunities and showed me a clear path for entering the US market. He's exactly the kind of person you want in your corner when you're building something new somewhere unfamiliar.",
+        name: "Peter Kirby",
+        role: "Founder",
+        industry: "Technology — UK",
+      },
       {
         quote: "I have consistently been impressed by his drive, professionalism, and ability to deliver results. Myron is a natural communicator, a quick thinker, and someone who truly understands how to uncover client needs and deliver tailored solutions.",
         name: "Joe",
