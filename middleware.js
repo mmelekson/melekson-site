@@ -7,6 +7,13 @@ const BOT_PATTERN =
 
 const posts = [
   {
+    slug: 'allbirds-ai-pivot-bubble',
+    title: 'A Shoe Company Just Became an AI Company Overnight',
+    excerpt: "Did everyone see what Allbirds did today? They sold their shoe brand, renamed themselves NewBird AI, and the stock jumped 700%. I have some thoughts.",
+    date: 'April 15, 2026',
+    category: 'AI',
+  },
+  {
     slug: 'the-price-gaps-american-businesses-dont-see',
     title: "The Price Gaps American Businesses Don't See",
     excerpt: "I had a call with a CEO from the UK this week. Something he said stuck with me.",

@@ -270,6 +270,24 @@ export const content = {
     subheading: "Weekly thoughts on building, AI, South Florida, and what it means to keep going.",
     posts: [
       {
+        slug: "allbirds-ai-pivot-bubble",
+        title: "A Shoe Company Just Became an AI Company Overnight",
+        date: "April 15, 2026",
+        category: "AI",
+        excerpt: "Did everyone see what Allbirds did today? They sold their shoe brand, renamed themselves NewBird AI, and the stock jumped 700%. I have some thoughts.",
+        body: [
+          "Did everyone see what Allbirds did today?",
+          "Only two weeks ago I was sitting with friends talking about this company. The fall from grace. How they went from the it shoe brand to closing every store and bleeding revenue. We were genuinely asking, what would they even need to do to turn this around?",
+          "Well, today we got our answer. They sold the shoe brand for $39 million, raised $50 million from some undisclosed investor, renamed themselves NewBird AI, and said they're now a GPU-as-a-Service company. The stock went up over 700%.",
+          "I'll say this: the opportunity they're pointing at is real. The demand for AI compute is massive and growing. Companies need dedicated, low-latency GPU access that the big cloud providers can't always give them. A shared access model, kind of like a rideshare for compute, is a legitimate play. Companies like CoreWeave built billion-dollar businesses doing exactly this.",
+          "But CoreWeave spent years building relationships with NVIDIA, hiring hundreds of engineers, building the orchestration software that makes shared compute actually work. They didn't just buy hardware and put up a sign.",
+          "When I look at the Allbirds plan, I have questions. Where's the AI team? Where's the proprietary technology? Where's the software layer to manage shared compute? Who are the customers, and why would they choose NewBird over AWS, Azure, Lambda, or the dozens of established players? The plan right now is to take $50 million, buy GPUs, and rent them out. I'd love to see more.",
+          "I run an AI company. I work with this stuff every day. I'm rooting for more players in the AI infrastructure space because more competition means better access for builders like me. But slapping AI on the name and watching the stock 7x overnight, that's the hype cycle doing its thing, not the business proving itself yet.",
+          "The real opportunity is there. GPU demand isn't slowing down. If they hire the right people, build the right software, and actually execute, maybe this becomes a real story. Right now it's a press release and a stock ticker.",
+          "If you're building in AI, keep building. The companies that win long term are the ones shipping products, not press releases.",
+        ],
+      },
+      {
         slug: "the-price-gaps-american-businesses-dont-see",
         title: "The Price Gaps American Businesses Don't See",
         date: "April 15, 2026",
