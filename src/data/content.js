@@ -187,14 +187,14 @@ export const content = {
         logo: "/logos/designedvr.webp",
         role: "Fractional Leadership",
         description: "Operational consulting and business development for a VR experience company in Hallandale Beach.",
-        period: "2024 - 2026",
+        period: "2023",
       },
       {
         name: "WeDry USA",
         logo: "/logos/wedry-usa.png",
         role: "COO",
         description: "Served as COO for a South Florida water damage restoration and remediation company.",
-        period: "2022 - 2023",
+        period: "2025",
       },
       {
         name: "House Mortgage",
