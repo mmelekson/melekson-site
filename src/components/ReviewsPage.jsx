@@ -42,7 +42,7 @@ export default function ReviewsPage() {
     return () => window.removeEventListener('resize', update);
   }, []);
 
-  const totalPages = Math.ceil(items.length / perPage);
+  const totalPages = Math.max(1, Math.ceil(items.length / perPage));
 
   // Reset to page 0 if perPage changes and page is out of range
   useEffect(() => {
@@ -53,10 +53,10 @@ export default function ReviewsPage() {
   const prev = () => setPage((p) => (p - 1 + totalPages) % totalPages);
 
   useEffect(() => {
-    if (paused) return;
+    if (paused || totalPages <= 1) return;
     const timer = setInterval(next, 10000);
     return () => clearInterval(timer);
-  }, [paused, next]);
+  }, [paused, next, totalPages]);
 
   const visible = items.slice(page * perPage, page * perPage + perPage);
 

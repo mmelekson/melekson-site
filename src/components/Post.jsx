@@ -79,6 +79,18 @@ export default function Post() {
 
           <hr className="border-warm-200 mb-10" />
 
+          {/* Hero image */}
+          {post.image && (
+            <div className="mb-10 rounded-xl overflow-hidden">
+              <img
+                src={post.image}
+                alt={post.title}
+                className="w-full h-64 sm:h-80 object-cover"
+                onError={(e) => { e.target.style.display = 'none'; }}
+              />
+            </div>
+          )}
+
           {/* Body */}
           <div className="space-y-6">
             {post.body.map((paragraph, i) => (

@@ -274,6 +274,7 @@ export const content = {
         title: "A Shoe Company Just Became an AI Company Overnight",
         date: "April 15, 2026",
         category: "AI",
+        image: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=1200&q=80&fit=crop&h=630",
         excerpt: "Did everyone see what Allbirds did today? They sold their shoe brand, renamed themselves NewBird AI, and the stock jumped 700%. I have some thoughts.",
         body: [
           "Did everyone see what Allbirds did today?",

@@ -21,7 +21,7 @@ export default function Book() {
   const prev = () => setCurrent(i => (i - 1 + quotes.length) % quotes.length);
 
   useEffect(() => {
-    if (paused) return;
+    if (paused || quotes.length <= 1) return;
     const timer = setInterval(next, 10000);
     return () => clearInterval(timer);
   }, [paused, next]);

@@ -98,7 +98,7 @@ export default function Projects() {
               <div className="flex items-start gap-4">
                 {project.logo ? (
                   <div className="w-10 h-10 rounded-lg bg-white flex items-center justify-center flex-shrink-0 overflow-hidden border border-warm-100">
-                    <img src={project.logo} alt={project.name} className="w-8 h-8 object-contain" />
+                    <img src={project.logo} alt={project.name} className="w-8 h-8 object-contain" onError={(e) => { e.target.style.display = 'none'; }} />
                   </div>
                 ) : project.icon && icons[project.icon] ? (
                   <div className="w-10 h-10 rounded-lg bg-accent/10 flex items-center justify-center flex-shrink-0 text-accent">
