@@ -179,8 +179,8 @@ export const content = {
         name: "Magen Builder Group",
         logo: "/logos/magen-builder-group.png",
         role: "Founder / Operator",
-        description: "Founded and operating a construction company focused on new builds and renovations across South Florida.",
-        period: "2025 - Present",
+        description: "Founded and operated a construction company focused on new builds and renovations across South Florida.",
+        period: "2025",
       },
       {
         name: "DesignedVR",
