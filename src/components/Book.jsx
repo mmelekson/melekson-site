@@ -3,10 +3,8 @@ import { content } from '../data/content';
 import { useFadeIn } from '../hooks/useFadeIn';
 
 const quotes = [
-  "Every business I've built — every single one — I built because of a suffocating feeling of not being able to pay for food, or worry about how I'm going to pay my rent or my mortgage or put my kids in school. That's the truth of it. Not inspiration. Not passion. Pressure.",
   "He stared at my screen for a moment. 'Why do you have the Matrix on your computer screen?' That was it. That was the whole comment. And in that moment — not angrily, not dramatically, just clearly — I thought: Why is this man managing me?",
   "For six to eight weeks, our team kept showing up without pay. They kept coming in, kept working. They believed in what we were building enough to show up for free when we had nothing left to give them. I don't know what to say about that except that it was one of the most humbling things I've ever witnessed.",
-  "Two decisions. Both mine. Both deliberate. I sold off the construction portfolio and put everything into Mpower. The financial pressure was heavier than ever — a wife, two young boys, a mortgage, one car barely functioning. But for the first time, what I was building was actually mine. I wasn't building for someone else anymore.",
 ];
 
 export default function Book() {

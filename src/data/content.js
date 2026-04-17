@@ -30,7 +30,7 @@ export const content = {
     body: [
       "I've spent 20 years building — companies, teams, products, and now communities. Not because it was the plan, but because it's what I do when there's a problem worth solving.",
       "I run Mpower Sourcing, an AI-enhanced staffing and managed services company based in South Florida. I also launched Mpower Agents, an AI automation platform. And I'm deep into building something I care about a lot — a civic tech ecosystem in Aventura focused on founders, students, and the next generation of leaders.",
-      "I grew up in Glenview, Illinois. I hold an MBA from Technion Tel Aviv, a BS from Purdue, and a certificate in Behavioral Economics from Yale. I'm Jewish, I'm a father of two, and I try to be the kind of person who shows up for people.",
+      "I grew up in Glenview, Illinois. I hold an MBA from Technion Tel Aviv, a BS from Purdue, and a certificate in Behavioral Economics from Yale. I have a wonderful wife, two boys, and a dog, and I care deeply about my community and keeping it safe.",
       "I believe technology should lift more boats. And I believe the communities worth living in are the ones people actively build — not the ones they wait for.",
     ],
     credentials: [
@@ -274,7 +274,6 @@ export const content = {
         title: "A Shoe Company Just Became an AI Company Overnight",
         date: "April 15, 2026",
         category: "AI",
-        image: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=1200&q=80&fit=crop&h=630",
         excerpt: "Did everyone see what Allbirds did today? They sold their shoe brand, renamed themselves NewBird AI, and the stock jumped 700%. I have some thoughts.",
         body: [
           "Did everyone see what Allbirds did today?",
