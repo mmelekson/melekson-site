@@ -5,6 +5,7 @@ import { useFadeIn } from '../hooks/useFadeIn';
 const quotes = [
   "He stared at my screen for a moment. 'Why do you have the Matrix on your computer screen?' That was it. That was the whole comment. And in that moment — not angrily, not dramatically, just clearly — I thought: Why is this man managing me?",
   "For six to eight weeks, our team kept showing up without pay. They kept coming in, kept working. They believed in what we were building enough to show up for free when we had nothing left to give them. I don't know what to say about that except that it was one of the most humbling things I've ever witnessed.",
+  "Everything I'm building right now — Mpower, the partnerships, the civic work — all of it is being built in the margins of a life that doesn't have many margins. And yet I keep building. That part hasn't changed.",
 ];
 
 export default function Book() {
