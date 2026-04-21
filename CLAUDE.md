@@ -13,10 +13,6 @@ The quotes displayed in the Book section of this site live in a **separate priva
 5. If a quote currently on the site is **not** in the Approved section, **stop and ask Myron before removing it** — he may have made a site-specific tweak.
 6. Never invent quotes. Never pull from the "Strong candidates" section. Candidates only become approved when Myron explicitly approves them in a book-chat session over in the book repo.
 
-## Deprecated: `book/notes.md`
-
-The `book/` directory in this repo (containing `notes.md`) is **deprecated**. It was an earlier attempt to keep book notes alongside the site. All book material has moved to the `myron-book` repo. Do not edit `book/notes.md` — treat it as historical.
-
 ## Site stack
 
 - Vite + React + Tailwind

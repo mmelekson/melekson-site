@@ -77,8 +77,16 @@ export default function Hero() {
 
           <div className="fade-in flex justify-center md:justify-end">
             <img
-              src="/myron-hero.png"
-              alt="Myron Melekson"
+              src="/myron-hero-800.jpg"
+              srcSet="/myron-hero-800.jpg 800w, /myron-hero-1600.jpg 1600w"
+              sizes="(max-width: 768px) 320px, 400px"
+              width="800"
+              height="800"
+              alt="Myron Melekson — Founder of Mpower Sourcing and Mpower Agents"
+              fetchpriority="high"
+              loading="eager"
+              decoding="async"
+              onError={(e) => { e.currentTarget.src = '/myron-hero.png'; e.currentTarget.srcset = ''; }}
               className="w-72 h-80 sm:w-80 sm:h-96 rounded-2xl object-cover object-top shadow-lg"
             />
           </div>
