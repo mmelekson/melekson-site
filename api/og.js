@@ -4,8 +4,11 @@ export const config = {
   runtime: 'edge',
 };
 
-// Generates a 1200x630 Open Graph card at the edge.
-// Called as: /api/og?title=...&category=...&date=...&author=Myron%20Melekson
+// Generates a branded Open Graph / hero card at the edge.
+// Two variants:
+//   - default (1200x630) — social share card for OG/Twitter
+//   - hero (1600x640)    — wider banner for in-post hero display
+// Called as: /api/og?title=...&category=...&date=...&author=...&variant=hero
 // All params optional; sensible defaults applied.
 export default function handler(req) {
   try {
@@ -14,6 +17,9 @@ export default function handler(req) {
     const category = (searchParams.get('category') || '').slice(0, 40);
     const date = (searchParams.get('date') || '').slice(0, 40);
     const author = (searchParams.get('author') || 'Myron Melekson').slice(0, 60);
+    const variant = searchParams.get('variant') === 'hero' ? 'hero' : 'og';
+    const width = variant === 'hero' ? 1600 : 1200;
+    const height = variant === 'hero' ? 640 : 630;
 
     return new ImageResponse(
       (
@@ -104,8 +110,8 @@ export default function handler(req) {
         </div>
       ),
       {
-        width: 1200,
-        height: 630,
+        width,
+        height,
       }
     );
   } catch (e) {
