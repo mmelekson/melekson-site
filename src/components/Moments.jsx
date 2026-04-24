@@ -23,6 +23,9 @@ export default function Moments() {
               <img
                 src={photo.src}
                 alt={photo.caption || ''}
+                loading="lazy"
+                decoding="async"
+                onError={(e) => { e.currentTarget.style.display = 'none'; }}
                 className="w-full object-cover"
               />
               {photo.caption && (

@@ -6,7 +6,7 @@ const defaults = {
   ogTitle: 'Myron Melekson',
   ogDescription: 'Founder. Builder. Community leader. South Florida.',
   ogUrl: 'https://melekson.com',
-  ogImage: 'https://melekson.com/myron-hero.png',
+  ogImage: 'https://melekson.com/myron-hero-1600.jpg',
 };
 
 function setMeta(selector, attr, value) {

@@ -88,8 +88,13 @@ export default function AboutPage() {
 
           <div className="fade-in flex gap-6 items-start mb-12">
             <img
-              src="/myron-hero.png"
+              src="/myron-hero-800.jpg"
               alt="Myron Melekson"
+              width="112"
+              height="112"
+              loading="eager"
+              decoding="async"
+              onError={(e) => { e.currentTarget.src = '/myron-hero.png'; }}
               className="w-28 h-28 rounded-xl object-cover object-top shadow flex-shrink-0"
             />
             <p className="text-warm-600 text-lg leading-relaxed">
