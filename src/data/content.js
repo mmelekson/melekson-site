@@ -30,11 +30,11 @@ export const content = {
     body: [
       "I've spent 20 years building — companies, teams, products, and now communities. Not because it was the plan, but because it's what I do when there's a problem worth solving.",
       "I run Mpower Sourcing, an AI-enhanced staffing and managed services company based in South Florida. I also launched Mpower Agents, an AI automation platform. And I'm deep into building something I care about a lot — a civic tech ecosystem in Aventura focused on founders, students, and the next generation of leaders.",
-      "I grew up in Glenview, Illinois. I hold an MBA from Technion Tel Aviv, a BS from Purdue, and a certificate in Behavioral Economics from Yale. I have a wonderful wife, two boys, and a dog, and I care deeply about my community and keeping it safe.",
+      "I grew up in Glenview, Illinois. I hold an MBA from Technion — Israel Institute of Technology, a BS from Purdue, and a certificate in Behavioral Economics from Yale. I have a wonderful wife, two boys, and a dog, and I care deeply about my community and keeping it safe.",
       "I believe technology should lift more boats. And I believe the communities worth living in are the ones people actively build — not the ones they wait for.",
     ],
     credentials: [
-      "MBA — Technion Tel Aviv",
+      "MBA — Technion — Israel Institute of Technology",
       "BS — Purdue University",
       "Behavioral Economics Certificate — Yale School of Management",
     ],

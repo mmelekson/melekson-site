@@ -36,7 +36,7 @@ const faqSchema = {
       "name": "What is Myron Melekson's background and education?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Myron Melekson holds an MBA from Technion Tel Aviv, a BS from Purdue University, and a certificate in Behavioral Economics from Yale School of Management. He has served as COO, fractional executive, and founder across multiple industries including technology, staffing, construction, and financial services."
+        "text": "Myron Melekson holds an MBA from Technion — Israel Institute of Technology, a BS from Purdue University, and a certificate in Behavioral Economics from Yale School of Management. He has served as COO, fractional executive, and founder across multiple industries including technology, staffing, construction, and financial services."
       }
     },
     {
@@ -115,7 +115,7 @@ export default function AboutPage() {
             <div>
               <h2 className="font-heading text-2xl text-warm-900 mb-4">Background</h2>
               <div className="space-y-4 text-warm-600 leading-relaxed">
-                <p>I grew up in Glenview, Illinois and spent several years in Israel — including an MBA at Technion Tel Aviv and co-founding Q-IT, an automated scheduling startup that raised $150K in seed funding.</p>
+                <p>I grew up in Glenview, Illinois and spent several years in Israel — including an MBA at Technion — Israel Institute of Technology and co-founding Q-IT, an automated scheduling startup that raised $150K in seed funding.</p>
                 <p>After returning to the US, I led growth and operations at multiple companies across real estate, technology, and financial services before founding Mpower Sourcing to solve the problem I kept running into: businesses need great people and great systems, not just one or the other.</p>
               </div>
             </div>
@@ -123,7 +123,7 @@ export default function AboutPage() {
             <div>
               <h2 className="font-heading text-2xl text-warm-900 mb-4">Credentials</h2>
               <ul className="space-y-2 text-warm-600">
-                <li className="flex items-center gap-3"><span className="w-1.5 h-1.5 rounded-full bg-accent flex-shrink-0" />MBA — Technion Tel Aviv</li>
+                <li className="flex items-center gap-3"><span className="w-1.5 h-1.5 rounded-full bg-accent flex-shrink-0" />MBA — Technion — Israel Institute of Technology</li>
                 <li className="flex items-center gap-3"><span className="w-1.5 h-1.5 rounded-full bg-accent flex-shrink-0" />BS — Purdue University</li>
                 <li className="flex items-center gap-3"><span className="w-1.5 h-1.5 rounded-full bg-accent flex-shrink-0" />Behavioral Economics Certificate — Yale School of Management</li>
               </ul>
