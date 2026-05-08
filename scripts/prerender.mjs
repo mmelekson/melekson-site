@@ -33,14 +33,9 @@ function esc(s) {
     .replace(/>/g, '&gt;');
 }
 
+// Per-post OG image URL — falls back to default Myron hero until /api/og is back online.
 function ogImageUrl(post) {
-  const params = new URLSearchParams({
-    title: post.title,
-    category: post.category || '',
-    date: post.date || '',
-    author: 'Myron Melekson',
-  });
-  return `${SITE}/api/og?${params.toString()}`;
+  return post.image || DEFAULT_IMAGE;
 }
 
 function apply(html, meta) {

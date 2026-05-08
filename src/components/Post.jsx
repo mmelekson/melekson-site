@@ -79,14 +79,11 @@ export default function Post() {
 
           <hr className="border-warm-200 mb-10" />
 
-          {/* Hero image — explicit post.image takes precedence, otherwise falls back to branded edge-generated card */}
-          {post.hero !== false && (
+          {/* Hero image — only render if post has an explicit image. Branded auto-hero is temporarily disabled while we debug the @vercel/og deploy issue. */}
+          {post.image && post.hero !== false && (
             <div className="mb-10 rounded-xl overflow-hidden">
               <img
-                src={
-                  post.image ||
-                  `/api/og?variant=hero&title=${encodeURIComponent(post.title)}&category=${encodeURIComponent(post.category || '')}&date=${encodeURIComponent(post.date || '')}&author=${encodeURIComponent('Myron Melekson')}`
-                }
+                src={post.image}
                 alt={post.title}
                 loading="lazy"
                 decoding="async"
