@@ -71,11 +71,11 @@ function apply(html, meta) {
     )
     .replace(
       /<meta property="og:image:width" content="[^"]*"/,
-      `<meta property="og:image:width" content="${meta.ogImage ? 1200 : 1600}"`
+      `<meta property="og:image:width" content="1600"`
     )
     .replace(
       /<meta property="og:image:height" content="[^"]*"/,
-      `<meta property="og:image:height" content="${meta.ogImage ? 630 : 1600}"`
+      `<meta property="og:image:height" content="1600"`
     )
     .replace(
       /<meta name="twitter:title" content="[^"]*"/,
