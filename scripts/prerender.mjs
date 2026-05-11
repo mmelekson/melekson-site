@@ -112,7 +112,7 @@ const routes = [
     meta: {
       title: 'About Myron Melekson — Founder, Builder, South Florida',
       description:
-        'Myron Melekson is a founder, operator, and community leader based in Aventura, Florida. CEO of Mpower Sourcing and Mpower Agents. 20 years building companies, teams, and communities.',
+        'Myron Melekson is a founder, operator, and community leader based in Aventura, Florida. CEO of Mpower Sourcing, the AI-enhanced staffing company behind the Mpower Agents automation product. 20 years building companies, teams, and communities.',
       canonical: `${SITE}/about`,
     },
   },
