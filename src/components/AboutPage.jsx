@@ -116,6 +116,7 @@ export default function AboutPage() {
               <h2 className="font-heading text-2xl text-warm-900 mb-4">Background</h2>
               <div className="space-y-4 text-warm-600 leading-relaxed">
                 <p>My career started in enterprise technology — channel sales and partner roles at Arrow Electronics and Zebra Technologies — where I learned how big companies actually buy, sell, and scale. I grew up in Glenview, Illinois and later spent several years in Israel: an MBA at Technion — Israel Institute of Technology and co-founding Q-IT, an automated scheduling startup that raised $150K in seed funding.</p>
+                <p>I grew up in Glenview, Illinois. I hold an MBA from Technion — Israel Institute of Technology, a BS from Purdue, and a certificate in Behavioral Economics from Yale. I have a wonderful wife, two boys, and a dog, and I care deeply about my community and keeping it safe.</p>
                 <p>After returning to the US, I led growth and operations at companies across real estate, technology, and financial services.</p>
               </div>
             </div>

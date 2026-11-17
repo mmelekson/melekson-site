@@ -7,8 +7,8 @@
     "node": "26.x"
   },
   "scripts": {
-    "dev": "vite",
-    "prebuild": "node scripts/generate-sitemap.mjs",
+    "dev": "node scripts/list-photos.mjs && vite",
+    "prebuild": "node scripts/list-photos.mjs && node scripts/generate-sitemap.mjs",
     "build": "vite build",
     "postbuild": "node scripts/prerender.mjs",
     "preview": "vite preview",
