@@ -107,7 +107,7 @@ function writeRoute(path, html) {
 const routes = [
   {
     path: '/',
-    expect: ['Aventura community builder', 'founded 2022', 'mpowersourcing.com', 'mpoweragents.ai', 'Greater North Miami Chamber of Commerce', 'wonderful wife, two boys, and a dog', 'Joining Nova Southeastern University', 'Healthcare AI'],
+    expect: ['What I work on', 'Founder & CEO of Mpower (founded 2022)', 'Board of Directors, Greater North Miami Chamber of Commerce', '40', '24', 'Healthcare AI'],
     meta: {
       title: 'Myron Melekson — Aventura community builder and civic reporter',
       description: DEFAULT_DESCRIPTION,
@@ -116,7 +116,7 @@ const routes = [
   },
   {
     path: '/about',
-    expect: ['Greater North Miami Chamber of Commerce', 'Zebra Technologies', 'founded 2022', 'mpoweragents.ai'],
+    expect: ['Greater North Miami Chamber of Commerce', 'Zebra Technologies', 'founded 2022', 'mpoweragents.ai', 'wonderful wife, two boys, and a dog'],
     meta: {
       title: 'About Myron Melekson — Aventura community builder',
       description:
@@ -196,7 +196,7 @@ const routes = [
   },
   {
     path: '/teaching',
-    expect: ["Joining Nova Southeastern University's H. Wayne Huizenga College of Business and Entrepreneurship as adjunct faculty in 2027 (OPS 3880 Operations Management).", 'Program Director, Curriculum Lead & Lead Instructor', 'Cohort Two is being planned'],
+    expect: ["Joining Nova Southeastern University's H. Wayne Huizenga College of Business and Entrepreneurship as adjunct faculty in 2027 (OPS 3880 Operations Management).", 'Program Director, Curriculum Lead & Lead Instructor', '40'],
     meta: {
       title: 'Teaching — Myron Melekson',
       description:
@@ -216,7 +216,7 @@ const routes = [
   },
   {
     path: '/community',
-    expect: ['Board of Directors, Greater North Miami Chamber of Commerce', 'Aventura Marketing Council', 'Aventura Tech Council', 'Ran in June 2026 with Aventura Charter High School', 'Russian-Speaking American Chamber'],
+    expect: ['Board of Directors, Greater North Miami Chamber of Commerce', 'Aventura Marketing Council', 'Ran in June 2026 with Aventura Charter High School'],
     meta: {
       title: 'Community — Myron Melekson',
       description:

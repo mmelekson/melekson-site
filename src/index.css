@@ -23,5 +23,15 @@ body {
   transform: translateY(0);
 }
 
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid #1a3a2a;
+  outline-offset: 3px;
+}
+
+main section.min-h-screen {
+  padding-top: 6.5rem;
+}
+
 .no-scrollbar::-webkit-scrollbar { display: none; }
 .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }

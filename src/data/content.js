@@ -658,4 +658,10 @@ export const content = {
     tagline: "Community builder. Civic reporter.",
     year: "2026",
   },
+
+  // Shown only when the file is also in public/photos/. See README.md.
+  photos: {
+    teaching: [],
+    community: [],
+  },
 };

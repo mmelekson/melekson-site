@@ -1,97 +1,44 @@
-import { useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
-import { content } from '../data/content';
 
 export default function Hero() {
-  const { hero, nav } = content;
-  const ref = useRef(null);
-
-  useEffect(() => {
-    const elements = ref.current?.querySelectorAll('.fade-in');
-    if (!elements) return;
-    elements.forEach((el, i) => {
-      setTimeout(() => {
-        el.classList.add('visible');
-      }, i * 120);
-    });
-  }, []);
-
   return (
-    <section className="flex items-center pt-36 pb-10 relative overflow-hidden" ref={ref}>
-      {/* Subtle background gradient */}
-      <div className="absolute inset-0 bg-gradient-to-br from-warm-50 via-warm-50 to-warm-100 pointer-events-none" />
-      <div className="absolute top-0 right-0 w-96 h-96 bg-accent/5 rounded-full blur-3xl pointer-events-none" />
-      <div className="absolute bottom-0 left-0 w-64 h-64 bg-accent/3 rounded-full blur-3xl pointer-events-none" />
-      <div className="max-w-5xl mx-auto px-6 w-full relative z-10">
-        <div className="grid md:grid-cols-2 gap-12 items-center">
-          <div>
-            <p className="fade-in text-sm font-medium text-warm-500 mb-4 tracking-wide uppercase">
-              {nav.name}
-            </p>
-            <h1 className="fade-in font-heading text-3xl sm:text-4xl lg:text-5xl text-warm-900 leading-tight mb-2">
-              {hero.headline}
-            </h1>
-            <p className="fade-in font-heading text-5xl sm:text-6xl lg:text-7xl text-accent mb-6 leading-none">
-              {hero.subheadline}
-            </p>
-            <p className="fade-in text-lg text-warm-500 mb-8">
-              {hero.tagline}
-            </p>
-            {/* TODO(myron): Removed the Mpower Calendly button (https://calendly.com/mpower-myron/video-call) from the hero. Say if you want a personal scheduling link here. */}
-            <div className="fade-in flex flex-wrap gap-3">
-              <Link
-                to={hero.cta.href}
-                className="inline-block bg-accent text-warm-50 px-6 py-3 rounded-lg font-medium hover:bg-accent-light transition-colors"
-              >
-                {hero.cta.label}
-              </Link>
-              <Link
-                to={hero.secondary_cta.href}
-                className="inline-flex items-center gap-2 border border-accent text-accent px-6 py-3 rounded-lg font-medium hover:bg-accent hover:text-warm-50 transition-colors"
-              >
-                {hero.secondary_cta.label}
-              </Link>
-            </div>
-
-            {/* Email capture */}
-            <form
-              action="https://formspree.io/f/xdayozlz"
-              method="POST"
-              className="fade-in mt-6 flex gap-2 max-w-sm"
+    <section className="pt-24 pb-12 sm:pt-28">
+      <div className="mx-auto grid max-w-5xl items-center gap-10 px-6 md:grid-cols-[1.1fr_0.9fr]">
+        <img
+          src="/myron-hero-800.jpg"
+          srcSet="/myron-hero-800.jpg 800w, /myron-hero-1600.jpg 1600w"
+          sizes="(max-width: 768px) 100vw, 420px"
+          width="800"
+          height="800"
+          alt="Myron Melekson"
+          fetchpriority="high"
+          decoding="async"
+          className="mx-auto aspect-square w-full max-w-sm rounded-2xl object-cover object-top shadow-md md:col-start-2 md:max-w-none"
+        />
+        <div className="md:col-start-1 md:row-start-1">
+          <p className="mb-3 text-sm font-medium uppercase tracking-wide text-warm-500">Myron Melekson</p>
+          <h1 className="font-heading text-4xl leading-tight text-warm-900 sm:text-5xl">
+            I don't wait for the future I want to live in.
+          </h1>
+          <p className="mt-3 font-heading text-3xl text-accent sm:text-4xl">I build it.</p>
+          <p className="mt-5 max-w-xl text-base leading-relaxed text-warm-600 sm:text-lg">
+            Aventura community builder. A voice on AI and the economy. Fact-first civic reporting.
+          </p>
+          <div className="mt-8 flex flex-wrap gap-3">
+            <Link
+              to="/teaching"
+              className="rounded-lg bg-accent px-5 py-3 text-sm font-medium text-warm-50 transition-colors hover:bg-accent-light"
             >
-              <input
-                type="email"
-                name="email"
-                placeholder="Your email"
-                required
-                className="flex-1 px-4 py-2.5 rounded-lg border border-warm-200 bg-white text-warm-900 text-sm focus:outline-none focus:border-accent placeholder:text-warm-400"
-              />
-              <button
-                type="submit"
-                className="px-4 py-2.5 bg-warm-900 text-warm-50 rounded-lg text-sm font-medium hover:bg-warm-700 transition-colors whitespace-nowrap"
-              >
-                Get my posts
-              </button>
-            </form>
-          </div>
-
-          <div className="fade-in flex justify-center md:justify-end">
-            <img
-              src="/myron-hero-800.jpg"
-              srcSet="/myron-hero-800.jpg 800w, /myron-hero-1600.jpg 1600w"
-              sizes="(max-width: 768px) 320px, 400px"
-              width="800"
-              height="800"
-              alt="Myron Melekson"
-              fetchpriority="high"
-              loading="eager"
-              decoding="async"
-              onError={(e) => { e.currentTarget.src = '/myron-hero.png'; e.currentTarget.srcset = ''; }}
-              className="w-72 h-80 sm:w-80 sm:h-96 rounded-2xl object-cover object-top shadow-lg"
-            />
+              Teaching
+            </Link>
+            <Link
+              to="/community"
+              className="rounded-lg border border-accent px-5 py-3 text-sm font-medium text-accent transition-colors hover:bg-accent hover:text-warm-50"
+            >
+              Community
+            </Link>
           </div>
         </div>
-
       </div>
     </section>
   );

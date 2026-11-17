@@ -1,6 +1,8 @@
 import { Link } from 'react-router-dom';
+import { content } from '../data/content';
 import { useFadeIn } from '../hooks/useFadeIn';
 import { useSEO } from '../hooks/useSEO';
+import { PhotoGallery } from './PhotoGallery';
 
 const topics = [
   'Financial Foundations',
@@ -52,7 +54,21 @@ export default function TeachingPage() {
             <p className="text-warm-700 leading-relaxed mt-3">
               I built the full 12-week curriculum kit: decks, facilitator guides, worksheets, and evaluations. I taught Week 10, “AI for Your Business,” on Aug 17, 2026. Participants watched AI working on real businesses in the room.
             </p>
-            <p className="text-warm-700 leading-relaxed mt-3">
+            <div className="mt-6 grid grid-cols-3 gap-3">
+              <div className="rounded-xl bg-warm-50 p-4">
+                <p className="font-heading text-3xl text-accent">40</p>
+                <p className="mt-1 text-xs text-warm-500">Attended at least one session</p>
+              </div>
+              <div className="rounded-xl bg-warm-50 p-4">
+                <p className="font-heading text-3xl text-accent">24</p>
+                <p className="mt-1 text-xs text-warm-500">Earned certificates</p>
+              </div>
+              <div className="rounded-xl bg-warm-50 p-4">
+                <p className="font-heading text-2xl text-accent">Aug 31</p>
+                <p className="mt-1 text-xs text-warm-500">Pitch & Launch Day, 2026</p>
+              </div>
+            </div>
+            <p className="text-warm-700 leading-relaxed mt-4">
               40 people attended at least one session. 24 earned certificates at Pitch & Launch Day on Aug 31, 2026.
             </p>
             <p className="text-warm-700 leading-relaxed mt-3">Cohort Two is being planned.</p>
@@ -72,6 +88,8 @@ export default function TeachingPage() {
             </ul>
           </section>
         </div>
+
+        <PhotoGallery items={content.photos.teaching} />
 
         <p className="fade-in mt-10 text-sm text-warm-500">
           <Link to="/community" className="text-accent hover:underline">Community</Link>
