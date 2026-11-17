@@ -12,15 +12,15 @@ const faqSchema = {
       "name": "Who is Myron Melekson?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Myron Melekson is a founder, operator, and community leader based in Aventura, Florida (zip code 33180). He is the CEO and founder of Mpower Sourcing, an AI-enhanced staffing and managed services company, which produces Mpower Agents — an AI automation product for virtual assistants and agentic workflows. He has 20 years of experience building companies, teams, and products across staffing, technology, construction, and operations."
+        "text": "Myron Melekson is an Aventura community builder and a fact-first civic reporter. He serves on the board of the Greater North Miami Chamber of Commerce. He has spent 20 years building companies, teams, products, and communities. He is also Founder and CEO of Mpower, founded in 2022."
       }
     },
     {
       "@type": "Question",
-      "name": "What companies has Myron Melekson founded?",
+      "name": "What community roles does Myron Melekson hold?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Myron Melekson founded Mpower Sourcing (mpowersourcing.com), an AI-enhanced staffing and managed services company. Mpower Sourcing produces Mpower Agents (mpoweragents.ai), the company's AI automation and virtual assistant product. Earlier, he co-founded Q-IT, an automated scheduling startup in Israel that raised $150K in seed funding, and founded Magen Builder Group, a South Florida construction company."
+        "text": "Myron Melekson serves on the board of the Greater North Miami Chamber of Commerce. He is active in Aventura through the Aventura Marketing Council, and he organized Hack Aventura, two student hackathons at Don Sofer High School in May 2026. He also founded Mpower in 2022 (mpowersourcing.com and mpoweragents.ai)."
       }
     },
     {
@@ -28,7 +28,7 @@ const faqSchema = {
       "name": "Where is Myron Melekson located?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Myron Melekson is based in Aventura, Florida (zip code 33180), in the South Florida area. He is active in the local business and tech community through the Aventura Marketing Council, NPI Advantage, Primetime Founders, and Pro Business Referrals."
+        "text": "Myron Melekson is based in Aventura, Florida (zip code 33180). He serves on the board of the Greater North Miami Chamber of Commerce and is active locally through the Aventura Marketing Council, NPI Advantage, Primetime Founders, and Pro Business Referrals."
       }
     },
     {
@@ -41,10 +41,10 @@ const faqSchema = {
     },
     {
       "@type": "Question",
-      "name": "What services does Myron Melekson offer?",
+      "name": "How does Myron Melekson report on Aventura?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Through Mpower Sourcing, Myron offers AI-enhanced staffing, offshore talent placement, managed services, and operational consulting. The company's product, Mpower Agents, delivers AI automation, agentic workflows, and virtual assistant services for growing businesses. Myron also takes select fractional COO and consulting engagements."
+        "text": "Aventura Watch is a brief published within 72 hours of each Aventura City Commission meeting. It covers the item, the motion, the vote by member, and links to the minutes and video. The method, including how issues are picked, how opinion is labeled, the right of reply, and the corrections log, is published at melekson.com/methodology."
       }
     },
     {
@@ -52,7 +52,7 @@ const faqSchema = {
       "name": "How can I contact Myron Melekson?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "You can reach Myron Melekson via LinkedIn at linkedin.com/in/melekson, by email at myron@melekson.com, or by booking a call at mpowersourcing.com."
+        "text": "You can reach Myron Melekson by email at myron@melekson.com, through the contact form at melekson.com/contact, or on LinkedIn at linkedin.com/in/melekson."
       }
     }
   ]
@@ -61,8 +61,8 @@ const faqSchema = {
 export default function AboutPage() {
   const ref = useFadeIn();
   useSEO({
-    title: 'About Myron Melekson — Founder, Builder, South Florida',
-    description: 'Myron Melekson is a founder, operator, and community leader based in Aventura, Florida. CEO of Mpower Sourcing, the AI-enhanced staffing company behind the Mpower Agents automation product. 20 years building companies, teams, and communities.',
+    title: 'About Myron Melekson — Aventura community builder',
+    description: 'Myron Melekson is an Aventura community builder and civic reporter. Board member of the Greater North Miami Chamber of Commerce. MBA, Technion. BS, Purdue. Yale certificate in Behavioral Economics.',
     ogUrl: 'https://melekson.com/about',
   });
 
@@ -98,7 +98,7 @@ export default function AboutPage() {
               className="w-28 h-28 rounded-xl object-cover object-top shadow flex-shrink-0"
             />
             <p className="text-warm-600 text-lg leading-relaxed">
-              Founder, operator, and community leader based in Aventura, Florida. CEO of Mpower Sourcing, the AI-enhanced staffing company behind the Mpower Agents automation product. 20 years building companies, teams, and communities across technology, staffing, construction, and operations.
+              Aventura community builder and civic reporter. Board member of the Greater North Miami Chamber of Commerce. Twenty years building companies, teams, and communities across technology, staffing, construction, and operations.
             </p>
           </div>
 
@@ -106,9 +106,9 @@ export default function AboutPage() {
             <div>
               <h2 className="font-heading text-2xl text-warm-900 mb-4">What I Do</h2>
               <div className="space-y-4 text-warm-600 leading-relaxed">
-                <p>I run <a href="https://mpowersourcing.com" className="text-accent hover:underline" target="_blank" rel="noopener noreferrer">Mpower Sourcing</a> — an AI-enhanced staffing and managed services company based in South Florida. We place skilled offshore professionals, trained on AI tools, to help growing businesses scale their operations at a fraction of the cost of traditional hiring.</p>
-                <p>The company also produces <a href="https://mpoweragents.ai" className="text-accent hover:underline" target="_blank" rel="noopener noreferrer">Mpower Agents</a>, our AI automation product: virtual assistants, agentic workflows, and back-office automation built on top of the same operating system that powers our staffing work.</p>
-                <p>Beyond the businesses, I'm actively building a civic tech ecosystem in Aventura — connecting founders, students, and local leaders around technology and innovation. This includes Hack Aventura, two back-to-back student hackathons at Don Sofer High School in May 2026.</p>
+                <p>I live in Aventura and serve on the board of the Greater North Miami Chamber of Commerce. I work with founders, students, and neighbors on the civic life of this city, including a fact-first record of local government.</p>
+                <p>In May 2026 I held Hack Aventura, two back-to-back student hackathons at Don Sofer High School. Students built with AI tools for a day. The events were free and community-funded.</p>
+                <p>Founder & CEO of Mpower (founded 2022). <a href="https://mpowersourcing.com" className="text-accent hover:underline" target="_blank" rel="noopener noreferrer">mpowersourcing.com</a> · <a href="https://mpoweragents.ai" className="text-accent hover:underline" target="_blank" rel="noopener noreferrer">mpoweragents.ai</a></p>
               </div>
             </div>
 
@@ -116,7 +116,7 @@ export default function AboutPage() {
               <h2 className="font-heading text-2xl text-warm-900 mb-4">Background</h2>
               <div className="space-y-4 text-warm-600 leading-relaxed">
                 <p>My career started in enterprise technology — channel sales and partner roles at Arrow Electronics and Zebra Technologies — where I learned how big companies actually buy, sell, and scale. I grew up in Glenview, Illinois and later spent several years in Israel: an MBA at Technion — Israel Institute of Technology and co-founding Q-IT, an automated scheduling startup that raised $150K in seed funding.</p>
-                <p>After returning to the US, I led growth and operations at companies across real estate, technology, and financial services before founding Mpower Sourcing to solve the problem I kept running into: businesses need great people and great systems, not just one or the other.</p>
+                <p>After returning to the US, I led growth and operations at companies across real estate, technology, and financial services.</p>
               </div>
             </div>
 
@@ -126,6 +126,7 @@ export default function AboutPage() {
                 <li className="flex items-center gap-3"><span className="w-1.5 h-1.5 rounded-full bg-accent flex-shrink-0" />MBA — Technion — Israel Institute of Technology</li>
                 <li className="flex items-center gap-3"><span className="w-1.5 h-1.5 rounded-full bg-accent flex-shrink-0" />BS — Purdue University</li>
                 <li className="flex items-center gap-3"><span className="w-1.5 h-1.5 rounded-full bg-accent flex-shrink-0" />Behavioral Economics Certificate — Yale School of Management</li>
+                <li className="flex items-center gap-3"><span className="w-1.5 h-1.5 rounded-full bg-accent flex-shrink-0" />Board member — Greater North Miami Chamber of Commerce</li>
               </ul>
             </div>
 

@@ -1,10 +1,10 @@
 import { useEffect } from 'react';
 
 const defaults = {
-  title: 'Myron Melekson',
-  description: 'Myron Melekson — Founder, builder, and community leader in South Florida.',
-  ogTitle: 'Myron Melekson',
-  ogDescription: 'Founder. Builder. Community leader. South Florida.',
+  title: 'Myron Melekson — Aventura community builder and civic reporter',
+  description: 'Myron Melekson is an Aventura community builder, a voice on AI and the economy, and a fact-first civic reporter.',
+  ogTitle: 'Myron Melekson — Aventura community builder and civic reporter',
+  ogDescription: 'Aventura community builder. A voice on AI and the economy. Fact-first civic reporting.',
   ogUrl: 'https://melekson.com',
   ogImage: 'https://melekson.com/myron-hero-1600.jpg',
 };

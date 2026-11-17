@@ -1,29 +1,31 @@
-// Post-build prerender: turns the Vite SPA output into per-route static HTML files
-// with per-route <title>, <meta description>, Open Graph, Twitter, and canonical tags.
-//
-// How it works:
-//   1. Reads dist/index.html as the template (Vite already injected the correct JS/CSS refs)
-//   2. For each route (homepage, about, writing index, each blog post, etc.),
-//      writes dist/<route>/index.html with customized meta tags
-//   3. Vercel serves the static per-route HTML directly (takes precedence over the SPA rewrite),
-//      so social crawlers (LinkedIn, Twitter, iMessage, Slack) see the right card for each URL
-//   4. Googlebot renders React normally once the page loads
-//
-// Per-post OG images point to /api/og?title=...&category=...&date=... (Vercel edge function)
-// so every blog post gets a unique branded social card generated at the edge.
+// Post-build prerender: turns the Vite SPA output into per-route static HTML.
+// Head tags are rewritten per route, and the full React tree is rendered into
+// <div id="root"> with renderToPipeableStream (onAllReady, so lazy routes resolve).
+// Crawlers that do not run JavaScript still receive the visible page body.
 import { readFileSync, writeFileSync, mkdirSync } from 'node:fs';
 import { resolve, dirname } from 'node:path';
-import { fileURLToPath } from 'node:url';
+import { fileURLToPath, pathToFileURL } from 'node:url';
+import { build } from 'vite';
 import { content } from '../src/data/content.js';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const DIST = resolve(__dirname, '../dist');
+const SSR_OUT = resolve(__dirname, '../dist-ssr');
 const SITE = 'https://melekson.com';
 const DEFAULT_IMAGE = `${SITE}/myron-hero-1600.jpg`;
 const DEFAULT_DESCRIPTION =
-  'Founder of Mpower Sourcing (AI-enhanced staffing) and Mpower Agents (AI automation). Fractional COO, builder, and community leader in Aventura, South Florida.';
+  'Myron Melekson is an Aventura community builder, a voice on AI and the economy, and a fact-first civic reporter. Board member, Greater North Miami Chamber of Commerce.';
 
-const template = readFileSync(resolve(DIST, 'index.html'), 'utf8');
+function shellTemplate(html) {
+  const start = html.indexOf('<div id="root">');
+  const bodyClose = html.lastIndexOf('</body>');
+  if (start === -1 || bodyClose === -1 || bodyClose < start) {
+    throw new Error('dist/index.html is missing <div id="root"> or </body>');
+  }
+  return `${html.slice(0, start)}<div id="root"></div>\n  ${html.slice(bodyClose)}`;
+}
+
+const template = shellTemplate(readFileSync(resolve(DIST, 'index.html'), 'utf8'));
 
 function esc(s) {
   return String(s)
@@ -33,7 +35,6 @@ function esc(s) {
     .replace(/>/g, '&gt;');
 }
 
-// Per-post OG image URL — falls back to default Myron hero until /api/og is back online.
 function ogImageUrl(post) {
   return post.image || DEFAULT_IMAGE;
 }
@@ -91,42 +92,54 @@ function apply(html, meta) {
     );
 }
 
+function visibleText(html) {
+  return html
+    .replace(/&amp;/g, '&')
+    .replace(/&apos;/g, "'")
+    .replace(/&#x27;/g, "'")
+    .replace(/&#39;/g, "'")
+    .replace(/&quot;/g, '"');
+}
+
 function writeRoute(path, html) {
   const dir = path === '/' ? DIST : resolve(DIST, '.' + path);
   mkdirSync(dir, { recursive: true });
   writeFileSync(resolve(dir, 'index.html'), html, 'utf8');
 }
 
-// Static routes
 const routes = [
   {
     path: '/',
+    expect: ['Aventura community builder', 'founded 2022', 'mpowersourcing.com', 'mpoweragents.ai', 'Greater North Miami Chamber of Commerce', 'wonderful wife, two boys, and a dog'],
     meta: {
-      title: 'Myron Melekson — Founder of Mpower Sourcing & Mpower Agents | Aventura, FL',
+      title: 'Myron Melekson — Aventura community builder and civic reporter',
       description: DEFAULT_DESCRIPTION,
       canonical: `${SITE}/`,
     },
   },
   {
     path: '/about',
+    expect: ['Greater North Miami Chamber of Commerce', 'Zebra Technologies', 'founded 2022', 'mpoweragents.ai'],
     meta: {
-      title: 'About Myron Melekson — Founder, Builder, South Florida',
+      title: 'About Myron Melekson — Aventura community builder',
       description:
-        'Myron Melekson is a founder, operator, and community leader based in Aventura, Florida. CEO of Mpower Sourcing, the AI-enhanced staffing company behind the Mpower Agents automation product. 20 years building companies, teams, and communities.',
+        'Myron Melekson is an Aventura community builder and civic reporter. Board member of the Greater North Miami Chamber of Commerce. MBA, Technion. BS, Purdue. Yale certificate in Behavioral Economics.',
       canonical: `${SITE}/about`,
     },
   },
   {
     path: '/writing',
+    expect: ['Writing'],
     meta: {
       title: 'Writing — Myron Melekson',
       description:
-        'Essays on AI, operations, founder life, fractional leadership, and building community in South Florida.',
+        'Notes on AI, the economy, building, and South Florida from Myron Melekson.',
       canonical: `${SITE}/writing`,
     },
   },
   {
     path: '/reviews',
+    expect: ['What People Say'],
     meta: {
       title: 'Reviews — Myron Melekson',
       description:
@@ -136,28 +149,70 @@ const routes = [
   },
   {
     path: '/media',
+    expect: ['Media'],
     meta: {
       title: 'Media — Myron Melekson',
       description:
-        'Podcasts, interviews, videos, and press featuring Myron Melekson on entrepreneurship, AI, and building.',
+        'Podcasts, interviews, videos, and press featuring Myron Melekson.',
       canonical: `${SITE}/media`,
     },
   },
   {
     path: '/updates',
+    expect: ['Hack Aventura', 'Hosted two back-to-back'],
     meta: {
       title: 'Updates — Myron Melekson',
       description:
-        'The latest on what Myron is building across Mpower Sourcing, Mpower Agents, and the Aventura tech ecosystem.',
+        'Notes from Myron Melekson on community work, events, and what has already happened in Aventura and South Florida.',
       canonical: `${SITE}/updates`,
+    },
+  },
+  {
+    path: '/contact',
+    expect: ['Aventura Civic Brief', 'Send a note'],
+    meta: {
+      title: 'Contact — Myron Melekson',
+      description:
+        'Write to Myron Melekson, or sign up for the Aventura Civic Brief, a note after each Aventura City Commission meeting.',
+      canonical: `${SITE}/contact`,
+    },
+  },
+  {
+    path: '/methodology',
+    expect: ['Methodology', 'No corrections have been posted.', 'Right of reply'],
+    meta: {
+      title: 'Methodology & Corrections — Myron Melekson',
+      description:
+        'How Aventura Watch picks issues, links claims to the public record, labels opinion, offers a right of reply, and logs corrections.',
+      canonical: `${SITE}/methodology`,
+    },
+  },
+  {
+    path: '/aventura-watch',
+    expect: ['First brief coming soon', 'vote by member'],
+    meta: {
+      title: 'Aventura Watch — Myron Melekson',
+      description:
+        'A brief within 72 hours of each Aventura City Commission meeting: the item, the motion, the vote by member, and links to the minutes and video.',
+      canonical: `${SITE}/aventura-watch`,
+    },
+  },
+  {
+    path: '/who-represents-aventura',
+    expect: ['Lucia Báez-Geller', 'Jason W. B. Pizzo', 'Howard S. Weinberg'],
+    meta: {
+      title: 'Who Represents Aventura — Myron Melekson',
+      description:
+        'A neutral list of who represents Aventura: Florida House District 106, Florida Senate District 37, and the Aventura City Commission, with links to official pages.',
+      canonical: `${SITE}/who-represents-aventura`,
     },
   },
 ];
 
-// Blog posts
 for (const post of content.writing?.posts || []) {
   routes.push({
     path: `/writing/${post.slug}`,
+    expect: [post.title],
     meta: {
       title: `${post.title} — Myron Melekson`,
       description: post.excerpt || DEFAULT_DESCRIPTION,
@@ -167,9 +222,29 @@ for (const post of content.writing?.posts || []) {
   });
 }
 
-for (const r of routes) {
-  const html = apply(template, r.meta);
-  writeRoute(r.path, html);
+await build({
+  build: {
+    ssr: resolve(__dirname, '../src/entry-server.jsx'),
+    outDir: SSR_OUT,
+    emptyOutDir: true,
+  },
+  logLevel: 'warn',
+});
+
+const { render } = await import(pathToFileURL(resolve(SSR_OUT, 'entry-server.js')).href);
+
+const staticCount = routes.filter((route) => !route.path.startsWith('/writing/')).length;
+
+for (const route of routes) {
+  const body = await render(route.path);
+  const text = visibleText(body);
+  for (const needle of route.expect) {
+    if (!text.includes(needle)) {
+      throw new Error(`Prerender of ${route.path} is missing visible text: ${needle}`);
+    }
+  }
+  const html = apply(template, route.meta).replace('<div id="root"></div>', `<div id="root">${body}</div>`);
+  writeRoute(route.path, html);
 }
 
-console.log(`✓ Prerendered ${routes.length} routes (${routes.length - 6} posts + 6 static)`);
+console.log(`✓ Prerendered ${routes.length} routes (${routes.length - staticCount} posts + ${staticCount} static) with full page bodies`);

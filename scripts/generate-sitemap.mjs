@@ -24,6 +24,10 @@ const staticRoutes = [
   { path: '/reviews', changefreq: 'monthly', priority: '0.7', lastmod: today },
   { path: '/media',   changefreq: 'monthly', priority: '0.7', lastmod: today },
   { path: '/updates', changefreq: 'weekly',  priority: '0.8', lastmod: today },
+  { path: '/contact', changefreq: 'monthly', priority: '0.6', lastmod: today },
+  { path: '/methodology', changefreq: 'monthly', priority: '0.7', lastmod: today },
+  { path: '/aventura-watch', changefreq: 'weekly', priority: '0.9', lastmod: today },
+  { path: '/who-represents-aventura', changefreq: 'monthly', priority: '0.8', lastmod: today },
 ];
 
 const postRoutes = (content?.writing?.posts || []).map((p) => ({

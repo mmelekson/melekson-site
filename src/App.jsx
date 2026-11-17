@@ -18,6 +18,10 @@ const MediaPage = lazy(() => import('./components/MediaPage'));
 const WritingPage = lazy(() => import('./components/WritingPage'));
 const ReviewsPage = lazy(() => import('./components/ReviewsPage'));
 const UpdatesPage = lazy(() => import('./components/UpdatesPage'));
+const ContactPage = lazy(() => import('./components/ContactPage'));
+const MethodologyPage = lazy(() => import('./components/MethodologyPage'));
+const AventuraWatchPage = lazy(() => import('./components/AventuraWatchPage'));
+const WhoRepresentsPage = lazy(() => import('./components/WhoRepresentsPage'));
 const NotFound = lazy(() => import('./components/NotFound'));
 
 function HomePage() {
@@ -56,6 +60,10 @@ export default function App() {
             <Route path="/writing/:slug" element={<Post />} />
             <Route path="/reviews" element={<ReviewsPage />} />
             <Route path="/updates" element={<UpdatesPage />} />
+            <Route path="/contact" element={<ContactPage />} />
+            <Route path="/methodology" element={<MethodologyPage />} />
+            <Route path="/aventura-watch" element={<AventuraWatchPage />} />
+            <Route path="/who-represents-aventura" element={<WhoRepresentsPage />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </Suspense>
