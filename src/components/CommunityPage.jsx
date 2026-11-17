@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import { content } from '../data/content';
 import { useFadeIn } from '../hooks/useFadeIn';
 import { useSEO } from '../hooks/useSEO';
 import { PhotoGallery } from './PhotoGallery';
@@ -57,14 +58,7 @@ export default function CommunityPage() {
           </section>
         </div>
 
-        <div className="fade-in mt-10">
-          <PhotoGallery
-            items={[
-              { file: 'community-gnmcc.jpg', caption: 'GNMCC photo coming soon' },
-              { file: 'community-hack-aventura.jpg', caption: 'Hack Aventura photo coming soon' },
-            ]}
-          />
-        </div>
+        <PhotoGallery items={content.photos.community} />
 
         <p className="fade-in mt-10 text-sm text-warm-500">
           Civic reporting is separate: <Link to="/aventura-watch" className="text-accent hover:underline">Aventura Watch</Link>

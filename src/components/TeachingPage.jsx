@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import { content } from '../data/content';
 import { useFadeIn } from '../hooks/useFadeIn';
 import { useSEO } from '../hooks/useSEO';
 import { PhotoGallery } from './PhotoGallery';
@@ -88,14 +89,7 @@ export default function TeachingPage() {
           </section>
         </div>
 
-        <div className="fade-in mt-10">
-          <PhotoGallery
-            items={[
-              { file: 'teaching-class.jpg', caption: 'Class photo coming soon' },
-              { file: 'teaching-session.jpg', caption: 'Cohort session photo coming soon' },
-            ]}
-          />
-        </div>
+        <PhotoGallery items={content.photos.teaching} />
 
         <p className="fade-in mt-10 text-sm text-warm-500">
           <Link to="/community" className="text-accent hover:underline">Community</Link>

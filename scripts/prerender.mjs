@@ -196,7 +196,7 @@ const routes = [
   },
   {
     path: '/teaching',
-    expect: ["Joining Nova Southeastern University's H. Wayne Huizenga College of Business and Entrepreneurship as adjunct faculty in 2027 (OPS 3880 Operations Management).", 'Program Director, Curriculum Lead & Lead Instructor', 'Class photo coming soon'],
+    expect: ["Joining Nova Southeastern University's H. Wayne Huizenga College of Business and Entrepreneurship as adjunct faculty in 2027 (OPS 3880 Operations Management).", 'Program Director, Curriculum Lead & Lead Instructor', '40'],
     meta: {
       title: 'Teaching — Myron Melekson',
       description:
@@ -216,7 +216,7 @@ const routes = [
   },
   {
     path: '/community',
-    expect: ['Board of Directors, Greater North Miami Chamber of Commerce', 'Aventura Marketing Council', 'Ran in June 2026 with Aventura Charter High School', 'GNMCC photo coming soon'],
+    expect: ['Board of Directors, Greater North Miami Chamber of Commerce', 'Aventura Marketing Council', 'Ran in June 2026 with Aventura Charter High School'],
     meta: {
       title: 'Community — Myron Melekson',
       description:

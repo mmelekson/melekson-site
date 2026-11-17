@@ -31,7 +31,6 @@ const cards = [
   },
 ];
 
-// TODO(myron): Confirm the years that were not previously printed on the site: Arrow in Aug 2010, independent supply-chain consulting in 2012–2013, Q-IT in 2015–2018, and Myron Consulting from 2018.
 const timeline = [
   { when: 'Aug 2010', what: 'Arrow Electronics, after Purdue' },
   { when: '2012–2013', what: 'Independent supply-chain consulting' },
