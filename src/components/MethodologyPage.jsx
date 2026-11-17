@@ -2,15 +2,14 @@ import { Link } from 'react-router-dom';
 import { useFadeIn } from '../hooks/useFadeIn';
 import { useSEO } from '../hooks/useSEO';
 
-// TODO(myron): myfloridahouse.gov rejected requests from the environment that prepared this page ("Request Rejected"). Confirm the House roll-call URL below still opens Rep. Lucia Báez-Geller's voting record. Member id 5098 and legislative term 92 came from a directory that pointed at the official House site on November 16, 2026.
 const HOUSE_VOTES =
-  'https://www.myfloridahouse.gov/Sections/Representatives/votingrecords.aspx?MemberId=5098&LegislativeTermId=92';
+  'https://www.flhouse.gov/Sections/Representatives/votingrecords.aspx?MemberId=5098&LegislativeTermId=92';
 
 const records = [
   {
     label: 'Florida House roll calls',
     href: HOUSE_VOTES,
-    detail: 'The vote record for the representative of District 106, on myfloridahouse.gov.',
+    detail: 'The vote record for the representative of District 106, on flhouse.gov.',
   },
   {
     label: 'Florida Senate',
