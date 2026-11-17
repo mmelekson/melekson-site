@@ -16,7 +16,7 @@ export default function UpdatesPage() {
   const ref = useFadeIn();
   useSEO({
     title: 'Updates — Myron Melekson',
-    description: "What's been happening lately — events, partnerships, product launches, and community news from Myron Melekson.",
+    description: "Notes from Myron Melekson on community work, events, and what has already happened in Aventura and South Florida.",
     ogUrl: 'https://melekson.com/updates',
   });
 

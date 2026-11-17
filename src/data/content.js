@@ -11,17 +11,28 @@ export const content = {
       { label: "Updates", href: "/updates" },
       { label: "Book", href: "#book" },
       { label: "Connect", href: "#connect" },
+      { label: "Teaching", href: "/teaching", row: "civic" },
+      { label: "Healthcare AI", href: "/healthcare-ai", row: "civic" },
+      { label: "Community", href: "/community", row: "civic" },
+      { label: "Aventura Watch", href: "/aventura-watch", row: "civic" },
+      { label: "Who Represents Aventura", href: "/who-represents-aventura", row: "civic" },
+      { label: "Methodology", href: "/methodology", row: "civic" },
+      { label: "Contact", href: "/contact", row: "civic" },
     ],
   },
 
   hero: {
     headline: "I don't wait for the future I want to live\u00A0in.",
     subheadline: "I build it.",
-    tagline: "Founder. Builder. Community leader. South Florida.",
+    tagline: "Aventura community builder. A voice on AI and the economy. Fact-first civic reporting.",
     photo_placeholder: "// Replace with: /assets/myron-hero.jpg",
     cta: {
-      label: "See what I'm working on",
-      href: "#building",
+      label: "Aventura Watch",
+      href: "/aventura-watch",
+    },
+    secondary_cta: {
+      label: "Who represents Aventura",
+      href: "/who-represents-aventura",
     },
   },
 
@@ -29,7 +40,7 @@ export const content = {
     heading: "About Me",
     body: [
       "I've spent 20 years building — companies, teams, products, and now communities. Not because it was the plan, but because it's what I do when there's a problem worth solving.",
-      "I run Mpower Sourcing, an AI-enhanced staffing and managed services company based in South Florida. Our product, Mpower Agents, is the AI automation side of the business — virtual assistants, agentic workflows, and back-office automation. Alongside the company, I'm deep into building something I care about a lot — a civic tech ecosystem in Aventura focused on founders, students, and the next generation of leaders.",
+      "I live in Aventura. I serve on the Board of Directors, Greater North Miami Chamber of Commerce, and I work with founders, students, and neighbors on the civic life of this city.",
       "I grew up in Glenview, Illinois. I hold an MBA from Technion — Israel Institute of Technology, a BS from Purdue, and a certificate in Behavioral Economics from Yale. I have a wonderful wife, two boys, and a dog, and I care deeply about my community and keeping it safe.",
       "I believe technology should lift more boats. And I believe the communities worth living in are the ones people actively build — not the ones they wait for.",
     ],
@@ -37,37 +48,15 @@ export const content = {
       "MBA — Technion — Israel Institute of Technology",
       "BS — Purdue University",
       "Behavioral Economics Certificate — Yale School of Management",
+      "Board of Directors, Greater North Miami Chamber of Commerce",
     ],
+    mpower: "Founder & CEO of Mpower (founded 2022).",
   },
 
   projects: {
     heading: "What I'm Building",
-    subheading: "A few things I'm actively working on.",
+    subheading: "Community work, partnerships, and the rooms I show up in.",
     items: [
-      {
-        id: "mpower",
-        label: "Company",
-        name: "Mpower Sourcing",
-        icon: "building",
-        logo: "/logos/mpower-sourcing.png",
-        description:
-          "AI-enhanced staffing and managed services. Skilled offshore professionals running AI agents for growing businesses -- delivering the output of a full team at a fraction of the cost.",
-        link: "https://mpowersourcing.com",
-        link_label: "mpowersourcing.com",
-        status: "Active",
-      },
-      {
-        id: "mpower_agents",
-        label: "Product",
-        name: "Mpower Agents",
-        logo: "/logos/mpoweragents.jpg",
-        icon: "cpu",
-        description:
-          "Virtual assistants, automation, and agentic AI for business operations. The AI-powered arm of the Mpower ecosystem.",
-        link: "https://mpoweragents.ai",
-        link_label: "mpoweragents.ai",
-        status: "Active",
-      },
       {
         id: "intelepeer",
         label: "Partnership",
@@ -116,6 +105,17 @@ export const content = {
         status: "Active",
       },
       {
+        id: "gnmcc",
+        label: "Chamber",
+        name: "Greater North Miami Chamber of Commerce",
+        icon: "handshake",
+        description:
+          "Board of Directors, Greater North Miami Chamber of Commerce.",
+        link: "https://greaternorthmiami.org/",
+        link_label: "greaternorthmiami.org",
+        status: "Board of Directors",
+      },
+      {
         id: "aventura_chamber",
         label: "Chamber",
         name: "Aventura Marketing Council / Chamber of Commerce",
@@ -141,11 +141,12 @@ export const content = {
       },
       {
         id: "aventura_tech",
+        // TODO(myron): "Champion" is the word used here. Confirm whether there is a formal role title at the Aventura Tech Council.
         label: "Community Initiative",
-        name: "Aventura Tech Ecosystem",
+        name: "Aventura Tech Council",
         icon: "globe",
         description:
-          "Building a civic tech hub in Aventura -- connecting founders, students, and local leaders around technology, innovation, and community. Includes hackathons, mentorship, and a growing tech council.",
+          "Champion of the Aventura Tech Council, connecting founders, students, and local leaders around technology in Aventura.",
         link: null,
         link_label: null,
         status: "In Progress",
@@ -156,10 +157,10 @@ export const content = {
         name: "Hack Aventura",
         icon: "zap",
         description:
-          "Two back-to-back student hackathons at Don Sofer High School in May 2026. Students build full startups in one day using AI tools. Free. Community-funded.",
+          "Ran in June 2026 with Aventura Charter High School.",
         link: null,
         link_label: null,
-        status: "Coming May 2026",
+        status: "June 2026",
       },
     ],
   },
@@ -224,10 +225,10 @@ export const content = {
     items: [
       {
         id: "update_001",
-        date: "May 2026",
+        date: "June 2026",
         category: "Event",
-        title: "Hack Aventura — Two Student Hackathons",
-        body: "Hosting two back-to-back 1-day hackathons at Don Sofer High School. Students are building full AI-powered startups in a single day. Proud to be bringing this to Aventura.",
+        title: "Hack Aventura",
+        body: "Ran in June 2026 with Aventura Charter High School.",
         link: null,
       },
       {
@@ -235,7 +236,7 @@ export const content = {
         date: "April 2026",
         category: "Event",
         title: "eMerge Americas 2026",
-        body: "Attending eMerge Americas in Miami. If you're there, let's connect.",
+        body: "Attended eMerge Americas in Miami.",
         link: "https://emergeamericas.com",
       },
       {
@@ -259,7 +260,7 @@ export const content = {
         date: "April 2026",
         category: "Community",
         title: "Growing the Aventura Tech Council",
-        body: "Working with the Aventura Marketing Council to expand the local tech community. More to share soon.",
+        body: "As of April 2026, working with the Aventura Marketing Council to expand the local tech community.",
         link: null,
       },
     ],
@@ -267,7 +268,7 @@ export const content = {
 
   writing: {
     heading: "Writing",
-    subheading: "Weekly thoughts on building, AI, South Florida, and what it means to keep going.",
+    subheading: "Notes on building, AI, the economy, and South Florida.",
     posts: [
       {
         slug: "allbirds-ai-pivot-bubble",
@@ -359,7 +360,7 @@ export const content = {
           "Aventura doesn't lack resources. It has money, density, business activity, and a highly educated population. What it lacks is a connective tissue for the people here who are building things with technology.",
           "There's no regular gathering place for founders. No pipeline for students who want to learn how to build. No civic identity around innovation.",
           "I've been working to change that through the Aventura Marketing Council, and it's becoming something real. We're building what I think of as a civic tech ecosystem — not a startup accelerator, not a coworking space, but a community infrastructure. Hackathons for high school students. A tech council for local founders and operators. Mentorship that doesn't require anyone to get on a plane to find it.",
-          "The first test of whether this is real is Hack Aventura — two back-to-back one-day hackathons at Don Sofer High School in May. Students come in with nothing and leave with a working AI-powered product. No rubric, no grades. Real stakes.",
+          "The first test of this was Hack Aventura, which ran in June 2026 with Aventura Charter High School.",
           "I believe the communities worth living in are the ones people actively build. Aventura has everything it needs to be a serious tech city. It just needs people who are willing to put in the work to make it one.",
           "That's what I'm doing here.",
         ],
@@ -455,9 +456,8 @@ export const content = {
         body: [
           "I didn't start Hack Aventura because it was a good idea. I started it because I looked around at what we had in Aventura for young builders and found almost nothing.",
           "The city has real talent. Don Sofer has students who are sharp, motivated, and hungry. But there was no event, no community, no venue for them to build something real — not a school project, not a competition rubric, but an actual product with actual stakes.",
-          "So we're building two back-to-back one-day hackathons in May 2026. Students come in the morning with nothing. They leave in the afternoon with a working product built on AI tools. Free. Community-funded. No gatekeeping.",
-          "This is what the Aventura tech ecosystem needs to start with — not a tech park or a grant program, but a room full of teenagers proving they can build.",
-          "More details coming. If you want to sponsor or volunteer, reach out.",
+          "Hack Aventura ran in June 2026 with Aventura Charter High School.",
+          "This is what the Aventura tech ecosystem needs to start with — not a tech park or a grant program, but a room full of teenagers building.",
         ],
       },
     ],
@@ -639,7 +639,8 @@ export const content = {
 
   connect: {
     heading: "Let's Connect",
-    body: "If you're building something, working on something interesting in South Florida, or just want to talk -- reach out.",
+    body: "If you're building something in South Florida, following the public record, or just want to talk — reach out.",
+    mpower: "Founder & CEO of Mpower (founded 2022).",
     links: [
       {
         platform: "LinkedIn",
@@ -652,14 +653,9 @@ export const content = {
         label: "myron@melekson.com",
       },
       {
-        platform: "Mpower",
-        href: "https://mpowersourcing.com",
-        label: "Mpower Sourcing",
-      },
-      {
-        platform: "MpowerAgents",
-        href: "https://mpoweragents.ai",
-        label: "Mpower Agents",
+        platform: "Contact",
+        href: "/contact",
+        label: "Contact",
       },
     ],
   },
@@ -667,7 +663,7 @@ export const content = {
   footer: {
     name: "Myron Melekson",
     location: "Aventura, FL",
-    tagline: "Builder. Founder. Community.",
+    tagline: "Community builder. Civic reporter.",
     year: "2026",
   },
 };

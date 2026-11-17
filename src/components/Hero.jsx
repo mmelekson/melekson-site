@@ -1,4 +1,5 @@
 import { useEffect, useRef } from 'react';
+import { Link } from 'react-router-dom';
 import { content } from '../data/content';
 
 export default function Hero() {
@@ -16,7 +17,7 @@ export default function Hero() {
   }, []);
 
   return (
-    <section className="min-h-screen flex items-center pt-20 pb-16 relative overflow-hidden" ref={ref}>
+    <section className="flex items-center pt-36 pb-10 relative overflow-hidden" ref={ref}>
       {/* Subtle background gradient */}
       <div className="absolute inset-0 bg-gradient-to-br from-warm-50 via-warm-50 to-warm-100 pointer-events-none" />
       <div className="absolute top-0 right-0 w-96 h-96 bg-accent/5 rounded-full blur-3xl pointer-events-none" />
@@ -36,21 +37,20 @@ export default function Hero() {
             <p className="fade-in text-lg text-warm-500 mb-8">
               {hero.tagline}
             </p>
+            {/* TODO(myron): Removed the Mpower Calendly button (https://calendly.com/mpower-myron/video-call) from the hero. Say if you want a personal scheduling link here. */}
             <div className="fade-in flex flex-wrap gap-3">
-              <a
-                href={hero.cta.href}
+              <Link
+                to={hero.cta.href}
                 className="inline-block bg-accent text-warm-50 px-6 py-3 rounded-lg font-medium hover:bg-accent-light transition-colors"
               >
                 {hero.cta.label}
-              </a>
-              <a
-                href="https://calendly.com/mpower-myron/video-call"
-                target="_blank"
-                rel="noopener noreferrer"
+              </Link>
+              <Link
+                to={hero.secondary_cta.href}
                 className="inline-flex items-center gap-2 border border-accent text-accent px-6 py-3 rounded-lg font-medium hover:bg-accent hover:text-warm-50 transition-colors"
               >
-                Book a call
-              </a>
+                {hero.secondary_cta.label}
+              </Link>
             </div>
 
             {/* Email capture */}
@@ -82,7 +82,7 @@ export default function Hero() {
               sizes="(max-width: 768px) 320px, 400px"
               width="800"
               height="800"
-              alt="Myron Melekson — Founder of Mpower Sourcing and Mpower Agents"
+              alt="Myron Melekson"
               fetchpriority="high"
               loading="eager"
               decoding="async"
@@ -92,15 +92,6 @@ export default function Hero() {
           </div>
         </div>
 
-        {/* Scroll indicator */}
-        <div className="fade-in flex justify-center mt-16">
-          <a href="#about" aria-label="Scroll down" className="flex flex-col items-center gap-2 text-warm-400 hover:text-warm-600 transition-colors">
-            <span className="text-xs tracking-widest uppercase">Scroll</span>
-            <svg className="w-4 h-4 animate-bounce" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-            </svg>
-          </a>
-        </div>
       </div>
     </section>
   );

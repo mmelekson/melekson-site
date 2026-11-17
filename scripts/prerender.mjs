@@ -1,29 +1,28 @@
-// Post-build prerender: turns the Vite SPA output into per-route static HTML files
-// with per-route <title>, <meta description>, Open Graph, Twitter, and canonical tags.
-//
-// How it works:
-//   1. Reads dist/index.html as the template (Vite already injected the correct JS/CSS refs)
-//   2. For each route (homepage, about, writing index, each blog post, etc.),
-//      writes dist/<route>/index.html with customized meta tags
-//   3. Vercel serves the static per-route HTML directly (takes precedence over the SPA rewrite),
-//      so social crawlers (LinkedIn, Twitter, iMessage, Slack) see the right card for each URL
-//   4. Googlebot renders React normally once the page loads
-//
-// Per-post OG images point to /api/og?title=...&category=...&date=... (Vercel edge function)
-// so every blog post gets a unique branded social card generated at the edge.
+// Post-build prerender: turns the Vite SPA output into per-route static HTML.
+// Head tags are rewritten per route, and the full React tree is rendered into
+// <div id="root"> with renderToPipeableStream (onAllReady, so lazy routes resolve).
+// Crawlers that do not run JavaScript still receive the visible page body.
 import { readFileSync, writeFileSync, mkdirSync } from 'node:fs';
 import { resolve, dirname } from 'node:path';
-import { fileURLToPath } from 'node:url';
+import { fileURLToPath, pathToFileURL } from 'node:url';
 import { content } from '../src/data/content.js';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const DIST = resolve(__dirname, '../dist');
+const SSR_OUT = resolve(__dirname, '../dist-ssr');
 const SITE = 'https://melekson.com';
 const DEFAULT_IMAGE = `${SITE}/myron-hero-1600.jpg`;
 const DEFAULT_DESCRIPTION =
-  'Founder of Mpower Sourcing (AI-enhanced staffing) and Mpower Agents (AI automation). Fractional COO, builder, and community leader in Aventura, South Florida.';
+  'Myron Melekson is an Aventura community builder, a voice on AI and the economy, and a fact-first civic reporter. Board of Directors, Greater North Miami Chamber of Commerce.';
 
-const template = readFileSync(resolve(DIST, 'index.html'), 'utf8');
+function shellTemplate(html) {
+  const start = html.indexOf('<div id="root">');
+  const bodyClose = html.lastIndexOf('</body>');
+  if (start === -1 || bodyClose === -1 || bodyClose < start) {
+    throw new Error('dist/index.html is missing <div id="root"> or </body>');
+  }
+  return `${html.slice(0, start)}<div id="root"></div>\n  ${html.slice(bodyClose)}`;
+}
 
 function esc(s) {
   return String(s)
@@ -33,7 +32,6 @@ function esc(s) {
     .replace(/>/g, '&gt;');
 }
 
-// Per-post OG image URL — falls back to default Myron hero until /api/og is back online.
 function ogImageUrl(post) {
   return post.image || DEFAULT_IMAGE;
 }
@@ -91,42 +89,54 @@ function apply(html, meta) {
     );
 }
 
+function visibleText(html) {
+  return html
+    .replace(/&amp;/g, '&')
+    .replace(/&apos;/g, "'")
+    .replace(/&#x27;/g, "'")
+    .replace(/&#39;/g, "'")
+    .replace(/&quot;/g, '"');
+}
+
 function writeRoute(path, html) {
   const dir = path === '/' ? DIST : resolve(DIST, '.' + path);
   mkdirSync(dir, { recursive: true });
   writeFileSync(resolve(dir, 'index.html'), html, 'utf8');
 }
 
-// Static routes
 const routes = [
   {
     path: '/',
+    expect: ['Aventura community builder', 'founded 2022', 'mpowersourcing.com', 'mpoweragents.ai', 'Greater North Miami Chamber of Commerce', 'wonderful wife, two boys, and a dog', 'Joining Nova Southeastern University', 'Healthcare AI'],
     meta: {
-      title: 'Myron Melekson — Founder of Mpower Sourcing & Mpower Agents | Aventura, FL',
+      title: 'Myron Melekson — Aventura community builder and civic reporter',
       description: DEFAULT_DESCRIPTION,
       canonical: `${SITE}/`,
     },
   },
   {
     path: '/about',
+    expect: ['Greater North Miami Chamber of Commerce', 'Zebra Technologies', 'founded 2022', 'mpoweragents.ai'],
     meta: {
-      title: 'About Myron Melekson — Founder, Builder, South Florida',
+      title: 'About Myron Melekson — Aventura community builder',
       description:
-        'Myron Melekson is a founder, operator, and community leader based in Aventura, Florida. CEO of Mpower Sourcing, the AI-enhanced staffing company behind the Mpower Agents automation product. 20 years building companies, teams, and communities.',
+        'Myron Melekson is an Aventura community builder and civic reporter. Board of Directors, Greater North Miami Chamber of Commerce. MBA, Technion. BS, Purdue. Yale certificate in Behavioral Economics.',
       canonical: `${SITE}/about`,
     },
   },
   {
     path: '/writing',
+    expect: ['Writing'],
     meta: {
       title: 'Writing — Myron Melekson',
       description:
-        'Essays on AI, operations, founder life, fractional leadership, and building community in South Florida.',
+        'Notes on AI, the economy, building, and South Florida from Myron Melekson.',
       canonical: `${SITE}/writing`,
     },
   },
   {
     path: '/reviews',
+    expect: ['What People Say'],
     meta: {
       title: 'Reviews — Myron Melekson',
       description:
@@ -136,28 +146,100 @@ const routes = [
   },
   {
     path: '/media',
+    expect: ['Media'],
     meta: {
       title: 'Media — Myron Melekson',
       description:
-        'Podcasts, interviews, videos, and press featuring Myron Melekson on entrepreneurship, AI, and building.',
+        'Podcasts, interviews, videos, and press featuring Myron Melekson.',
       canonical: `${SITE}/media`,
     },
   },
   {
     path: '/updates',
+    expect: ['Hack Aventura', 'Ran in June 2026 with Aventura Charter High School'],
     meta: {
       title: 'Updates — Myron Melekson',
       description:
-        'The latest on what Myron is building across Mpower Sourcing, Mpower Agents, and the Aventura tech ecosystem.',
+        'Notes from Myron Melekson on community work, events, and what has already happened in Aventura and South Florida.',
       canonical: `${SITE}/updates`,
+    },
+  },
+  {
+    path: '/contact',
+    expect: ['Aventura Civic Brief', 'Send a note'],
+    meta: {
+      title: 'Contact — Myron Melekson',
+      description:
+        'Write to Myron Melekson, or sign up for the Aventura Civic Brief, a note after each Aventura City Commission meeting.',
+      canonical: `${SITE}/contact`,
+    },
+  },
+  {
+    path: '/methodology',
+    expect: ['Methodology', 'No corrections have been posted.', 'Right of reply'],
+    meta: {
+      title: 'Methodology & Corrections — Myron Melekson',
+      description:
+        'How Aventura Watch picks issues, links claims to the public record, labels opinion, offers a right of reply, and logs corrections.',
+      canonical: `${SITE}/methodology`,
+    },
+  },
+  {
+    path: '/aventura-watch',
+    expect: ['First brief coming soon', 'vote by member'],
+    meta: {
+      title: 'Aventura Watch — Myron Melekson',
+      description:
+        'A brief within 72 hours of each Aventura City Commission meeting: the item, the motion, the vote by member, and links to the minutes and video.',
+      canonical: `${SITE}/aventura-watch`,
+    },
+  },
+  {
+    path: '/teaching',
+    expect: ["Joining Nova Southeastern University's H. Wayne Huizenga College of Business and Entrepreneurship as adjunct faculty in 2027 (OPS 3880 Operations Management).", 'Program Director, Curriculum Lead & Lead Instructor', 'Cohort Two is being planned'],
+    meta: {
+      title: 'Teaching — Myron Melekson',
+      description:
+        'Teaching: joining Nova Southeastern University as adjunct faculty in 2027, and Cohort One of the Entrepreneur Certificate Program at The Business Center Miami.',
+      canonical: `${SITE}/teaching`,
+    },
+  },
+  {
+    path: '/healthcare-ai',
+    expect: ['claims, scheduling, and admin workload'],
+    meta: {
+      title: 'Healthcare AI — Myron Melekson',
+      description:
+        'A focus area for Myron Melekson: helping healthcare practices and groups apply AI to operations such as claims, scheduling, and admin workload, responsibly.',
+      canonical: `${SITE}/healthcare-ai`,
+    },
+  },
+  {
+    path: '/community',
+    expect: ['Board of Directors, Greater North Miami Chamber of Commerce', 'Aventura Marketing Council', 'Aventura Tech Council', 'Ran in June 2026 with Aventura Charter High School', 'Russian-Speaking American Chamber'],
+    meta: {
+      title: 'Community — Myron Melekson',
+      description:
+        'Community roles: Greater North Miami Chamber of Commerce Board of Directors, Aventura Marketing Council, Aventura Tech Council, Hack Aventura, and the Russian-Speaking American Chamber of South Florida.',
+      canonical: `${SITE}/community`,
+    },
+  },
+  {
+    path: '/who-represents-aventura',
+    expect: ['Lucia Báez-Geller', 'Jason W. B. Pizzo', 'Howard S. Weinberg'],
+    meta: {
+      title: 'Who Represents Aventura — Myron Melekson',
+      description:
+        'A neutral list of who represents Aventura: Florida House District 106, Florida Senate District 37, and the Aventura City Commission, with links to official pages.',
+      canonical: `${SITE}/who-represents-aventura`,
     },
   },
 ];
 
-// Blog posts
 for (const post of content.writing?.posts || []) {
   routes.push({
     path: `/writing/${post.slug}`,
+    expect: [post.title],
     meta: {
       title: `${post.title} — Myron Melekson`,
       description: post.excerpt || DEFAULT_DESCRIPTION,
@@ -167,9 +249,44 @@ for (const post of content.writing?.posts || []) {
   });
 }
 
-for (const r of routes) {
-  const html = apply(template, r.meta);
-  writeRoute(r.path, html);
-}
+// Bundle with esbuild (already installed via Vite). No headless browser and no
+// second Vite build. If this step throws on the Vercel image, keep the SPA
+// output and let the deployment succeed instead of failing the preview.
+try {
+  const template = shellTemplate(readFileSync(resolve(DIST, 'index.html'), 'utf8'));
+  const esbuild = await import('esbuild');
+  mkdirSync(SSR_OUT, { recursive: true });
+  const serverBundle = resolve(SSR_OUT, 'entry-server.js');
+  await esbuild.build({
+    entryPoints: [resolve(__dirname, '../src/entry-server.jsx')],
+    bundle: true,
+    platform: 'node',
+    format: 'esm',
+    jsx: 'automatic',
+    packages: 'external',
+    outfile: serverBundle,
+    logLevel: 'warning',
+  });
 
-console.log(`✓ Prerendered ${routes.length} routes (${routes.length - 6} posts + 6 static)`);
+  const { render } = await import(pathToFileURL(serverBundle).href);
+  const staticCount = routes.filter((route) => !route.path.startsWith('/writing/')).length;
+
+  for (const route of routes) {
+    const body = await render(route.path);
+    const text = visibleText(body);
+    for (const needle of route.expect) {
+      if (!text.includes(needle)) {
+        throw new Error(`Prerender of ${route.path} is missing visible text: ${needle}`);
+      }
+    }
+    const html = apply(template, route.meta).replace('<div id="root"></div>', `<div id="root">${body}</div>`);
+    writeRoute(route.path, html);
+  }
+
+  console.log(`✓ Prerendered ${routes.length} routes (${routes.length - staticCount} posts + ${staticCount} static) with full page bodies`);
+} catch (error) {
+  const message = error && error.stack ? error.stack : String(error);
+  console.error('Prerender failed; shipping the Vite SPA without static bodies.');
+  console.error(message);
+  writeFileSync(resolve(DIST, 'prerender-error.txt'), message, 'utf8');
+}

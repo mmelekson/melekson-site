@@ -12,14 +12,9 @@ const icons = {
       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
     </svg>
   ),
-  Mpower: (
+  Contact: (
     <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" />
-    </svg>
-  ),
-  MpowerAgents: (
-    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
     </svg>
   ),
 };
@@ -37,35 +32,31 @@ export default function Connect() {
         <p className="fade-in text-warm-600 text-lg mb-10 max-w-xl mx-auto">
           {connect.body}
         </p>
-        {/* Calendly CTA */}
-        <div className="fade-in mb-8">
-          <a
-            href="https://calendly.com/mpower-myron/video-call"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 bg-accent text-warm-50 px-8 py-4 rounded-lg font-medium hover:bg-accent-light transition-colors text-lg"
-          >
-            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
-            </svg>
-            Book a call
-          </a>
-        </div>
+        {/* TODO(myron): Removed the Mpower Calendly button (https://calendly.com/mpower-myron/video-call) from this section. Say if you want a personal scheduling link here. */}
 
         <div className="fade-in flex flex-col sm:flex-row gap-4 justify-center flex-wrap">
-          {connect.links.map((link) => (
-            <a
-              key={link.platform}
-              href={link.href}
-              target={link.href.startsWith('mailto:') ? undefined : '_blank'}
-              rel={link.href.startsWith('mailto:') ? undefined : 'noopener noreferrer'}
-              className="flex items-center justify-center gap-2 bg-warm-100 hover:bg-warm-200 text-warm-700 px-6 py-3 rounded-lg font-medium transition-colors"
-            >
-              {icons[link.platform]}
-              {link.label}
-            </a>
-          ))}
+          {connect.links.map((link) => {
+            const external = link.href.startsWith('http');
+            return (
+              <a
+                key={link.platform}
+                href={link.href}
+                target={external ? '_blank' : undefined}
+                rel={external ? 'noopener noreferrer' : undefined}
+                className="flex items-center justify-center gap-2 bg-warm-100 hover:bg-warm-200 text-warm-700 px-6 py-3 rounded-lg font-medium transition-colors"
+              >
+                {icons[link.platform]}
+                {link.label}
+              </a>
+            );
+          })}
         </div>
+        <p className="fade-in mt-8 text-warm-600">
+          {connect.mpower}{' '}
+          <a href="https://mpowersourcing.com" className="text-accent hover:underline" target="_blank" rel="noopener noreferrer">mpowersourcing.com</a>
+          {' · '}
+          <a href="https://mpoweragents.ai" className="text-accent hover:underline" target="_blank" rel="noopener noreferrer">mpoweragents.ai</a>
+        </p>
       </div>
     </section>
   );

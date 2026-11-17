@@ -117,14 +117,13 @@ export default function Post() {
               </svg>
               Share on LinkedIn
             </a>
-            <a
-              href="https://calendly.com/mpower-myron/video-call"
-              target="_blank"
-              rel="noopener noreferrer"
+            {/* TODO(myron): Replaced the Mpower Calendly link (https://calendly.com/mpower-myron/video-call) on each essay with the contact page. */}
+            <Link
+              to="/contact"
               className="inline-flex items-center gap-2 bg-accent text-warm-50 px-5 py-2.5 rounded-lg text-sm font-medium hover:bg-accent-light transition-colors"
             >
-              Book a call with Myron &rarr;
-            </a>
+              Contact Myron &rarr;
+            </Link>
           </div>
 
           {/* Prev / Next navigation */}

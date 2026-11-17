@@ -12,10 +12,10 @@ body {
   color: #1e1a16;
 }
 
+/* Readable in the prerendered HTML, before any script runs. */
 .fade-in {
-  opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  opacity: 1;
+  transform: none;
 }
 
 .fade-in.visible {

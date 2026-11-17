@@ -25,8 +25,8 @@ export default function About() {
             <p className="text-sm text-warm-500 mt-1">Years building</p>
           </div>
           <div>
-            <p className="font-heading text-3xl text-accent">3</p>
-            <p className="text-sm text-warm-500 mt-1">Active companies</p>
+            <p className="font-heading text-3xl text-accent">GNMCC</p>
+            <p className="text-sm text-warm-500 mt-1">Board of Directors</p>
           </div>
           <div>
             <p className="font-heading text-3xl text-accent">5+</p>
@@ -44,6 +44,12 @@ export default function About() {
             </span>
           ))}
         </div>
+        <p className="fade-in mt-8 text-warm-600">
+          {about.mpower}{' '}
+          <a href="https://mpowersourcing.com" className="text-accent hover:underline" target="_blank" rel="noopener noreferrer">mpowersourcing.com</a>
+          {' · '}
+          <a href="https://mpoweragents.ai" className="text-accent hover:underline" target="_blank" rel="noopener noreferrer">mpoweragents.ai</a>
+        </p>
       </div>
     </section>
   );
