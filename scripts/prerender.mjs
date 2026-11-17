@@ -5,7 +5,6 @@
 import { readFileSync, writeFileSync, mkdirSync } from 'node:fs';
 import { resolve, dirname } from 'node:path';
 import { fileURLToPath, pathToFileURL } from 'node:url';
-import * as esbuild from 'esbuild';
 import { content } from '../src/data/content.js';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
@@ -24,8 +23,6 @@ function shellTemplate(html) {
   }
   return `${html.slice(0, start)}<div id="root"></div>\n  ${html.slice(bodyClose)}`;
 }
-
-const template = shellTemplate(readFileSync(resolve(DIST, 'index.html'), 'utf8'));
 
 function esc(s) {
   return String(s)
@@ -256,6 +253,8 @@ for (const post of content.writing?.posts || []) {
 // second Vite build. If this step throws on the Vercel image, keep the SPA
 // output and let the deployment succeed instead of failing the preview.
 try {
+  const template = shellTemplate(readFileSync(resolve(DIST, 'index.html'), 'utf8'));
+  const esbuild = await import('esbuild');
   mkdirSync(SSR_OUT, { recursive: true });
   const serverBundle = resolve(SSR_OUT, 'entry-server.js');
   await esbuild.build({
