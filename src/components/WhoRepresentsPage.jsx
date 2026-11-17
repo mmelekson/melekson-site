@@ -2,9 +2,8 @@ import { Link } from 'react-router-dom';
 import { useFadeIn } from '../hooks/useFadeIn';
 import { useSEO } from '../hooks/useSEO';
 
-// TODO(myron): myfloridahouse.gov rejected requests from this environment ("Request Rejected"), so the House profile URL was not opened here. Confirm https://www.myfloridahouse.gov/Sections/Representatives/details.aspx?MemberId=5098&LegislativeTermId=92 is Rep. Lucia Báez-Geller. Member id 5098 and term 92 came from a directory that pointed at the official House site on November 16, 2026.
 const HOUSE_URL =
-  'https://www.myfloridahouse.gov/Sections/Representatives/details.aspx?MemberId=5098&LegislativeTermId=92';
+  'https://www.flhouse.gov/Sections/Representatives/details.aspx?MemberId=5098&LegislativeTermId=92';
 const SENATE_URL = 'https://www.flsenate.gov/Senators/s37';
 const CITY_URL = 'https://www.cityofaventura.com/200/City-Commission';
 
@@ -51,7 +50,7 @@ export default function WhoRepresentsPage() {
               State House District 106 is held by Rep. Lucia Báez-Geller (D), elected November 3, 2026.
             </p>
             <p className="mt-3 text-sm">
-              <ExternalLink href={HOUSE_URL}>Official profile on myfloridahouse.gov</ExternalLink>
+              <ExternalLink href={HOUSE_URL}>Official profile on flhouse.gov</ExternalLink>
             </p>
           </section>
 
