@@ -20,7 +20,7 @@ const faqSchema = {
       "name": "What community roles does Myron Melekson hold?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Myron Melekson serves on the Board of Directors of the Greater North Miami Chamber of Commerce. He is a member of the Aventura Marketing Council / Chamber of Commerce and the Russian-Speaking American Chamber of South Florida, and a champion of the Aventura Tech Council. Hack Aventura is planned for June 2026 with Aventura City of Excellence School / Aventura Charter High School. He also founded Mpower in 2022 (mpowersourcing.com and mpoweragents.ai)."
+        "text": "Myron Melekson serves on the Board of Directors, Greater North Miami Chamber of Commerce. He is a member of the Aventura Marketing Council / Chamber of Commerce and the Russian-Speaking American Chamber of South Florida, and a champion of the Aventura Tech Council. Hack Aventura ran in June 2026 with Aventura Charter High School. He also founded Mpower in 2022 (mpowersourcing.com and mpoweragents.ai)."
       }
     },
     {
@@ -62,7 +62,7 @@ export default function AboutPage() {
   const ref = useFadeIn();
   useSEO({
     title: 'About Myron Melekson — Aventura community builder',
-    description: 'Myron Melekson is an Aventura community builder and civic reporter. Board member of the Greater North Miami Chamber of Commerce. MBA, Technion. BS, Purdue. Yale certificate in Behavioral Economics.',
+    description: 'Myron Melekson is an Aventura community builder and civic reporter. Board of Directors, Greater North Miami Chamber of Commerce. MBA, Technion. BS, Purdue. Yale certificate in Behavioral Economics.',
     ogUrl: 'https://melekson.com/about',
   });
 
@@ -98,7 +98,7 @@ export default function AboutPage() {
               className="w-28 h-28 rounded-xl object-cover object-top shadow flex-shrink-0"
             />
             <p className="text-warm-600 text-lg leading-relaxed">
-              Aventura community builder and civic reporter. Board member of the Greater North Miami Chamber of Commerce. Twenty years building companies, teams, and communities across technology, staffing, construction, and operations.
+              Aventura community builder and civic reporter. Board of Directors, Greater North Miami Chamber of Commerce. Twenty years building companies, teams, and communities across technology, staffing, construction, and operations.
             </p>
           </div>
 
@@ -107,7 +107,7 @@ export default function AboutPage() {
               <h2 className="font-heading text-2xl text-warm-900 mb-4">What I Do</h2>
               <div className="space-y-4 text-warm-600 leading-relaxed">
                 <p>I live in Aventura and serve on the board of the Greater North Miami Chamber of Commerce. I work with founders, students, and neighbors on the civic life of this city, including a fact-first record of local government.</p>
-                <p>Hack Aventura is planned for June 2026 with Aventura City of Excellence School / Aventura Charter High School. Community roles are listed on the <Link to="/community" className="text-accent hover:underline">community page</Link>.</p>
+                <p>Hack Aventura ran in June 2026 with Aventura Charter High School. Community roles are listed on the <Link to="/community" className="text-accent hover:underline">community page</Link>.</p>
                 <p>Founder & CEO of Mpower (founded 2022). <a href="https://mpowersourcing.com" className="text-accent hover:underline" target="_blank" rel="noopener noreferrer">mpowersourcing.com</a> · <a href="https://mpoweragents.ai" className="text-accent hover:underline" target="_blank" rel="noopener noreferrer">mpoweragents.ai</a></p>
               </div>
             </div>
@@ -126,7 +126,7 @@ export default function AboutPage() {
                 <li className="flex items-center gap-3"><span className="w-1.5 h-1.5 rounded-full bg-accent flex-shrink-0" />MBA — Technion — Israel Institute of Technology</li>
                 <li className="flex items-center gap-3"><span className="w-1.5 h-1.5 rounded-full bg-accent flex-shrink-0" />BS — Purdue University</li>
                 <li className="flex items-center gap-3"><span className="w-1.5 h-1.5 rounded-full bg-accent flex-shrink-0" />Behavioral Economics Certificate — Yale School of Management</li>
-                <li className="flex items-center gap-3"><span className="w-1.5 h-1.5 rounded-full bg-accent flex-shrink-0" />Board member — Greater North Miami Chamber of Commerce</li>
+                <li className="flex items-center gap-3"><span className="w-1.5 h-1.5 rounded-full bg-accent flex-shrink-0" />Board of Directors, Greater North Miami Chamber of Commerce</li>
               </ul>
             </div>
 

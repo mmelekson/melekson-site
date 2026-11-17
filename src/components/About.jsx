@@ -26,7 +26,7 @@ export default function About() {
           </div>
           <div>
             <p className="font-heading text-3xl text-accent">GNMCC</p>
-            <p className="text-sm text-warm-500 mt-1">Board member</p>
+            <p className="text-sm text-warm-500 mt-1">Board of Directors</p>
           </div>
           <div>
             <p className="font-heading text-3xl text-accent">5+</p>

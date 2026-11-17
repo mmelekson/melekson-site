@@ -21,10 +21,9 @@ export default function CommunityPage() {
         </p>
 
         <div className="space-y-6">
-          {/* TODO(myron): Sunbiz's officer list for The Greater North Miami Chamber of Commerce, Inc. (document N00623), retrieved 2026-11-17, does not list you. Confirm the exact board title. Public site: https://greaternorthmiami.org/ */}
           <section className="fade-in bg-white border border-warm-200 rounded-xl p-6">
             <h2 className="font-heading text-2xl text-warm-900 mb-2">Greater North Miami Chamber of Commerce</h2>
-            <p className="text-warm-700 leading-relaxed">Board of Directors.</p>
+            <p className="text-warm-700 leading-relaxed">Board of Directors, Greater North Miami Chamber of Commerce.</p>
             <p className="mt-3 text-sm">
               <a href="https://greaternorthmiami.org/" className="text-accent hover:underline" target="_blank" rel="noopener noreferrer">greaternorthmiami.org</a>
             </p>
@@ -41,11 +40,10 @@ export default function CommunityPage() {
             <p className="text-warm-700 leading-relaxed">Champion.</p>
           </section>
 
-          {/* TODO(myron): Confirm Hack Aventura ran before it is described in the past tense. Until then this stays neutral. */}
           <section className="fade-in bg-white border border-warm-200 rounded-xl p-6">
             <h2 className="font-heading text-2xl text-warm-900 mb-2">Hack Aventura</h2>
             <p className="text-warm-700 leading-relaxed">
-              Planned for June 2026 with Aventura City of Excellence School / Aventura Charter High School.
+              Ran in June 2026 with Aventura Charter High School.
             </p>
           </section>
 

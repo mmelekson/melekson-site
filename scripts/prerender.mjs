@@ -14,7 +14,7 @@ const SSR_OUT = resolve(__dirname, '../dist-ssr');
 const SITE = 'https://melekson.com';
 const DEFAULT_IMAGE = `${SITE}/myron-hero-1600.jpg`;
 const DEFAULT_DESCRIPTION =
-  'Myron Melekson is an Aventura community builder, a voice on AI and the economy, and a fact-first civic reporter. Board member, Greater North Miami Chamber of Commerce.';
+  'Myron Melekson is an Aventura community builder, a voice on AI and the economy, and a fact-first civic reporter. Board of Directors, Greater North Miami Chamber of Commerce.';
 
 function shellTemplate(html) {
   const start = html.indexOf('<div id="root">');
@@ -123,7 +123,7 @@ const routes = [
     meta: {
       title: 'About Myron Melekson — Aventura community builder',
       description:
-        'Myron Melekson is an Aventura community builder and civic reporter. Board member of the Greater North Miami Chamber of Commerce. MBA, Technion. BS, Purdue. Yale certificate in Behavioral Economics.',
+        'Myron Melekson is an Aventura community builder and civic reporter. Board of Directors, Greater North Miami Chamber of Commerce. MBA, Technion. BS, Purdue. Yale certificate in Behavioral Economics.',
       canonical: `${SITE}/about`,
     },
   },
@@ -159,7 +159,7 @@ const routes = [
   },
   {
     path: '/updates',
-    expect: ['Hack Aventura', 'Planned for June 2026'],
+    expect: ['Hack Aventura', 'Ran in June 2026 with Aventura Charter High School'],
     meta: {
       title: 'Updates — Myron Melekson',
       description:
@@ -199,7 +199,7 @@ const routes = [
   },
   {
     path: '/teaching',
-    expect: ['Joining Nova Southeastern University', 'OPS 3880', 'AI for Your Business', 'Cohort Two is being planned'],
+    expect: ["Joining Nova Southeastern University's H. Wayne Huizenga College of Business and Entrepreneurship as adjunct faculty in 2027 (OPS 3880 Operations Management).", 'Program Director, Curriculum Lead & Lead Instructor', 'Cohort Two is being planned'],
     meta: {
       title: 'Teaching — Myron Melekson',
       description:
@@ -219,7 +219,7 @@ const routes = [
   },
   {
     path: '/community',
-    expect: ['Board of Directors', 'Aventura Marketing Council', 'Aventura Tech Council', 'Planned for June 2026', 'Russian-Speaking American Chamber'],
+    expect: ['Board of Directors, Greater North Miami Chamber of Commerce', 'Aventura Marketing Council', 'Aventura Tech Council', 'Ran in June 2026 with Aventura Charter High School', 'Russian-Speaking American Chamber'],
     meta: {
       title: 'Community — Myron Melekson',
       description:

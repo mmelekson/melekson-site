@@ -33,22 +33,21 @@ export default function TeachingPage() {
         </p>
 
         <div className="space-y-8">
-          {/* TODO(myron): Confirm hiring is complete (the MBA evaluation is pending) before publishing the NSU appointment as final. */}
+          {/* TODO(myron): Finalize the NSU adjunct appointment, including JSON-LD, once hiring completes. */}
           <section className="fade-in bg-white border border-warm-200 rounded-xl p-6">
             <h2 className="font-heading text-2xl text-warm-900 mb-3">Nova Southeastern University</h2>
             <p className="text-warm-700 leading-relaxed">
-              Joining Nova Southeastern University, H. Wayne Huizenga College of Business and Entrepreneurship, as adjunct faculty in 2027. The field is Decision Sciences.
+              Joining Nova Southeastern University's H. Wayne Huizenga College of Business and Entrepreneurship as adjunct faculty in 2027 (OPS 3880 Operations Management).
             </p>
             <p className="text-warm-700 leading-relaxed mt-3">
-              The course is OPS 3880 Operations Management (undergraduate), in Winter II 2027 (March 8 to May 2, 2027).
+              The course is undergraduate, in Decision Sciences, Winter II 2027 (March 8 to May 2, 2027).
             </p>
           </section>
 
-          {/* TODO(myron): Confirm the exact role title for Cohort One — curriculum lead, facilitator, or instructor. The page states the curriculum kit and Week 10, and does not pick a title. */}
           <section className="fade-in bg-white border border-warm-200 rounded-xl p-6">
             <h2 className="font-heading text-2xl text-warm-900 mb-3">The Business Center Miami</h2>
             <p className="text-warm-700 leading-relaxed">
-              The Business Center Miami is in North Miami and affiliated with the Greater North Miami Chamber of Commerce. Cohort One of the Entrepreneur Certificate Program ran June 15 to Aug 31, 2026. It was a 12-week program on Monday mornings.
+              The Business Center Miami is in North Miami and affiliated with the Greater North Miami Chamber of Commerce. Cohort One of the Entrepreneur Certificate Program ran June 15 to Aug 31, 2026. It was a 12-week program on Monday mornings. I was Program Director, Curriculum Lead & Lead Instructor.
             </p>
             <p className="text-warm-700 leading-relaxed mt-3">
               I built the full 12-week curriculum kit: decks, facilitator guides, worksheets, and evaluations. I taught Week 10, “AI for Your Business,” on Aug 17, 2026. Participants watched AI working on real businesses in the room.

@@ -40,7 +40,7 @@ export const content = {
     heading: "About Me",
     body: [
       "I've spent 20 years building — companies, teams, products, and now communities. Not because it was the plan, but because it's what I do when there's a problem worth solving.",
-      "I live in Aventura. I serve on the board of the Greater North Miami Chamber of Commerce, and I work with founders, students, and neighbors on the civic life of this city.",
+      "I live in Aventura. I serve on the Board of Directors, Greater North Miami Chamber of Commerce, and I work with founders, students, and neighbors on the civic life of this city.",
       "I grew up in Glenview, Illinois. I hold an MBA from Technion — Israel Institute of Technology, a BS from Purdue, and a certificate in Behavioral Economics from Yale. I have a wonderful wife, two boys, and a dog, and I care deeply about my community and keeping it safe.",
       "I believe technology should lift more boats. And I believe the communities worth living in are the ones people actively build — not the ones they wait for.",
     ],
@@ -48,8 +48,7 @@ export const content = {
       "MBA — Technion — Israel Institute of Technology",
       "BS — Purdue University",
       "Behavioral Economics Certificate — Yale School of Management",
-      // TODO(myron): Sunbiz's officer list for The Greater North Miami Chamber of Commerce, Inc. (document N00623), retrieved 2026-11-17, does not list you. Confirm the board title for the site. Public site used for the link: https://greaternorthmiami.org/
-      "Board member — Greater North Miami Chamber of Commerce",
+      "Board of Directors, Greater North Miami Chamber of Commerce",
     ],
     mpower: "Founder & CEO of Mpower (founded 2022).",
   },
@@ -111,10 +110,10 @@ export const content = {
         name: "Greater North Miami Chamber of Commerce",
         icon: "handshake",
         description:
-          "Board member of the Greater North Miami Chamber of Commerce (GNMCC).",
+          "Board of Directors, Greater North Miami Chamber of Commerce.",
         link: "https://greaternorthmiami.org/",
         link_label: "greaternorthmiami.org",
-        status: "Board member",
+        status: "Board of Directors",
       },
       {
         id: "aventura_chamber",
@@ -157,12 +156,11 @@ export const content = {
         label: "Event",
         name: "Hack Aventura",
         icon: "zap",
-        // TODO(myron): Confirm Hack Aventura ran before this is described in the past tense. Until then it stays neutral: planned for June 2026 with Aventura City of Excellence School / Aventura Charter High School.
         description:
-          "Planned for June 2026 with Aventura City of Excellence School / Aventura Charter High School.",
+          "Ran in June 2026 with Aventura Charter High School.",
         link: null,
         link_label: null,
-        status: "Planned June 2026",
+        status: "June 2026",
       },
     ],
   },
@@ -230,7 +228,7 @@ export const content = {
         date: "June 2026",
         category: "Event",
         title: "Hack Aventura",
-        body: "Planned for June 2026 with Aventura City of Excellence School / Aventura Charter High School.",
+        body: "Ran in June 2026 with Aventura Charter High School.",
         link: null,
       },
       {
@@ -362,7 +360,7 @@ export const content = {
           "Aventura doesn't lack resources. It has money, density, business activity, and a highly educated population. What it lacks is a connective tissue for the people here who are building things with technology.",
           "There's no regular gathering place for founders. No pipeline for students who want to learn how to build. No civic identity around innovation.",
           "I've been working to change that through the Aventura Marketing Council, and it's becoming something real. We're building what I think of as a civic tech ecosystem — not a startup accelerator, not a coworking space, but a community infrastructure. Hackathons for high school students. A tech council for local founders and operators. Mentorship that doesn't require anyone to get on a plane to find it.",
-          "The first test of this is Hack Aventura, planned for June 2026 with Aventura City of Excellence School / Aventura Charter High School.",
+          "The first test of this was Hack Aventura, which ran in June 2026 with Aventura Charter High School.",
           "I believe the communities worth living in are the ones people actively build. Aventura has everything it needs to be a serious tech city. It just needs people who are willing to put in the work to make it one.",
           "That's what I'm doing here.",
         ],
@@ -458,7 +456,7 @@ export const content = {
         body: [
           "I didn't start Hack Aventura because it was a good idea. I started it because I looked around at what we had in Aventura for young builders and found almost nothing.",
           "The city has real talent. Don Sofer has students who are sharp, motivated, and hungry. But there was no event, no community, no venue for them to build something real — not a school project, not a competition rubric, but an actual product with actual stakes.",
-          "Hack Aventura is planned for June 2026 with Aventura City of Excellence School / Aventura Charter High School.",
+          "Hack Aventura ran in June 2026 with Aventura Charter High School.",
           "This is what the Aventura tech ecosystem needs to start with — not a tech park or a grant program, but a room full of teenagers building.",
         ],
       },

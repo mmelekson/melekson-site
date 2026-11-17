@@ -11,10 +11,10 @@ export default function TeachingBlock() {
         <h2 className="fade-in font-heading text-3xl text-warm-900 mb-4">In the classroom</h2>
         <div className="fade-in space-y-4 text-warm-700 leading-relaxed text-lg">
           <p>
-            Joining Nova Southeastern University, H. Wayne Huizenga College of Business and Entrepreneurship, as adjunct faculty in 2027. Decision Sciences. The course is OPS 3880 Operations Management (undergraduate), Winter II 2027 (March 8 to May 2, 2027).
+            Joining Nova Southeastern University's H. Wayne Huizenga College of Business and Entrepreneurship as adjunct faculty in 2027 (OPS 3880 Operations Management).
           </p>
           <p>
-            Cohort One of the Entrepreneur Certificate Program at The Business Center Miami ran June 15 to Aug 31, 2026. I built the 12-week curriculum kit and taught Week 10, “AI for Your Business.” Cohort Two is being planned.
+            Cohort One of the Entrepreneur Certificate Program at The Business Center Miami ran June 15 to Aug 31, 2026. I was Program Director, Curriculum Lead & Lead Instructor. Cohort Two is being planned.
           </p>
         </div>
         <p className="fade-in mt-6">
