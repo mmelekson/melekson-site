@@ -494,14 +494,6 @@ export const content = {
       },
       {
         type: "profile",
-        title: "Myron Melekson — Startup Nation Finder",
-        show: "Startup Nation Central",
-        date: "2016",
-        url: "https://finder.startupnationcentral.org/user/profile/agxzfmlsbGlzdHNpdGVyFQsSCE5ld19Vc2VyGICAwIbz2IIKDA",
-        description: "Profile in the Israeli startup ecosystem directory. Listed during the Q-IT / Technion MBA years.",
-      },
-      {
-        type: "profile",
         title: "Q-IT — Crunchbase",
         show: "Crunchbase",
         date: "2016",

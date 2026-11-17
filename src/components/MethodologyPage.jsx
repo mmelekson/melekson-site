@@ -2,14 +2,14 @@ import { Link } from 'react-router-dom';
 import { useFadeIn } from '../hooks/useFadeIn';
 import { useSEO } from '../hooks/useSEO';
 
-const HOUSE_VOTES =
-  'https://www.flhouse.gov/Sections/Representatives/votingrecords.aspx?MemberId=5098&LegislativeTermId=92';
+const HOUSE_BILLS =
+  'https://www.flhouse.gov/Sections/Representatives/sponsoredbills.aspx?MemberId=5098&SessionId=126';
 
 const records = [
   {
-    label: 'Florida House roll calls',
-    href: HOUSE_VOTES,
-    detail: 'The vote record for the representative of District 106, on flhouse.gov.',
+    label: 'Florida House sponsored bills',
+    href: HOUSE_BILLS,
+    detail: 'Bills sponsored by the representative of District 106, on flhouse.gov. Roll-call votes are taken from each bill\'s official vote history on flhouse.gov.',
   },
   {
     label: 'Florida Senate',
