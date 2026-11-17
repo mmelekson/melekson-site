@@ -20,7 +20,7 @@ const faqSchema = {
       "name": "What community roles does Myron Melekson hold?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Myron Melekson serves on the board of the Greater North Miami Chamber of Commerce. He is active in Aventura through the Aventura Marketing Council, and he organized Hack Aventura, two student hackathons at Don Sofer High School in May 2026. He also founded Mpower in 2022 (mpowersourcing.com and mpoweragents.ai)."
+        "text": "Myron Melekson serves on the Board of Directors of the Greater North Miami Chamber of Commerce. He is a member of the Aventura Marketing Council / Chamber of Commerce and the Russian-Speaking American Chamber of South Florida, and a champion of the Aventura Tech Council. Hack Aventura is planned for June 2026 with Aventura City of Excellence School / Aventura Charter High School. He also founded Mpower in 2022 (mpowersourcing.com and mpoweragents.ai)."
       }
     },
     {
@@ -107,7 +107,7 @@ export default function AboutPage() {
               <h2 className="font-heading text-2xl text-warm-900 mb-4">What I Do</h2>
               <div className="space-y-4 text-warm-600 leading-relaxed">
                 <p>I live in Aventura and serve on the board of the Greater North Miami Chamber of Commerce. I work with founders, students, and neighbors on the civic life of this city, including a fact-first record of local government.</p>
-                <p>In May 2026 I held Hack Aventura, two back-to-back student hackathons at Don Sofer High School. Students built with AI tools for a day. The events were free and community-funded.</p>
+                <p>Hack Aventura is planned for June 2026 with Aventura City of Excellence School / Aventura Charter High School. Community roles are listed on the <Link to="/community" className="text-accent hover:underline">community page</Link>.</p>
                 <p>Founder & CEO of Mpower (founded 2022). <a href="https://mpowersourcing.com" className="text-accent hover:underline" target="_blank" rel="noopener noreferrer">mpowersourcing.com</a> · <a href="https://mpoweragents.ai" className="text-accent hover:underline" target="_blank" rel="noopener noreferrer">mpoweragents.ai</a></p>
               </div>
             </div>

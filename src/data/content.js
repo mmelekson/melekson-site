@@ -11,6 +11,9 @@ export const content = {
       { label: "Updates", href: "/updates" },
       { label: "Book", href: "#book" },
       { label: "Connect", href: "#connect" },
+      { label: "Teaching", href: "/teaching", row: "civic" },
+      { label: "Healthcare AI", href: "/healthcare-ai", row: "civic" },
+      { label: "Community", href: "/community", row: "civic" },
       { label: "Aventura Watch", href: "/aventura-watch", row: "civic" },
       { label: "Who Represents Aventura", href: "/who-represents-aventura", row: "civic" },
       { label: "Methodology", href: "/methodology", row: "civic" },
@@ -139,11 +142,12 @@ export const content = {
       },
       {
         id: "aventura_tech",
+        // TODO(myron): "Champion" is the word used here. Confirm whether there is a formal role title at the Aventura Tech Council.
         label: "Community Initiative",
-        name: "Aventura Tech Ecosystem",
+        name: "Aventura Tech Council",
         icon: "globe",
         description:
-          "Building a civic tech hub in Aventura -- connecting founders, students, and local leaders around technology, innovation, and community. Includes hackathons, mentorship, and a growing tech council.",
+          "Champion of the Aventura Tech Council, connecting founders, students, and local leaders around technology in Aventura.",
         link: null,
         link_label: null,
         status: "In Progress",
@@ -153,11 +157,12 @@ export const content = {
         label: "Event",
         name: "Hack Aventura",
         icon: "zap",
+        // TODO(myron): Confirm Hack Aventura ran before this is described in the past tense. Until then it stays neutral: planned for June 2026 with Aventura City of Excellence School / Aventura Charter High School.
         description:
-          "Two back-to-back student hackathons at Don Sofer High School in May 2026. Students built full startups in one day using AI tools. Free. Community-funded.",
+          "Planned for June 2026 with Aventura City of Excellence School / Aventura Charter High School.",
         link: null,
         link_label: null,
-        status: "Held May 2026",
+        status: "Planned June 2026",
       },
     ],
   },
@@ -222,10 +227,10 @@ export const content = {
     items: [
       {
         id: "update_001",
-        date: "May 2026",
+        date: "June 2026",
         category: "Event",
-        title: "Hack Aventura — Two Student Hackathons",
-        body: "Hosted two back-to-back 1-day hackathons at Don Sofer High School in May 2026. Students built full AI-powered startups in a single day.",
+        title: "Hack Aventura",
+        body: "Planned for June 2026 with Aventura City of Excellence School / Aventura Charter High School.",
         link: null,
       },
       {
@@ -357,7 +362,7 @@ export const content = {
           "Aventura doesn't lack resources. It has money, density, business activity, and a highly educated population. What it lacks is a connective tissue for the people here who are building things with technology.",
           "There's no regular gathering place for founders. No pipeline for students who want to learn how to build. No civic identity around innovation.",
           "I've been working to change that through the Aventura Marketing Council, and it's becoming something real. We're building what I think of as a civic tech ecosystem — not a startup accelerator, not a coworking space, but a community infrastructure. Hackathons for high school students. A tech council for local founders and operators. Mentorship that doesn't require anyone to get on a plane to find it.",
-          "The first test of whether this was real was Hack Aventura — two back-to-back one-day hackathons at Don Sofer High School in May 2026. Students came in with nothing and left with a working AI-powered product. No rubric, no grades. Real stakes.",
+          "The first test of this is Hack Aventura, planned for June 2026 with Aventura City of Excellence School / Aventura Charter High School.",
           "I believe the communities worth living in are the ones people actively build. Aventura has everything it needs to be a serious tech city. It just needs people who are willing to put in the work to make it one.",
           "That's what I'm doing here.",
         ],
@@ -453,8 +458,8 @@ export const content = {
         body: [
           "I didn't start Hack Aventura because it was a good idea. I started it because I looked around at what we had in Aventura for young builders and found almost nothing.",
           "The city has real talent. Don Sofer has students who are sharp, motivated, and hungry. But there was no event, no community, no venue for them to build something real — not a school project, not a competition rubric, but an actual product with actual stakes.",
-          "In May 2026 we held two back-to-back one-day hackathons at Don Sofer High School. Students came in the morning with nothing and left in the afternoon with a working product built on AI tools. Free. Community-funded. No gatekeeping.",
-          "This is what the Aventura tech ecosystem needed to start with — not a tech park or a grant program, but a room full of teenagers proving they can build.",
+          "Hack Aventura is planned for June 2026 with Aventura City of Excellence School / Aventura Charter High School.",
+          "This is what the Aventura tech ecosystem needs to start with — not a tech park or a grant program, but a room full of teenagers building.",
         ],
       },
     ],

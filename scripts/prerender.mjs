@@ -110,7 +110,7 @@ function writeRoute(path, html) {
 const routes = [
   {
     path: '/',
-    expect: ['Aventura community builder', 'founded 2022', 'mpowersourcing.com', 'mpoweragents.ai', 'Greater North Miami Chamber of Commerce', 'wonderful wife, two boys, and a dog'],
+    expect: ['Aventura community builder', 'founded 2022', 'mpowersourcing.com', 'mpoweragents.ai', 'Greater North Miami Chamber of Commerce', 'wonderful wife, two boys, and a dog', 'Joining Nova Southeastern University', 'Healthcare AI'],
     meta: {
       title: 'Myron Melekson — Aventura community builder and civic reporter',
       description: DEFAULT_DESCRIPTION,
@@ -159,7 +159,7 @@ const routes = [
   },
   {
     path: '/updates',
-    expect: ['Hack Aventura', 'Hosted two back-to-back'],
+    expect: ['Hack Aventura', 'Planned for June 2026'],
     meta: {
       title: 'Updates — Myron Melekson',
       description:
@@ -195,6 +195,36 @@ const routes = [
       description:
         'A brief within 72 hours of each Aventura City Commission meeting: the item, the motion, the vote by member, and links to the minutes and video.',
       canonical: `${SITE}/aventura-watch`,
+    },
+  },
+  {
+    path: '/teaching',
+    expect: ['Joining Nova Southeastern University', 'OPS 3880', 'AI for Your Business', 'Cohort Two is being planned'],
+    meta: {
+      title: 'Teaching — Myron Melekson',
+      description:
+        'Teaching: joining Nova Southeastern University as adjunct faculty in 2027, and Cohort One of the Entrepreneur Certificate Program at The Business Center Miami.',
+      canonical: `${SITE}/teaching`,
+    },
+  },
+  {
+    path: '/healthcare-ai',
+    expect: ['claims, scheduling, and admin workload'],
+    meta: {
+      title: 'Healthcare AI — Myron Melekson',
+      description:
+        'A focus area for Myron Melekson: helping healthcare practices and groups apply AI to operations such as claims, scheduling, and admin workload, responsibly.',
+      canonical: `${SITE}/healthcare-ai`,
+    },
+  },
+  {
+    path: '/community',
+    expect: ['Board of Directors', 'Aventura Marketing Council', 'Aventura Tech Council', 'Planned for June 2026', 'Russian-Speaking American Chamber'],
+    meta: {
+      title: 'Community — Myron Melekson',
+      description:
+        'Community roles: Greater North Miami Chamber of Commerce Board of Directors, Aventura Marketing Council, Aventura Tech Council, Hack Aventura, and the Russian-Speaking American Chamber of South Florida.',
+      canonical: `${SITE}/community`,
     },
   },
   {

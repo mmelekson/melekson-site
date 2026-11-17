@@ -28,6 +28,9 @@ const staticRoutes = [
   { path: '/methodology', changefreq: 'monthly', priority: '0.7', lastmod: today },
   { path: '/aventura-watch', changefreq: 'weekly', priority: '0.9', lastmod: today },
   { path: '/who-represents-aventura', changefreq: 'monthly', priority: '0.8', lastmod: today },
+  { path: '/teaching', changefreq: 'monthly', priority: '0.8', lastmod: today },
+  { path: '/healthcare-ai', changefreq: 'monthly', priority: '0.7', lastmod: today },
+  { path: '/community', changefreq: 'monthly', priority: '0.8', lastmod: today },
 ];
 
 const postRoutes = (content?.writing?.posts || []).map((p) => ({

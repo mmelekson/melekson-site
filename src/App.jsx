@@ -3,6 +3,8 @@ import { Routes, Route } from 'react-router-dom';
 import { Analytics } from '@vercel/analytics/react';
 import Nav from './components/Nav';
 import Hero from './components/Hero';
+import Focus from './components/Focus';
+import TeachingBlock from './components/TeachingBlock';
 import About from './components/About';
 import Projects from './components/Projects';
 import Clients from './components/Clients';
@@ -22,12 +24,17 @@ const ContactPage = lazy(() => import('./components/ContactPage'));
 const MethodologyPage = lazy(() => import('./components/MethodologyPage'));
 const AventuraWatchPage = lazy(() => import('./components/AventuraWatchPage'));
 const WhoRepresentsPage = lazy(() => import('./components/WhoRepresentsPage'));
+const TeachingPage = lazy(() => import('./components/TeachingPage'));
+const HealthcareAiPage = lazy(() => import('./components/HealthcareAiPage'));
+const CommunityPage = lazy(() => import('./components/CommunityPage'));
 const NotFound = lazy(() => import('./components/NotFound'));
 
 function HomePage() {
   return (
     <>
       <Hero />
+      <Focus />
+      <TeachingBlock />
       <About />
       <Projects />
       <Clients />
@@ -64,6 +71,9 @@ export default function App() {
             <Route path="/methodology" element={<MethodologyPage />} />
             <Route path="/aventura-watch" element={<AventuraWatchPage />} />
             <Route path="/who-represents-aventura" element={<WhoRepresentsPage />} />
+            <Route path="/teaching" element={<TeachingPage />} />
+            <Route path="/healthcare-ai" element={<HealthcareAiPage />} />
+            <Route path="/community" element={<CommunityPage />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </Suspense>

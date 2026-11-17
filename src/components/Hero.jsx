@@ -17,7 +17,7 @@ export default function Hero() {
   }, []);
 
   return (
-    <section className="min-h-screen flex items-center pt-36 pb-16 relative overflow-hidden" ref={ref}>
+    <section className="flex items-center pt-36 pb-10 relative overflow-hidden" ref={ref}>
       {/* Subtle background gradient */}
       <div className="absolute inset-0 bg-gradient-to-br from-warm-50 via-warm-50 to-warm-100 pointer-events-none" />
       <div className="absolute top-0 right-0 w-96 h-96 bg-accent/5 rounded-full blur-3xl pointer-events-none" />
@@ -92,15 +92,6 @@ export default function Hero() {
           </div>
         </div>
 
-        {/* Scroll indicator */}
-        <div className="fade-in flex justify-center mt-16">
-          <a href="#about" aria-label="Scroll down" className="flex flex-col items-center gap-2 text-warm-400 hover:text-warm-600 transition-colors">
-            <span className="text-xs tracking-widest uppercase">Scroll</span>
-            <svg className="w-4 h-4 animate-bounce" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-            </svg>
-          </a>
-        </div>
       </div>
     </section>
   );
