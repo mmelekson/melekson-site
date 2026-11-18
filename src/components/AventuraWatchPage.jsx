@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import { content } from '../data/content';
 import { useFadeIn } from '../hooks/useFadeIn';
 import { useSEO } from '../hooks/useSEO';
 
@@ -39,7 +40,16 @@ export default function AventuraWatchPage() {
           </ul>
         </div>
 
-        <p className="fade-in text-warm-800 text-lg font-medium mb-6">First brief coming soon.</p>
+        <ul className="fade-in space-y-4 mb-8">
+          {content.aventuraWatch.briefs.map((brief) => (
+            <li key={brief.slug}>
+              <Link to={`/aventura-watch/${brief.slug}`} className="font-heading text-2xl text-warm-900 hover:text-accent">
+                {brief.title}
+              </Link>
+              <p className="text-sm text-warm-500 mt-1">{brief.date}</p>
+            </li>
+          ))}
+        </ul>
 
         <p className="fade-in text-warm-600 leading-relaxed mb-8">
           How issues are chosen, how opinion is labeled, and how to reply or ask for a correction are on the{' '}

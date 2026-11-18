@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { useFadeIn } from '../hooks/useFadeIn';
 import { useSEO } from '../hooks/useSEO';
 
@@ -92,7 +93,8 @@ export default function ContactPage() {
           <div className="fade-in bg-white border border-warm-200 rounded-xl p-6">
             <h2 className="font-heading text-2xl text-warm-900 mb-2">Aventura Civic Brief</h2>
             <p className="text-warm-600 text-sm leading-relaxed mb-5">
-              A short note within 72 hours of each Aventura City Commission meeting: the item, the motion, the vote by member, and links to the minutes and video. First brief coming soon.
+              A short note within 72 hours of each Aventura City Commission meeting: the item, the motion, the vote by member, and links to the minutes and video.{' '}
+              <Link to="/aventura-watch/2026-11-17-commission" className="text-accent hover:underline">Aventura Watch Brief No. 1</Link>
             </p>
             {brief.status === 'sent' ? (
               <p className="text-warm-800 font-medium">You&apos;re on the list for the Aventura Civic Brief.</p>

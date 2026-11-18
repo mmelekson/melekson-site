@@ -4,14 +4,8 @@ import { Routes, Route } from 'react-router-dom';
 import { Writable } from 'node:stream';
 import Nav from './components/Nav';
 import Hero from './components/Hero';
-import Focus from './components/Focus';
-import TeachingBlock from './components/TeachingBlock';
-import About from './components/About';
-import Projects from './components/Projects';
-import Clients from './components/Clients';
-import Moments from './components/Moments';
+import HomeStory from './components/HomeStory';
 import Book from './components/Book';
-import Connect from './components/Connect';
 import Footer from './components/Footer';
 import AboutPage from './components/AboutPage';
 import Post from './components/Post';
@@ -22,6 +16,7 @@ import UpdatesPage from './components/UpdatesPage';
 import ContactPage from './components/ContactPage';
 import MethodologyPage from './components/MethodologyPage';
 import AventuraWatchPage from './components/AventuraWatchPage';
+import WatchBrief from './components/WatchBrief';
 import WhoRepresentsPage from './components/WhoRepresentsPage';
 import TeachingPage from './components/TeachingPage';
 import HealthcareAiPage from './components/HealthcareAiPage';
@@ -32,14 +27,8 @@ function HomePage() {
   return (
     <>
       <Hero />
-      <Focus />
-      <TeachingBlock />
-      <About />
-      <Projects />
-      <Clients />
-      <Moments />
+      <HomeStory />
       <Book />
-      <Connect />
     </>
   );
 }
@@ -60,6 +49,7 @@ function Shell({ url }) {
           <Route path="/contact" element={<ContactPage />} />
           <Route path="/methodology" element={<MethodologyPage />} />
           <Route path="/aventura-watch" element={<AventuraWatchPage />} />
+          <Route path="/aventura-watch/:slug" element={<WatchBrief />} />
           <Route path="/who-represents-aventura" element={<WhoRepresentsPage />} />
           <Route path="/teaching" element={<TeachingPage />} />
           <Route path="/healthcare-ai" element={<HealthcareAiPage />} />

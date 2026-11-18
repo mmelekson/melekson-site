@@ -186,7 +186,7 @@ const routes = [
   },
   {
     path: '/aventura-watch',
-    expect: ['First brief coming soon', 'vote by member'],
+    expect: ['Aventura Watch Brief No. 1', 'vote by member'],
     meta: {
       title: 'Aventura Watch — Myron Melekson',
       description:
@@ -235,6 +235,18 @@ const routes = [
     },
   },
 ];
+
+for (const brief of content.aventuraWatch?.briefs || []) {
+  routes.push({
+    path: `/aventura-watch/${brief.slug}`,
+    expect: [brief.title, 'November 17, 2026', 'https://www.youtube.com/live/pCHIJ6RyJJQ'],
+    meta: {
+      title: `${brief.title} — Myron Melekson`,
+      description: brief.excerpt || DEFAULT_DESCRIPTION,
+      canonical: `${SITE}/aventura-watch/${brief.slug}`,
+    },
+  });
+}
 
 for (const post of content.writing?.posts || []) {
   routes.push({

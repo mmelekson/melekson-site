@@ -1,3 +1,5 @@
+import { aventuraWatch } from './aventura-watch.js';
+
 export const content = {
   nav: {
     name: "Myron Melekson",
@@ -664,4 +666,6 @@ export const content = {
     teaching: [],
     community: [],
   },
+
+  aventuraWatch,
 };
