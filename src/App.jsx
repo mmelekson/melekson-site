@@ -17,6 +17,7 @@ const UpdatesPage = lazy(() => import('./components/UpdatesPage'));
 const ContactPage = lazy(() => import('./components/ContactPage'));
 const MethodologyPage = lazy(() => import('./components/MethodologyPage'));
 const AventuraWatchPage = lazy(() => import('./components/AventuraWatchPage'));
+const WatchBrief = lazy(() => import('./components/WatchBrief'));
 const WhoRepresentsPage = lazy(() => import('./components/WhoRepresentsPage'));
 const TeachingPage = lazy(() => import('./components/TeachingPage'));
 const HealthcareAiPage = lazy(() => import('./components/HealthcareAiPage'));
@@ -58,6 +59,7 @@ export default function App() {
             <Route path="/contact" element={<ContactPage />} />
             <Route path="/methodology" element={<MethodologyPage />} />
             <Route path="/aventura-watch" element={<AventuraWatchPage />} />
+            <Route path="/aventura-watch/:slug" element={<WatchBrief />} />
             <Route path="/who-represents-aventura" element={<WhoRepresentsPage />} />
             <Route path="/teaching" element={<TeachingPage />} />
             <Route path="/healthcare-ai" element={<HealthcareAiPage />} />

@@ -33,6 +33,13 @@ const staticRoutes = [
   { path: '/community', changefreq: 'monthly', priority: '0.8', lastmod: today },
 ];
 
+const briefRoutes = (content?.aventuraWatch?.briefs || []).map((brief) => ({
+  path: `/aventura-watch/${brief.slug}`,
+  changefreq: 'monthly',
+  priority: '0.8',
+  lastmod: toIso(brief.date),
+}));
+
 const postRoutes = (content?.writing?.posts || []).map((p) => ({
   path: `/writing/${p.slug}`,
   changefreq: 'monthly',
@@ -40,7 +47,7 @@ const postRoutes = (content?.writing?.posts || []).map((p) => ({
   lastmod: toIso(p.date),
 }));
 
-const all = [...staticRoutes, ...postRoutes];
+const all = [...staticRoutes, ...briefRoutes, ...postRoutes];
 
 const body = all
   .map(
